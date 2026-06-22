@@ -29,4 +29,4 @@ cp -r junyi-deep-dialogue ~/.claude/skills/
 
 ## 关于
 
-作者：君一 · 享育心塾
+作者：君一
