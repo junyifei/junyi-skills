@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth Spark Recorder · 闪光瞬间三层复盘</title>
+<style>
+  :root{
+    --ink:#1a1714;
+    --ink-soft:#5c544c;
+    --ink-faint:#8a8178;
+    --orange:#C8451C;
+    --orange-soft:#e0794f;
+    --wash:#fbece3;
+    --wash-line:#f0d6c6;
+    --paper:#FDFAF6;
+    --cream:#f6efe6;
+    --cream-deep:#f0e5d6;
+    --line:#e5dccf;
+    --white:#ffffff;
+    --mono:"SF Mono",ui-monospace,"JetBrains Mono",Menlo,monospace;
+    --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    font-size:16px;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding-left:28px;padding-right:28px}
+  .mono{font-family:var(--mono);letter-spacing:.04em}
+
+  /* ---------- topbar ---------- */
+  .topbar{
+    border-bottom:1px solid var(--line);
+    background:rgba(253,250,246,.85);
+    backdrop-filter:saturate(160%) blur(8px);
+    position:sticky;top:0;z-index:50;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:54px}
+  .topbar .brand{font-size:13px;font-weight:600;letter-spacing:.02em}
+  .topbar .brand b{color:var(--orange)}
+  .topbar .meta{font-family:var(--mono);font-size:11px;color:var(--ink-faint)}
+
+  /* ---------- hero ---------- */
+  header.hero{padding:90px 0 70px;text-align:center;position:relative;overflow:hidden}
+  header.hero::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(200,69,28,.06),transparent 70%);
+    pointer-events:none;
+  }
+  .hero .kicker{font-family:var(--mono);font-size:14px;letter-spacing:.32em;color:var(--orange);font-weight:600;margin-bottom:22px;padding-left:.32em}
+  .hero h1{font-size:clamp(34px,6vw,58px);font-weight:800;letter-spacing:-.01em;line-height:1.12}
+  .hero h1 em{font-style:normal;color:var(--orange)}
+  .hero .sub{margin-top:16px;font-size:clamp(17px,2.4vw,22px);color:var(--ink-soft);font-weight:600}
+  .hero .sub em{font-style:normal;color:var(--orange)}
+  .hero .credit{margin-top:14px;font-size:13px;color:var(--ink-faint)}
+
+  /* core belief plate */
+  .belief{
+    max-width:760px;margin:48px auto 0;
+    background:var(--white);color:var(--ink);border-radius:20px;
+    border:1px solid var(--line);border-left:5px solid var(--orange);
+    padding:38px 40px;text-align:left;position:relative;
+    box-shadow:0 16px 40px rgba(26,23,20,.07);
+  }
+  .belief .tag{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--orange);font-weight:700}
+  .belief .big{font-size:clamp(24px,3.6vw,34px);font-weight:800;line-height:1.35;margin-top:14px;color:var(--ink);letter-spacing:.03em}
+  .belief .big span{color:var(--orange)}
+  .belief .belief-sub{margin-top:12px;font-size:clamp(16px,2vw,19px);font-weight:700;color:var(--ink-soft);line-height:1.5}
+  .belief .belief-sub b{color:var(--orange)}
+  .belief .note{margin-top:16px;font-size:15px;color:var(--ink-soft);line-height:1.7}
+  .belief .note b{color:var(--ink);font-weight:700}
+
+  /* ---------- section frame ---------- */
+  section{padding:76px 0}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:14px}
+  .sec-num{font-family:var(--mono);font-size:42px;font-weight:700;color:var(--orange);line-height:1;letter-spacing:-.02em}
+  .sec-num.alt{color:var(--ink)}
+  .sec-title{font-size:24px;font-weight:800}
+  .sec-lede{font-size:16px;color:var(--ink-soft);max-width:880px;margin-bottom:40px;line-height:1.7}
+  .sec-lede b{color:var(--ink);font-weight:600}
+
+  /* ---------- flow map (overview) ---------- */
+  .map{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .flow{display:flex;flex-direction:column;gap:0;align-items:center}
+  .flow-layer{width:100%;text-align:center}
+  .layer-label{font-size:16px;letter-spacing:.01em;color:var(--ink);font-weight:700;margin-bottom:18px}
+  .layer-label b{color:var(--orange)}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .pillar{
+    background:var(--white);border:1px solid var(--line);border-radius:16px;
+    padding:26px 22px;text-align:left;position:relative;transition:transform .2s,box-shadow .2s;
+  }
+  .pillar:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(26,23,20,.08)}
+  .pillar .pnum{font-family:var(--mono);font-size:12px;color:var(--orange);font-weight:600}
+  .pillar h3{font-size:19px;font-weight:800;margin:8px 0 6px}
+  .pillar .pkey{font-size:13px;color:var(--orange);font-weight:600;font-family:var(--mono);letter-spacing:.02em}
+  .pillar p{font-size:14px;color:var(--ink-soft);margin-top:12px;line-height:1.7}
+  .pillar .arrow-up{font-size:14px}
+
+  .down{font-family:var(--mono);color:var(--orange-soft);font-size:26px;line-height:1;margin:22px 0;font-weight:700}
+
+  .fuse{
+    background:var(--white);color:var(--ink);border-radius:18px;padding:30px 34px;max-width:680px;width:100%;
+    margin-left:auto;margin-right:auto;border:1px solid var(--line);box-shadow:0 10px 28px rgba(26,23,20,.06);
+    display:grid;grid-template-columns:1fr 1fr;gap:0;position:relative;overflow:hidden;
+  }
+  .fuse .col{padding:6px 22px}
+  .fuse .col:first-child{border-right:1px solid var(--line)}
+  .fuse .who{font-family:var(--mono);font-size:12px;letter-spacing:.06em;font-weight:700;color:var(--orange)}
+  .fuse .who.ai{color:var(--ink-faint)}
+  .fuse h4{font-size:18px;font-weight:800;margin:8px 0 6px}
+  .fuse p{font-size:13px;color:var(--ink-soft);line-height:1.65}
+  .fuse .plus{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:34px;height:34px;background:var(--orange);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:#fff;
+    border:3px solid var(--white);box-shadow:0 0 0 1px var(--line);
+  }
+  .output{
+    margin:0 auto;background:var(--wash);border:1px solid var(--wash-line);
+    color:var(--ink);border-radius:16px;padding:24px 32px;text-align:center;max-width:680px;width:100%;
+  }
+  .output .o-big{font-size:15px;font-weight:700;color:var(--ink);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 12px}
+  .output .o-big .ar{font-weight:400;color:var(--orange);display:inline-block}
+
+  /* ---------- detail cards ---------- */
+  .detail{display:grid;grid-template-columns:1fr;gap:0}
+  .row{
+    display:grid;grid-template-columns:140px 1fr;gap:30px;
+    padding:34px 0;border-top:1px solid var(--line);
+  }
+  .row:last-child{border-bottom:1px solid var(--line)}
+  .row .left .rk{font-family:var(--mono);font-size:13px;color:var(--orange);font-weight:600}
+  .row .left h3{font-size:21px;font-weight:800;margin-top:8px;line-height:1.25}
+  .row .body p{font-size:15px;color:var(--ink-soft);line-height:1.8}
+  .row .body p + p{margin-top:12px}
+  .row .body b{color:var(--ink);font-weight:600}
+  .chip{
+    display:inline-block;font-family:var(--mono);font-size:12px;
+    background:var(--cream-deep);color:var(--orange);
+    padding:3px 10px;border-radius:999px;margin:0 6px 6px 0;font-weight:600;
+  }
+
+  /* honest / callout box */
+  .callout{
+    background:var(--cream);border-left:3px solid var(--orange);
+    border-radius:0 12px 12px 0;padding:18px 22px;margin-top:16px;
+  }
+  .callout .c-lab{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:600}
+  .callout p{font-size:14px;color:var(--ink);margin-top:8px;line-height:1.7}
+  .callout.ex{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--orange)}
+
+  /* ---------- AI split big block ---------- */
+  .split{background:var(--cream-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+  /* ---------- 写什么 grid ---------- */
+  .what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+  .wcard{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px;
+    position:relative;transition:transform .2s,box-shadow .2s;
+  }
+  .wcard:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(26,23,20,.07)}
+  .wcard .wn{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--cream-deep)}
+  .wcard:hover .wn{color:var(--orange-soft)}
+  .wcard h3{font-size:16px;font-weight:800;margin:4px 0 6px;line-height:1.35}
+  .wcard p{font-size:14px;color:var(--ink-soft);margin-top:4px;line-height:1.65}
+  .wcard .wtag{font-family:var(--mono);font-size:11px;color:var(--orange);margin-top:12px;display:block}
+  .three{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .three .t{
+    background:var(--ink);color:#fff;border-radius:999px;padding:10px 24px;font-weight:700;font-size:15px;
+  }
+  .three .t span{color:var(--orange-soft);font-family:var(--mono);font-size:12px;margin-left:8px;font-weight:400}
+  .miss{
+    margin-top:26px;text-align:center;font-size:15px;color:var(--ink-soft);max-width:680px;margin-left:auto;margin-right:auto;
+  }
+  .miss b{color:var(--ink)}
+
+  /* ---------- flywheel ---------- */
+  .wheel{background:#2c2118;color:#f5efe8;border-radius:24px;padding:54px 44px;text-align:center;margin:0 auto;max-width:820px;box-shadow:0 20px 46px rgba(44,33,24,.28)}
+  .wheel .wk{font-family:var(--mono);font-size:12px;letter-spacing:.08em;font-weight:700;color:#e8a37e}
+  .wheel h2{font-size:clamp(24px,4vw,34px);font-weight:800;margin-top:14px;line-height:1.3;color:#f5efe8}
+  .wheel h2 span{color:#f0a982}
+  .wheel .cycle{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin-top:32px}
+  .wheel .node{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:14px 20px;font-size:14px;font-weight:600;color:#f5efe8}
+  .wheel .sep{color:#f0a982;font-size:20px;font-weight:700}
+  .wheel .foot{margin-top:30px;font-size:15px;color:#cabfb2;line-height:1.75;max-width:640px;margin-left:auto;margin-right:auto}
+  .wheel .foot b{color:#fff}
+
+  /* ---------- footer ---------- */
+  footer{padding:50px 0 70px;text-align:center;color:var(--ink-faint);font-size:13px;border-top:1px solid var(--line);margin-top:64px}
+  footer .mono{font-size:11px;letter-spacing:.1em}
+  footer a{color:var(--orange);text-decoration:none}
+
+  /* ---------- timeline ---------- */
+  .path{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .tl{position:relative;margin-top:16px;padding-left:36px}
+  .tl::before{content:"";position:absolute;left:9px;top:8px;bottom:46px;width:2px;background:var(--line)}
+  .tl-item{position:relative;padding-bottom:34px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{
+    content:"";position:absolute;left:-36px;top:2px;width:20px;height:20px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--orange);box-sizing:border-box;
+  }
+  .tl-item.now::before{background:var(--orange);box-shadow:0 0 0 5px rgba(200,69,28,.13)}
+  .tl-num{font-family:var(--mono);font-size:12px;color:var(--ink-faint);font-weight:600;letter-spacing:.04em}
+  .tl-item h3{font-size:18px;font-weight:800;margin:4px 0 7px;line-height:1.3}
+  .tl-item.now h3{color:var(--orange)}
+  .tl-item p{font-size:14.5px;color:var(--ink-soft);line-height:1.75;max-width:740px}
+  .tl-item p b{color:var(--ink);font-weight:600}
+  .tl-hl{
+    display:inline-block;background:var(--white);border:1px solid var(--line);color:var(--orange);
+    font-family:var(--mono);font-size:12px;padding:3px 11px;border-radius:999px;margin-top:9px;font-weight:600;
+  }
+
+  /* ---------- responsive ---------- */
+  @media(max-width:760px){
+    .pillars{grid-template-columns:1fr}
+    .what-grid{grid-template-columns:1fr 1fr}
+    .fuse{grid-template-columns:1fr}
+    .fuse .col:first-child{border-right:none;border-bottom:1px solid var(--line);padding-bottom:20px}
+    .fuse .col:last-child{padding-top:20px}
+    .fuse .plus{display:none}
+    .row{grid-template-columns:1fr;gap:14px}
+    .sec-num{font-size:34px}
+    /* pipelines: horizontal arrows become vertical when stacked */
+    .output .o-big{flex-direction:column;gap:8px}
+    .output .o-big .ar{transform:rotate(90deg)}
+    .cycle{flex-direction:column}
+    .cycle .sep{transform:rotate(90deg)}
+    .cycle .node{width:100%;max-width:280px}
+  }
+  @media(max-width:420px){
+    .what-grid{grid-template-columns:1fr}
+    .wrap{padding-left:20px;padding-right:20px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">Growth Spark Recorder<b> · 闪光瞬间三层复盘</b></div>
+    <div class="meta">OpenClaw Skill · 开源亲子工具</div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">OPENCLAW SKILL · 亲子成长</div>
+    <h1>闪光瞬间<em>三层复盘</em></h1>
+    <div class="sub">随手发一句观察，AI 给你<em>专业级</em>的发展分析和行动建议，还自动存好</div>
+    <div class="credit">一个给家长的开源 AI Skill · 装上即用</div>
+
+    <div class="belief">
+      <div class="tag">核心理念</div>
+      <div class="big">你负责<span>看见</span>孩子，AI 负责把“看见”变成<span>看懂</span>和<span>用好</span>。</div>
+      <div class="belief-sub">孩子的闪光瞬间稍纵即逝——<b>记不住、看不深、用不上</b>。</div>
+      <div class="note">
+        你知道“这个挺棒”，但说不清<b>到底哪里棒、对成长意味着什么、下次怎么做更好</b>。这个 skill 只做一件事：把你随手发的一句话，变成一条<b>记得住、看得懂、用得上</b>的成长记录。
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 00 OVERVIEW MAP ============ -->
+<section class="map">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">00</div>
+      <div class="sec-title">底层逻辑 · 一张图看懂它怎么运转</div>
+    </div>
+    <p class="sec-lede">
+      你只需要做一件事——<b>把看到的发给 AI</b>。剩下的「三层复盘 + 62 个思维模型 + 自动归档」全自动。
+    </p>
+
+    <div class="flow">
+      <!-- INPUT LAYER -->
+      <div class="flow-layer">
+        <div class="layer-label"><b>①</b> 输入层 · 你随手给的，越用越值钱</div>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pnum">输入 A</div>
+            <h3>一句观察</h3>
+            <div class="pkey">像聊天一样随意</div>
+            <p>一句话、一段语音、一张照片都行。“孩子今天主动把文具盒让给了同学”——这样就够了，<b>不用整理、不用打开任何 App</b>。</p>
+          </div>
+          <div class="pillar">
+            <div class="pnum">输入 B</div>
+            <h3>孩子的阶段</h3>
+            <div class="pkey">年龄 / 发展窗口</div>
+            <p>名字和年龄<b>从对话里自动识别</b>，用来判断“这个行为在<b>这个年龄</b>意味着什么”——是进步，还是正常水平。</p>
+          </div>
+          <div class="pillar">
+            <div class="pnum">输入 C</div>
+            <h3>历史档案</h3>
+            <div class="pkey">自动积累</div>
+            <p>每条记录都存进档案，<b>越积越多</b>。有了历史，AI 才能做纵向对比：“上次类似情况是 XX，这次变化在哪”。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="down">↓</div>
+
+      <!-- COLLABORATION LAYER -->
+      <div class="flow-layer">
+        <div class="layer-label"><b>②</b> 协作层 · 你和 AI 的分工</div>
+        <div class="fuse">
+          <div class="col">
+            <div class="who">你 · 负责</div>
+            <h4>看见</h4>
+            <p>捕捉那个稍纵即逝的瞬间，随手发出来。这部分不能外包——<b>只有你在现场</b>。</p>
+          </div>
+          <div class="col">
+            <div class="who ai">AI · 负责</div>
+            <h4>看懂 + 用好</h4>
+            <p>三层复盘，从 62 个模型里挑 1-3 个最贴合的，用大白话给你<b>结论和下一步</b>。</p>
+          </div>
+          <div class="plus">+</div>
+        </div>
+      </div>
+
+      <div class="down">↓</div>
+
+      <!-- OUTPUT -->
+      <div class="flow-layer">
+        <div class="layer-label"><b>③</b> 输出层 · 三层复盘，自动归档</div>
+        <div class="output">
+          <div class="o-big"><span class="step">📸 记录</span><i class="ar">→</i><span class="step">🔬 发展分析</span><i class="ar">→</i><span class="step">🧠 模型复盘</span><i class="ar">→</i><span class="step">🗂 自动归档</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 WHEN TO USE ============ -->
+<section class="what wrap">
+  <div class="sec-head">
+    <div class="sec-num alt">01</div>
+    <div class="sec-title">什么时候用它？</div>
+  </div>
+  <p class="sec-lede">
+    不用特意“打开”。只要你看到孩子一个<b>值得记下的瞬间</b>，或想搞懂一次互动、拿不准一个决定，就发给它。下面这些都是它的主场：
+  </p>
+
+  <div class="what-grid">
+    <div class="wcard"><div class="wn">01</div><h3>孩子做了件好事</h3><p>自发、主动的行为，你心里闪过“这小子不错”。</p><span class="wtag"># 想记下来</span></div>
+    <div class="wcard"><div class="wn">02</div><h3>刚表扬或批评完</h3><p>话已经说出口，但你不确定“说得对不对、会不会有反效果”。</p><span class="wtag"># 想复盘</span></div>
+    <div class="wcard"><div class="wn">03</div><h3>孩子遇到困难想放弃</h3><p>畏难、退缩、“我不会”，你想知道该推一把还是该等等。</p><span class="wtag"># 想复盘</span></div>
+    <div class="wcard"><div class="wn">04</div><h3>亲子冲突 / 发完火</h3><p>情绪爆发过去了，你想知道刚才到底发生了什么、怎么修复。</p><span class="wtag"># 想复盘</span></div>
+    <div class="wcard"><div class="wn">05</div><h3>兄弟姐妹的互动</h3><p>争抢、合作、一起出游——一次互动对两个孩子各意味着什么。</p><span class="wtag"># 想看懂</span></div>
+    <div class="wcard"><div class="wn">06</div><h3>拿不准的教养决定</h3><p>要不要报班、加课、换方向？你想要的不是焦虑，是一个清醒的判断。</p><span class="wtag"># 想决策</span></div>
+  </div>
+
+  <div class="three">
+    <div class="t">值得记的瞬间 <span>记下来</span></div>
+    <div class="t">想复盘的互动 <span>看懂它</span></div>
+    <div class="t">拿不准的决策 <span>想清楚</span></div>
+  </div>
+
+  <p class="miss">
+    一句话标准：<b>当你心里闪过“这个不错”或“这下怎么办”，就是它该出场的时候。</b>
+  </p>
+</section>
+
+<!-- ============ 02 THREE LAYERS (effect, worked example) ============ -->
+<section style="background:var(--cream-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <div class="sec-title">三层复盘 · 你会得到什么</div>
+    </div>
+    <p class="sec-lede">
+      举个例子。你只发了一句：<b>“孩子在超市自己算出了一袋糍粑多少钱”</b>。AI 回你的，是这样三层 ——
+    </p>
+
+    <div class="detail">
+      <div class="row">
+        <div class="left">
+          <div class="rk">第一层</div>
+          <h3>📸 记录</h3>
+        </div>
+        <div class="body">
+          <p>把场景还原成一条清晰记录，标好<b>日期、当事人</b>，你说的每个细节<b>原样保留</b>，不添油加醋。这条记录会自动存档，以后翻起来就是成长的实证。</p>
+          <div class="callout ex">
+            <div class="c-lab">它会写下</div>
+            <p>2026-06-22 · 在超市，孩子用“单价 × 重量”自己算出了一袋糍粑的价钱。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left">
+          <div class="rk">第二层</div>
+          <h3>🔬 发展分析</h3>
+        </div>
+        <div class="body">
+          <p>从儿童发展的角度告诉你<b>这个行为在这个年龄意味着什么</b>——属于哪个发展维度，是进步还是正常水平。有历史记录时，自动做<b>纵向对比</b>，让你看见成长轨迹。</p>
+          <div class="callout ex">
+            <div class="c-lab">它会指出</div>
+            <p>这是<b>数感 + 生活数学</b>的真实迁移：他把课堂里的“单价”用到了真实购物里，属于<b>认知发展</b>。比“会做题”更难得的，是他<b>主动</b>把知识用了起来。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left">
+          <div class="rk">第三层 · 最有价值</div>
+          <h3>🧠 模型复盘</h3>
+        </div>
+        <div class="body">
+          <p>挑 1-3 个最贴合的思维模型，用大白话<b>指着场景</b>说：哪个机制在起作用、你的回应在强化好循环还是埋隐患、<b>下次具体能说什么、做什么</b>。不堆术语，不讲理论。</p>
+          <div class="callout ex">
+            <div class="c-lab">最近发展区 · 下次可以试</div>
+            <p>他是在“踮脚够得着”的难度上自己解决的——<b>这正是学习真实发生的地方</b>。下次可以试：到超市给他一个小预算，让他自己挑、自己算钱，<b>把生活变成他的数学游戏</b>。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 THE 62-MODEL ENGINE ============ -->
+<section class="wrap">
+  <div class="sec-head">
+    <div class="sec-num alt">03</div>
+    <div class="sec-title">引擎盖下 · 62 个思维模型</div>
+  </div>
+  <p class="sec-lede">
+    第三层的“看懂”不是 AI 现编的。背后是一个 <b>62 个思维模型</b>的库，从查理·芒格的多元思维模型和儿童发展心理学里提炼，<b>每个都做了育儿场景的落地改写</b>——不是抽象定义，而是“孩子做了 XX 时，这个模型怎么解释、你可以怎么应对”。
+  </p>
+
+  <div class="detail">
+    <div class="row">
+      <div class="left"><div class="rk">板块一</div><h3>误判心理学</h3></div>
+      <div class="body">
+        <p><b>25 个</b>。芒格的人类误判心理学——解释孩子（和你自己）为什么会有那些“不讲理”的反应。</p>
+        <div style="margin-top:6px">
+          <span class="chip"># 激励机制</span><span class="chip"># 社会认同</span><span class="chip"># 被剥夺超级反应</span><span class="chip"># 好奇心倾向</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="left"><div class="rk">板块二</div><h3>跨学科模型</h3></div>
+      <div class="body">
+        <p><b>12 个</b>。把物理、生物、工程里的智慧借来看成长——很多育儿难题换个视角就通了。</p>
+        <div style="margin-top:6px">
+          <span class="chip"># 反转思维</span><span class="chip"># 安全边际</span><span class="chip"># 临界质量</span><span class="chip"># 生态位</span><span class="chip"># 复利</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="left"><div class="rk">板块三</div><h3>发展心理学</h3></div>
+      <div class="body">
+        <p><b>16 个</b>。儿童发展与亲子关系模型，直接对应孩子每个阶段的心理任务。</p>
+        <div style="margin-top:6px">
+          <span class="chip"># 最近发展区</span><span class="chip"># 安全基地</span><span class="chip"># 关系修复</span><span class="chip"># 叙事身份</span><span class="chip"># 假装游戏</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="left"><div class="rk">板块四</div><h3>会计与统计</h3></div>
+      <div class="body">
+        <p><b>9 个</b>。帮你在“要不要报班”“单次波动”这类决策上，不被焦虑和个案带偏。</p>
+        <div style="margin-top:6px">
+          <span class="chip"># 沉没成本</span><span class="chip"># 机会成本</span><span class="chip"># 均值回归</span><span class="chip"># 幸存者偏差</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 WHERE IT GOES (archive / compounding) ============ -->
+<section class="path">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <div class="sec-title">一条记录，会长成什么</div>
+    </div>
+    <p class="sec-lede">
+      每条闪光瞬间都<b>自动归档</b>（默认写在项目里的 <span class="mono">growth-records/</span>，开箱即用）。单看是一句话，日积月累，它会长成这些 ——
+    </p>
+
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-num">当下 · 单条建档</div>
+        <h3>每条瞬间，一个文件</h3>
+        <p>原始场景 + 三层复盘，存成一个独立文件。这是历史记录的<b>主索引</b>，将来要找“他第一次会 XX”一搜就到。</p>
+        <span class="tl-hl">记得住</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-num">每天 · 成长日记</div>
+        <h3>自动汇总成编年史</h3>
+        <p>当天的记录自动汇总进日记。翻起来，就是一部<b>孩子的成长编年史</b>，不丢、不忘。</p>
+        <span class="tl-hl">看得见轨迹</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-num">里程碑 · 个人档案</div>
+        <h3>突破性表现，进档案</h3>
+        <p>首次出现的能力、突破性的表现，自动更新到<b>孩子的个人档案</b>，成为发展的关键节点。</p>
+        <span class="tl-hl">抓住关键一跃</span>
+      </div>
+      <div class="tl-item now">
+        <div class="tl-num">时间久了 · 复利</div>
+        <h3>纵向对比 & 未来素材</h3>
+        <p>历史够多后，新记录会<b>自动和过去对照</b>；这些积累，往后就是成长周报、学期总结的<b>现成素材来源</b>。</p>
+        <span class="tl-hl">越用越值钱</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 FLYWHEEL ============ -->
+<section class="wrap">
+  <div class="wheel">
+    <div class="wk">为什么它会“利滚利”</div>
+    <h2>你越<span>看见</span>，就越<span>看懂</span>；<br>越看懂，就越<span>看见</span></h2>
+    <div class="cycle">
+      <div class="node">看见 · 随手记下</div>
+      <div class="sep">→</div>
+      <div class="node">看懂 · 发展 + 模型</div>
+      <div class="sep">→</div>
+      <div class="node">用好 · 下次行动</div>
+      <div class="sep">↻</div>
+    </div>
+    <p class="foot">
+      每一次复盘都在加深你对孩子的理解，理解越深，你越能<b>看见</b>更细微的闪光；记录越多，纵向对比越准。
+      这就是复利：<b>你负责看见，AI 负责把“看见”变成“看懂”和“用好”</b>——而看懂，又让你看见更多。
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Growth Spark Recorder · 闪光瞬间三层复盘</div>
+    <div class="mono" style="margin-top:8px">OpenClaw 开源亲子 Skill · 记录 → 发展分析 → 思维模型复盘 · 62 个模型 · 2026-06</div>
+  </div>
+</footer>
+
+</body>
+</html>
