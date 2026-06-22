@@ -15,7 +15,7 @@
 ### junyi-growth-spark-recorder · 闪光瞬间三层复盘
 把家长随手发来的一句观察，变成「记录 → 发展分析 → 思维模型复盘」三层结构，并自动归档成成长编年史。背后是一个 62 个思维模型的库（芒格多元思维 + 儿童发展心理学），用大白话给出"下次可以试"的具体行动。
 适合：随手记录孩子的闪光瞬间、想看懂一次亲子互动、复盘冲突或表扬、纠结要不要报班这类教养决策。
-详见 [junyi-growth-spark-recorder/SKILL.md](junyi-growth-spark-recorder/SKILL.md) · [可视化介绍](junyi-growth-spark-recorder/overview.html)。
+详见 [junyi-growth-spark-recorder/SKILL.md](junyi-growth-spark-recorder/SKILL.md)。
 
 ## 怎么安装
 
