@@ -1,6 +1,6 @@
 # junyi-skills
 
-君一 · 享育心塾 的 Claude / OpenClaw Skill 合集。
+君一 的 Claude / OpenClaw Skill 合集。
 
 每个文件夹是一个独立的 skill，包含 `SKILL.md`（技能本体）和可选的 `references/`。
 拿来即用，已做去个人化处理，任何人都能装。
