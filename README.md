@@ -24,16 +24,21 @@
 
 ## 怎么安装
 
-每个 skill 都遵循 [agentskills.io](https://agentskills.io) 开放标准，Claude Code / OpenClaw / Codex / Hermes 都能用。把需要的 skill 文件夹复制进对应平台的 skills 目录即可自动发现，例如装 junyi-po-leng-shui：
+每个 skill 都遵循 [agentskills.io](https://agentskills.io) 开放标准，Claude Code / OpenClaw / Codex / Hermes / WorkBuddy 都能用。把需要的 skill 文件夹复制进对应平台的 skills 目录即可自动发现，例如装 junyi-po-leng-shui：
 
 ```
 cp -r junyi-po-leng-shui ~/.claude/skills/           # Claude Code
 cp -r junyi-po-leng-shui ~/.openclaw/shared-skills/   # OpenClaw
 cp -r junyi-po-leng-shui ~/.agents/skills/           # Codex
 cp -r junyi-po-leng-shui ~/.hermes/skills/            # Hermes
+cp -r junyi-po-leng-shui ~/.workbuddy/skills/        # WorkBuddy
 ```
 
 装完重开一个新会话 / 重启 agent 即生效。
+
+**或者让 AI 一键装**——不想手动复制的话，把下面这段整段发给对方的 agent（任何工具通用）：
+
+> 帮我从 https://github.com/junyifei/junyi-skills 装一个 skill，只装 `junyi-growth-spark-recorder` 这一个（换成你要的那个）。请把仓库克隆到临时目录，只把这个文件夹复制到你这个工具的 skills 目录——Claude Code `~/.claude/skills/`、OpenClaw `~/.openclaw/shared-skills/`、Codex `~/.agents/skills/`、Hermes `~/.hermes/skills/`、WorkBuddy `~/.workbuddy/skills/`，你是哪个就放哪个——再删掉临时克隆、别留下仓库里其它 skill。装好后读一下它的 SKILL.md，告诉我用什么话触发。
 
 ## 许可
 
