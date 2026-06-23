@@ -17,15 +17,29 @@
 适合：随手记录孩子的闪光瞬间、想看懂一次亲子互动、复盘冲突或表扬、纠结要不要报班这类教养决策。
 详见 [junyi-growth-spark-recorder/SKILL.md](junyi-growth-spark-recorder/SKILL.md)。
 
+### junyi-po-leng-shui · 泼冷水
+专治 AI 拍马屁的反谄媚开关。一开它就切到「魔鬼代言人」，不给情绪价值，专挑你想法里的毛病、戳破你没看见的风险、指出最可能崩的那一点；泼完还帮你收口（把问题分成必须改/可不改两堆 + 一句总判断 + 你拍板）。
+适合：需求或技术方案 review、产品定价决策、入场某个市场前、跳槽搬家 all in 等重大个人决定、判断一篇稿子值不值得发。
+详见 [junyi-po-leng-shui/SKILL.md](junyi-po-leng-shui/SKILL.md)。
+
 ## 怎么安装
 
-把需要的 skill 文件夹复制到你的 skills 目录即可被自动发现，例如：
+每个 skill 都遵循 [agentskills.io](https://agentskills.io) 开放标准，Claude Code / OpenClaw / Codex / Hermes 都能用。把需要的 skill 文件夹复制进对应平台的 skills 目录即可自动发现，例如装 junyi-po-leng-shui：
 
 ```
-cp -r junyi-deep-dialogue ~/.claude/skills/
+cp -r junyi-po-leng-shui ~/.claude/skills/           # Claude Code
+cp -r junyi-po-leng-shui ~/.openclaw/shared-skills/   # OpenClaw
+cp -r junyi-po-leng-shui ~/.codex/skills/             # Codex
+cp -r junyi-po-leng-shui ~/.hermes/skills/            # Hermes
 ```
 
-（OpenClaw 用户复制到你的 shared-skills 目录。）
+装完重开一个新会话 / 重启 agent 即生效。
+
+## 许可
+
+本仓库的文字内容（各 skill 的 `SKILL.md` 与 `references/`）采用 [CC BY 4.0（署名 4.0 国际）](https://creativecommons.org/licenses/by/4.0/) 许可：可自由使用、修改、再分发（含商用），前提是署名「君一」。许可全文见 [LICENSE](LICENSE)。
+
+> ⚠️ 品牌素材不在授权范围：享育心塾 logo、个人微信二维码（含介绍海报 `preview.png` 中嵌入的部分）版权归 君一 / 享育心塾所有，保留所有权利，未经许可不得复用、修改或再分发。
 
 ## 关于
 
