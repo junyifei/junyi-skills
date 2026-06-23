@@ -1,6 +1,6 @@
 # junyi-skills
 
-君一 的 Claude / OpenClaw Skill 合集。
+君一的 Skill 合集
 
 每个文件夹是一个独立的 skill，包含 `SKILL.md`（技能本体）和可选的 `references/`。
 拿来即用，已做去个人化处理，任何人都能装。
@@ -38,8 +38,6 @@ cp -r junyi-po-leng-shui ~/.hermes/skills/            # Hermes
 ## 许可
 
 本仓库的文字内容（各 skill 的 `SKILL.md` 与 `references/`）采用 [CC BY 4.0（署名 4.0 国际）](https://creativecommons.org/licenses/by/4.0/) 许可：可自由使用、修改、再分发（含商用），前提是署名「君一」。许可全文见 [LICENSE](LICENSE)。
-
-> ⚠️ 品牌素材不在授权范围：享育心塾 logo、个人微信二维码（含介绍海报 `preview.png` 中嵌入的部分）版权归 君一 / 享育心塾所有，保留所有权利，未经许可不得复用、修改或再分发。
 
 ## 关于
 
