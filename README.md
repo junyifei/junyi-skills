@@ -2,7 +2,7 @@
 
 君一的 Skill 合集
 
-每个文件夹是一个独立的 skill，包含 `SKILL.md`（技能本体）和可选的 `references/`。
+每个文件夹是一个独立的 skill，包含 `SKILL.md`（技能本体）和可选的 `references/`、`scripts/`。
 拿来即用，已做去个人化处理，任何人都能装。
 
 ## 技能列表
@@ -21,6 +21,11 @@
 专治 AI 拍马屁的反谄媚开关。一开它就切到「魔鬼代言人」，不给情绪价值，专挑你想法里的毛病、戳破你没看见的风险、指出最可能崩的那一点；泼完还帮你收口（把问题分成必须改/可不改两堆 + 一句总判断 + 你拍板）。
 适合：需求或技术方案 review、产品定价决策、入场某个市场前、跳槽搬家 all in 等重大个人决定、判断一篇稿子值不值得发。
 详见 [junyi-po-leng-shui/SKILL.md](junyi-po-leng-shui/SKILL.md)。
+
+### junyi-doc-reader · 大文档归档与检索
+把大文档安全地转成结构化 Markdown，做分块索引、可选 LLM 提炼摘要，最终存进 Obsidian。支持本地文件（Word/PDF/TXT/Markdown）和飞书云文档，还能把飞书工作日志按日期拆成 daily notes。基础管线完全离线；读飞书凭据仅在你用飞书源时、网络出口仅限官方 API，LLM 外发默认关闭、需你显式开启。
+适合：归档或检索超长文档、把飞书文档或工作日志存进 Obsidian、按日期拆成 daily notes、文档超出上下文窗口需要分块处理。
+详见 [junyi-doc-reader/SKILL.md](junyi-doc-reader/SKILL.md)。
 
 ## 怎么安装
 
