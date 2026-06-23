@@ -29,7 +29,7 @@
 ```
 cp -r junyi-po-leng-shui ~/.claude/skills/           # Claude Code
 cp -r junyi-po-leng-shui ~/.openclaw/shared-skills/   # OpenClaw
-cp -r junyi-po-leng-shui ~/.codex/skills/             # Codex
+cp -r junyi-po-leng-shui ~/.agents/skills/           # Codex
 cp -r junyi-po-leng-shui ~/.hermes/skills/            # Hermes
 ```
 
