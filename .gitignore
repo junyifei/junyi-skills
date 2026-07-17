@@ -7,6 +7,9 @@ growth-preview/
 # 本地资产盘点，包含绝对路径与未公开 Skill，不得发布
 .private-inventory/
 
+# 本地回归测试记录，可能包含测试输入与内部评语，不得发布
+.private-regression/
+
 # 待完成独立回归测试的儿童成长 Skills，验证后再显式加入
 collect-child-growth-intake/
 build-infant-growth-plan/
