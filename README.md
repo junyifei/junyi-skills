@@ -4,7 +4,7 @@
 
 `junyi-skills` 不是提示词陈列柜。每个正式 Skill 都要回答四个问题：什么任务触发、需要什么证据、按什么流程做、怎样判断结果可信。尚未形成稳定流程的内容先保留为知识，不为了数量硬包装成 Skill。
 
-当前版本：**0.1.0** · 正式入口与 Skill：**15 个**
+当前版本：**0.1.1** · 正式入口与 Skill：**7 个**
 
 ## 从这里开始
 
@@ -59,17 +59,9 @@ junyi 总入口：判断目标、证据与当前阶段
 | 阶段 | Skill | 作用 | 当前成熟度 |
 |---|---|---|---|
 | 战略定位 | [`build-evidence-based-ip-book`](build-evidence-based-ip-book/SKILL.md) | 定位诊断；建立、审核和迭代证据型 IP 战略书 | 已投入项目 |
-| 用户研究 | [`research-audience-insights`](research-audience-insights/SKILL.md) | 研究用户经历、原话、问题、付费与目标 | 测试中 |
 | 对标研究 | [`find-xiaohongshu-benchmarks`](find-xiaohongshu-benchmarks/SKILL.md) | 发现、核验、分层和选择对标样本 | 测试中 |
-| 选题规划 | [`plan-xiaohongshu-topics`](plan-xiaohongshu-topics/SKILL.md) | 生成、去重、筛选、评分和排序选题 | 已建立，待验证 |
-| 小红书标题 | [`write-xiaohongshu-titles`](write-xiaohongshu-titles/SKILL.md) | 生成封面文案与笔记标题 | 已建立，待验证 |
-| 视频号标题 | [`write-wechat-channels-titles`](write-wechat-channels-titles/SKILL.md) | 生成封面文案与发布标题 | 已建立，待验证 |
-| 小红书创作 | [`write-xiaohongshu-content`](write-xiaohongshu-content/SKILL.md) | 从真实材料创建完整内容包 | 已多轮测试，待实盘校准 |
-| 小红书审核 | [`audit-xiaohongshu-content`](audit-xiaohongshu-content/SKILL.md) | 审核、评分并重写已有草稿 | 已多轮测试，待实盘校准 |
-| 视频号创作 | [`write-wechat-channels-content`](write-wechat-channels-content/SKILL.md) | 创建口播、镜头、证据与验证方案 | 已多轮测试，待实盘校准 |
-| 视频号审核 | [`audit-wechat-channels-content`](audit-wechat-channels-content/SKILL.md) | 审核并重写标题、口播与镜头稿 | 已多轮测试，待实盘校准 |
 
-推荐链路不是强制流水线：已有草稿就直接审核，已有素材只缺标题就直接做标题。只有当前产出确实依赖上一步时，才继续向上追溯。
+这里公开的是目前愿意承担方法承诺的能力。用户研究、选题、标题、内容生产与审核等方法仍在本地实盘验证，跑通并积累可说明的证据后再发布。
 
 ## 方法论原则
 
@@ -86,6 +78,7 @@ junyi 总入口：判断目标、证据与当前阶段
 ```bash
 cp -R junyi ~/.codex/skills/
 cp -R build-evidence-based-ip-book ~/.codex/skills/
+cp -R find-xiaohongshu-benchmarks ~/.codex/skills/
 ```
 
 不同工具的目录可能不同；安装前先检查是否存在同名目录，避免覆盖本地未同步的修改。安装后开启新会话，让工具重新发现 Skill。

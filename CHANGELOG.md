@@ -2,6 +2,12 @@
 
 版本统一记录在根目录 [`VERSION`](VERSION) 与 [`skill-index.json`](skill-index.json)；`SKILL.md` frontmatter 只保留跨平台标准字段 `name` 和 `description`。
 
+## [0.1.1] — 2026-07-17
+
+- 收紧公开范围，只保留已发布基础能力、IP 战略报告与小红书对标研究。
+- 将 8 个尚未完成实盘验证的 IP Skills 撤出公开仓库，保留本地继续验证。
+- 公开入口与 Skills 调整为 7 个，并同步更新总入口、README、索引与权利记录。
+
 ## [0.1.0] — 2026-07-17
 
 - 建立原创总入口 `junyi`，按任务、证据、平台与阶段选择最短调用链。

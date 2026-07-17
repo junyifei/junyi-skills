@@ -13,6 +13,16 @@ build-infant-growth-plan/
 build-preschool-growth-plan/
 build-school-age-growth-plan/
 
+# 尚未完成实盘验证的 IP Skills，验证后再显式加入
+research-audience-insights/
+plan-xiaohongshu-topics/
+write-xiaohongshu-titles/
+write-wechat-channels-titles/
+write-xiaohongshu-content/
+audit-xiaohongshu-content/
+write-wechat-channels-content/
+audit-wechat-channels-content/
+
 # 与本次公开发布无关的本地资料
 docs/
 junyi-growth-spark-recorder.zip

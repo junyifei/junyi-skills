@@ -2,25 +2,17 @@
   "name": "君一方法论",
   "repository": "junyi-skills",
   "entrypoint": "junyi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "updated_at": "2026-07-17",
   "license": "CC-BY-4.0",
-  "official_skill_count": 15,
+  "official_skill_count": 7,
   "skills": [
-    {"name": "junyi", "category": "总入口", "path": "junyi", "version": "0.1.0", "maturity": "已发布", "role": "根据任务、证据、平台与阶段选择最短 Skill 路径"},
+    {"name": "junyi", "category": "总入口", "path": "junyi", "version": "0.1.1", "maturity": "已发布", "role": "根据任务、证据、平台与阶段选择最短 Skill 路径"},
     {"name": "junyi-deep-dialogue", "category": "思考与判断", "path": "junyi-deep-dialogue", "version": "1.0.0", "maturity": "已发布", "role": "通过苏格拉底式追问把体验转化为自己的判断"},
     {"name": "junyi-po-leng-shui", "category": "思考与判断", "path": "junyi-po-leng-shui", "version": "1.0.0", "maturity": "已发布", "role": "只有用户明确说出触发词时才进行反谄媚与魔鬼代言人评审"},
     {"name": "junyi-growth-spark-recorder", "category": "家庭成长", "path": "junyi-growth-spark-recorder", "version": "1.0.0", "maturity": "已发布", "role": "记录亲子片段并完成发展分析和模型复盘"},
     {"name": "junyi-doc-reader", "category": "知识处理", "path": "junyi-doc-reader", "version": "1.0.0", "maturity": "已发布", "role": "转换、分块、索引和归档大文档"},
     {"name": "build-evidence-based-ip-book", "category": "IP战略定位", "path": "build-evidence-based-ip-book", "version": "0.1.0", "maturity": "已投入项目", "role": "定位诊断并建立、审核和迭代证据型 IP 战略书"},
-    {"name": "research-audience-insights", "category": "IP用户研究", "path": "research-audience-insights", "version": "0.1.0", "maturity": "测试中", "role": "研究用户经历、原话、问题、付费和目标"},
-    {"name": "find-xiaohongshu-benchmarks", "category": "IP对标研究", "path": "find-xiaohongshu-benchmarks", "version": "0.1.0", "maturity": "测试中", "role": "发现、核验、分层和选择小红书对标样本"},
-    {"name": "plan-xiaohongshu-topics", "category": "IP选题规划", "path": "plan-xiaohongshu-topics", "version": "0.1.0", "maturity": "已建立待验证", "role": "生成、去重、筛选、评分和排序小红书选题"},
-    {"name": "write-xiaohongshu-titles", "category": "IP标题", "path": "write-xiaohongshu-titles", "version": "0.1.0", "maturity": "已建立待验证", "role": "生成小红书封面文案与笔记标题"},
-    {"name": "write-wechat-channels-titles", "category": "IP标题", "path": "write-wechat-channels-titles", "version": "0.1.0", "maturity": "已建立待验证", "role": "生成视频号封面文案与发布标题"},
-    {"name": "write-xiaohongshu-content", "category": "IP内容生产", "path": "write-xiaohongshu-content", "version": "0.1.0", "maturity": "已多轮测试待实盘校准", "role": "从真实材料创建小红书内容包"},
-    {"name": "audit-xiaohongshu-content", "category": "IP内容审核", "path": "audit-xiaohongshu-content", "version": "0.1.0", "maturity": "已多轮测试待实盘校准", "role": "审核、评分并重写已有小红书草稿"},
-    {"name": "write-wechat-channels-content", "category": "IP内容生产", "path": "write-wechat-channels-content", "version": "0.1.0", "maturity": "已多轮测试待实盘校准", "role": "从真实材料创建视频号内容包"},
-    {"name": "audit-wechat-channels-content", "category": "IP内容审核", "path": "audit-wechat-channels-content", "version": "0.1.0", "maturity": "已多轮测试待实盘校准", "role": "审核并重写已有视频号标题、口播和镜头稿"}
+    {"name": "find-xiaohongshu-benchmarks", "category": "IP对标研究", "path": "find-xiaohongshu-benchmarks", "version": "0.1.0", "maturity": "测试中", "role": "发现、核验、分层和选择小红书对标样本"}
   ]
 }

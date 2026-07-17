@@ -1,4 +1,0 @@
-interface:
-  display_name: "用户洞察与痛点调研"
-  short_description: "研究用户原话、真实场景、痛点与未完成任务，并输出可复用证据包"
-  default_prompt: "使用 $research-audience-insights 完成一次用户洞察与痛点调研，并输出 Markdown 报告和结构化 JSON。"

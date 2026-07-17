@@ -31,22 +31,12 @@ description: 君一方法论总入口。仅在用户显式调用 /junyi、$junyi
 | 用户现在要做什么 | 路由 |
 |---|---|
 | 定位诊断、战略书、商业与内容验证设计 | `build-evidence-based-ip-book` |
-| 研究目标用户的真实问题、语言、付费与任务 | `research-audience-insights` |
 | 找小红书对标账号、样本和爆款标本 | `find-xiaohongshu-benchmarks` |
-| 根据上游证据生成、筛选和排序小红书选题 | `plan-xiaohongshu-topics` |
-| 生成小红书封面文案与标题 | `write-xiaohongshu-titles` |
-| 生成视频号封面文案与发布标题 | `write-wechat-channels-titles` |
-| 从真实素材新写小红书内容 | `write-xiaohongshu-content` |
-| 审核并改写已有小红书草稿 | `audit-xiaohongshu-content` |
-| 从真实素材新写视频号内容 | `write-wechat-channels-content` |
-| 审核并改写已有视频号草稿 | `audit-wechat-channels-content` |
 
 ## 最短调用链
 
-- 已有草稿，只想改好：直接走对应平台的 `audit-*`，不要先重做定位。
-- 已有真实素材，只缺标题：直接走对应平台的 `write-*-titles`。
-- 已有清晰定位和用户证据，要持续生产：`plan-xiaohongshu-topics` → 对应平台的 `write-*` → `audit-*`。
-- 从零建立个人 IP：`build-evidence-based-ip-book` → `research-audience-insights` → 必要时 `find-xiaohongshu-benchmarks` → 选题、创作、审核。
+- 要建立或审核个人 IP 战略：直接走 `build-evidence-based-ip-book`。
+- 只需要研究小红书对标账号与内容样本：直接走 `find-xiaohongshu-benchmarks`。
 - 对一个重大方向既想看见自己又想防止自欺：先 `junyi-deep-dialogue`，形成明确判断后，仅在用户显式要求时再调用 `junyi-po-leng-shui`。
 - 已有一个亲子片段，只想记录与复盘：直接走 `junyi-growth-spark-recorder`。
 
