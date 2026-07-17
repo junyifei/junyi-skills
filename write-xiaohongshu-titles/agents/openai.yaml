@@ -1,0 +1,4 @@
+interface:
+  display_name: "小红书封面与标题"
+  short_description: "从真实素材生成有搜索意图且封标互补的小红书标题方案"
+  default_prompt: "Use $write-xiaohongshu-titles to create Xiaohongshu cover copy and titles from this source material."

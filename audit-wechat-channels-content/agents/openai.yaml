@@ -1,0 +1,4 @@
+interface:
+  display_name: "视频号审核与改稿"
+  short_description: "诊断已有视频号草稿并评分、解释问题、给出完整修改稿与对照"
+  default_prompt: "使用 $audit-wechat-channels-content 审核这份已有视频号草稿并完成改稿。"

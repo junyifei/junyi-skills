@@ -1,0 +1,5 @@
+interface:
+  display_name: "大文档归档与检索"
+  short_description: "安全转换、分块、索引并归档超长文档、飞书文档与工作日志"
+  brand_color: "#C65A3A"
+  default_prompt: "Use $junyi-doc-reader to convert, chunk, index, and archive this large document safely."

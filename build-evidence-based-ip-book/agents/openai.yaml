@@ -1,0 +1,4 @@
+interface:
+  display_name: "证据型个人 IP 战略书"
+  short_description: "用真实证据设计、审核、迭代并验证个人 IP 战略书"
+  default_prompt: "Use $build-evidence-based-ip-book to turn my facts, audience evidence, positioning ideas, and business goals into an evidence-based personal-IP strategy book."

@@ -1,0 +1,5 @@
+interface:
+  display_name: "苏格拉底式深度对话"
+  short_description: "通过连续追问梳理体验、矛盾与判断，并可沉淀为觉知日记"
+  brand_color: "#C65A3A"
+  default_prompt: "Use $junyi-deep-dialogue to help me think through this experience one question at a time without speaking for me."

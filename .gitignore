@@ -4,6 +4,19 @@ serve_*.py
 growth-preview/
 *.log
 
+# 本地资产盘点，包含绝对路径与未公开 Skill，不得发布
+.private-inventory/
+
+# 待完成独立回归测试的儿童成长 Skills，验证后再显式加入
+collect-child-growth-intake/
+build-infant-growth-plan/
+build-preschool-growth-plan/
+build-school-age-growth-plan/
+
+# 与本次公开发布无关的本地资料
+docs/
+junyi-growth-spark-recorder.zip
+
 # 系统文件
 .DS_Store
 __pycache__/

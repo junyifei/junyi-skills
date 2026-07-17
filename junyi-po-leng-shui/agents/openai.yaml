@@ -1,0 +1,7 @@
+interface:
+  display_name: "泼冷水"
+  short_description: "只有用户明确要求泼冷水或挑刺时，才启动魔鬼代言人模式并暴露风险"
+  brand_color: "#C65A3A"
+  default_prompt: "Use $junyi-po-leng-shui to challenge this idea, expose its weakest assumptions, and let me make the final decision."
+policy:
+  allow_implicit_invocation: false

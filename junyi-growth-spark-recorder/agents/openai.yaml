@@ -1,0 +1,5 @@
+interface:
+  display_name: "闪光瞬间三层复盘"
+  short_description: "把亲子片段转化为客观记录、发展分析与可行动的模型复盘"
+  brand_color: "#C65A3A"
+  default_prompt: "Use $junyi-growth-spark-recorder to analyze and archive this real parenting moment without inventing details."

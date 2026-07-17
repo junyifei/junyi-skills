@@ -1,0 +1,124 @@
+{
+  "topic_id": "JY-XHS-T07-01",
+  "upstream_insights": [
+    {
+      "insight_id": "JY-AI-RESULT-VALIDATION",
+      "user_quote": null,
+      "source": {
+        "creator_source": "2026-06-13 AI 对话沉淀与小一工作日志",
+        "platform_signal": "未用于证明需求，仅用于形成待发布验证的问题假设",
+        "snapshot_date": "2026-07-17",
+        "limitation": "没有可逐字引用的目标用户原话"
+      },
+      "evidence_grade": "B",
+      "use_in_topic": "提供一手验收失败、修复和重跑过程；不冒充用户需求证据"
+    }
+  ],
+  "target_user": {
+    "identity": "已经用 AI 生成报告、总结或数据结果的创业者和内容团队负责人",
+    "stage": "系统已能交付，但缺少独立验收机制",
+    "included": ["有真实 AI 交付", "本人承担结果验收", "能保留原始记录"],
+    "excluded": ["只收集工具的人", "期待绝对正确的人", "无可核对原始记录的人"]
+  },
+  "trigger_moment": "AI 报告看似完整，但结果体量与当天真实工作明显不符",
+  "search_intent": {
+    "intent_type": "solution",
+    "query_language": ["AI 总结漏内容怎么办", "AI 报告怎么验收", "AI 结果如何对账"],
+    "save_reason": "保存异常、参照、重跑三格验收卡"
+  },
+  "topic_angle": "用 99 条修复到 203 条的一手事件，说明如何把‘不对劲’变成可验证的对账，而不是宣称人的直觉总是对",
+  "three_axis_check": {
+    "difference": "有前后数字、两个真实缺陷和独立参照，不是泛泛反 AI",
+    "relevance": "服务已经使用 AI 且本人承担验收的负责人",
+    "usefulness": "读者可以填写异常、参照、重跑三格卡"
+  },
+  "value_mode": {
+    "primary": "method",
+    "secondary": "emotional_understanding",
+    "user_receives": "把模糊不安转成一次可证伪的验收动作"
+  },
+  "cognitive_increment": {
+    "before_belief_or_action": "要么相信 AI，要么凭经验否定它",
+    "after_belief_or_action": "先描述异常，再找独立参照，修复后用真实样本重跑",
+    "earned_by_proof_ids": ["JY-2026-06-13-DAILY", "JY-2026-06-13-WORKLOG"]
+  },
+  "title_direction": [
+    "搜索回答：AI 总结漏内容怎么办",
+    "数字证据：99 条对账后变成 203 条",
+    "人物判断：一句‘太简单了’怎样变成可验证动作"
+  ],
+  "hook_direction": "先给出 99→203，再说明不是让 AI 更认真，而是找独立记录对账",
+  "distribution_policy": "task_calibrated",
+  "distribution_gates": {
+    "counterintuitive": {
+      "prior_belief": "AI 报告结构完整就可以直接采用",
+      "contradicting_evidence": ["99→203 的同口径对账", "两个采集缺陷"],
+      "replacement_judgment": "完整感不是验收，先找独立参照再重跑",
+      "result": "pass"
+    },
+    "shared_scene": {
+      "common_job_or_trigger": "负责人验收看似完整但无法确认覆盖范围的 AI 报告",
+      "evidence_clusters": ["创作者一手事件", "上游用户洞察记录"],
+      "sample_and_limitations": "当前为 B 级证据，不宣称平台普遍发生",
+      "result": "pass"
+    },
+    "forwarding_job": {
+      "recipient": "使用 AI 报告的团队负责人",
+      "share_sentence": "以后别凭完整感收货，先拿独立记录对账",
+      "social_function": "alignment",
+      "result": "pass"
+    }
+  },
+  "primary_content_task": "trust",
+  "creator_real_material": ["第一版 99 条/12 chunks", "工作日志参照", "两个采集缺陷", "修复后 203 条/21 chunks/20 sessions"],
+  "attributed_source_claims": [],
+  "required_proof": ["两份 2026-06-13 记录", "必要数字脱敏截图", "修复前后字段口径"],
+  "recommended_format": "小红书图文；前后数字＋三格验收卡＋证据边界",
+  "expected_metrics": {
+    "primary": "包含具体独立参照的目标用户评论数，相对同形式基线",
+    "supporting": ["收藏", "搜索进入", "主页访问", "方法型私信"],
+    "baseline": "账号同形式方法复盘内容；若无则先建立基线",
+    "early_window": "24h",
+    "decision_window": "7d"
+  },
+  "current_evidence_grade": "B",
+  "single_hypothesis": "精确前后数字和三格验收卡会促使真实 AI 使用者描述自己的对账对象",
+  "risks": {
+    "wrong_audiences": ["泛反 AI 情绪人群", "只想看 bug 的技术围观者"],
+    "triggering_language": ["AI 漏了一半", "人的直觉一定更准", "万能验收法"],
+    "integrity_privacy": ["原始对话包含私人内容", "一次事件不能证明普遍规律"],
+    "mitigations": ["使用精确数字", "只展示必要字段", "明确一次案例边界", "用目标用户语言限定场景"]
+  },
+  "score": {
+    "dimensions": {
+      "user_demand": 11,
+      "search_save": 9,
+      "creator_proof": 15,
+      "strategic_fit": 15,
+      "novel_angle": 8,
+      "series_potential": 8,
+      "audience_precision": 10,
+      "integrity": 7,
+      "validation_clarity": 5,
+      "metric_match": 5
+    },
+    "total": 93,
+    "numeric_band": "strong"
+  },
+  "gate_results": {
+    "qualification": "pass",
+    "audience_fit": "pass",
+    "reality_proof": "pass",
+    "strategic_fit": "pass",
+    "distinctness": "pass",
+    "integrity": "pass"
+  },
+  "decision": "keep",
+  "decision_basis": "一手事件、前后数字、可复用验收方法、目标用户和验证问题同时成立",
+  "unlock_condition": null,
+  "downstream_constraints": {
+    "must_preserve": ["99→203 的精确数字", "独立参照", "两个缺陷", "直觉不是结论", "一次案例边界"],
+    "must_not_claim": ["人的直觉总是对", "该方法能发现所有错误", "固定爆款或平台推荐结果"],
+    "do_not_write_full_post_here": true
+  }
+}

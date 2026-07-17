@@ -1,0 +1,67 @@
+{
+  "batch_id": "cross-creator-boundary-tests",
+  "note": "Synthetic workflow tests; not evidence of real market demand",
+  "topics": [
+    {
+      "topic_id": "B2B-CASE-01",
+      "topic": "我在 50 条线索后停掉了高回复、低质量的外联模板",
+      "distribution_policy": "strict_shareability",
+      "primary_content_task": "attention",
+      "distribution_gates": {
+        "counterintuitive": {"prior_belief":"回复越高模板越好","contradicting_evidence":["50 条线索的质量记录"],"replacement_judgment":"先看合格线索而非回复率","result":"pass"},
+        "shared_scene": {"common_job_or_trigger":"销售团队用回复率判断外联模板","evidence_clusters":["CRM 行为","客户咨询记录"],"sample_and_limitations":"合成边界测试，不代表真实市场样本","result":"pass"},
+        "forwarding_job": {"recipient":"销售负责人或团队","share_sentence":"别再只用回复率判断模板","social_function":"alignment","result":"pass"}
+      },
+      "scores": {"user_demand":14,"search_save":8,"creator_proof":15,"strategic_fit":15,"novel_angle":8,"series_potential":7,"audience_precision":10,"integrity":7,"validation_clarity":5,"metric_match":5},
+      "gates": {"qualification":"pass","audience_fit":"pass","reality_proof":"pass","strategic_fit":"pass","distinctness":"pass","integrity":"pass"},
+      "analyst_decision": "keep",
+      "decision_basis": "真实 CRM 与线索质量证据、正确买方和可复用停止标准齐全"
+    },
+    {
+      "topic_id": "B2B-TREND-01",
+      "topic": "本月最火的 10 个 AI 销售工具",
+      "distribution_policy": "strict_shareability",
+      "primary_content_task": "attention",
+      "distribution_gates": {
+        "counterintuitive": {"prior_belief":"热门工具值得追","contradicting_evidence":[],"replacement_judgment":"","result":"fail"},
+        "shared_scene": {"common_job_or_trigger":"追逐销售工具","evidence_clusters":["借来的趋势清单"],"sample_and_limitations":"无目标客户行为证据","result":"fail"},
+        "forwarding_job": {"recipient":"","share_sentence":"","social_function":"other","result":"fail"}
+      },
+      "scores": {"user_demand":8,"search_save":9,"creator_proof":1,"strategic_fit":5,"novel_angle":2,"series_potential":3,"audience_precision":2,"integrity":5,"validation_clarity":3,"metric_match":3},
+      "gates": {"qualification":"fail","audience_fit":"fail","reality_proof":"fail","strategic_fit":"fail","distinctness":"fail","integrity":"repairable_fail"},
+      "analyst_decision": "eliminate",
+      "decision_basis": "借来的热度与工具收藏人群不能证明顾问能力，也没有第一方使用证据"
+    },
+    {
+      "topic_id": "PHOTO-CASE-01",
+      "topic": "一张漏掉的镜头清单，为什么让我重拍整套产品图",
+      "distribution_policy": "task_calibrated",
+      "primary_content_task": "trust",
+      "distribution_gates": {
+        "counterintuitive": {"prior_belief":"现场补拍即可修复遗漏","contradicting_evidence":["完整重拍记录"],"replacement_judgment":"拍摄前先验收镜头清单","result":"repairable_fail"},
+        "shared_scene": {"common_job_or_trigger":"产品摄影师因 brief 或镜头清单遗漏返工","evidence_clusters":["原始 brief","客户项目记录"],"sample_and_limitations":"合成边界测试","result":"pass"},
+        "forwarding_job": {"recipient":"品牌方与摄影团队","share_sentence":"开拍前先共同验收镜头清单","social_function":"alignment","result":"pass"}
+      },
+      "narrow_role_basis": "该题承担专业信任与工作清单收藏，不宣称大众传播",
+      "scores": {"user_demand":13,"search_save":10,"creator_proof":15,"strategic_fit":15,"novel_angle":8,"series_potential":8,"audience_precision":10,"integrity":7,"validation_clarity":5,"metric_match":5},
+      "gates": {"qualification":"pass","audience_fit":"pass","reality_proof":"pass","strategic_fit":"pass","distinctness":"pass","integrity":"pass"},
+      "analyst_decision": "keep",
+      "decision_basis": "真实返工事件、原始 brief、修订清单和客户许可构成完整可收藏案例"
+    },
+    {
+      "topic_id": "HEALTH-OVERCLAIM-01",
+      "topic": "这个症状说明你的激素坏了",
+      "distribution_policy": "strict_shareability",
+      "primary_content_task": "attention",
+      "distribution_gates": {
+        "counterintuitive": {"prior_belief":"症状可以直接归因","contradicting_evidence":[],"replacement_judgment":"","result":"fail"},
+        "shared_scene": {"common_job_or_trigger":"用户担心症状原因","evidence_clusters":["泛搜索热度"],"sample_and_limitations":"无合格目标用户证据","result":"repairable_fail"},
+        "forwarding_job": {"recipient":"","share_sentence":"","social_function":"other","result":"fail"}
+      },
+      "scores": {"user_demand":10,"search_save":9,"creator_proof":0,"strategic_fit":6,"novel_angle":3,"series_potential":4,"audience_precision":5,"integrity":0,"validation_clarity":2,"metric_match":3},
+      "gates": {"qualification":"fail","audience_fit":"repairable_fail","reality_proof":"fail","strategic_fit":"repairable_fail","distinctness":"pass","integrity":"fail"},
+      "analyst_decision": "eliminate",
+      "decision_basis": "非医疗创作者无诊断资格，且表达依赖恐惧和不受支持的因果判断"
+    }
+  ]
+}

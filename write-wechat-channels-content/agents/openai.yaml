@@ -1,0 +1,4 @@
+interface:
+  display_name: "视频号内容创作"
+  short_description: "基于真实事件创作有关系冲突、人物判断与转发动机的视频号脚本"
+  default_prompt: "使用 $write-wechat-channels-content 把真实事件写成一条视频号口播脚本。"

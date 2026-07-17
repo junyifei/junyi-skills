@@ -1,0 +1,4 @@
+interface:
+  display_name: "小红书选题规划"
+  short_description: "将用户洞察转成可验证、可筛选、可评级的小红书选题测试单"
+  default_prompt: "Use $plan-xiaohongshu-topics to turn validated user insights into a ranked Xiaohongshu topic test plan."

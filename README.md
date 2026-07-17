@@ -1,54 +1,101 @@
-# junyi-skills
+# 君一方法论
 
-君一的 Skill 合集
+把真实经验蒸馏成可调用、可验证、可迭代的 Skill。
 
-每个文件夹是一个独立的 skill，包含 `SKILL.md`（技能本体）和可选的 `references/`、`scripts/`。
-拿来即用，已做去个人化处理，任何人都能装。
+`junyi-skills` 不是提示词陈列柜。每个正式 Skill 都要回答四个问题：什么任务触发、需要什么证据、按什么流程做、怎样判断结果可信。尚未形成稳定流程的内容先保留为知识，不为了数量硬包装成 Skill。
 
-## 技能列表
+当前版本：**0.1.0** · 正式入口与 Skill：**15 个**
 
-### junyi-deep-dialogue · 苏格拉底式深度对话
-通过一轮轮追问，帮你在对话中挖掘自己的内在体验和深层认知，最终（可选）产出一篇完全由你原话构成的觉知日记。
-适合：情绪强烈但说不清、看完电影或书有余震、在两个选择之间纠结、想从感性体验里提炼认知。
-详见 [junyi-deep-dialogue/SKILL.md](junyi-deep-dialogue/SKILL.md)。
+## 从这里开始
 
-### junyi-growth-spark-recorder · 闪光瞬间三层复盘
-把家长随手发来的一句观察，变成「记录 → 发展分析 → 思维模型复盘」三层结构，并自动归档成成长编年史。背后是一个 62 个思维模型的库（芒格多元思维 + 儿童发展心理学），用大白话给出"下次可以试"的具体行动。
-适合：随手记录孩子的闪光瞬间、想看懂一次亲子互动、复盘冲突或表扬、纠结要不要报班这类教养决策。
-详见 [junyi-growth-spark-recorder/SKILL.md](junyi-growth-spark-recorder/SKILL.md)。
+不知道该用哪个 Skill 时，显式调用：
 
-### junyi-po-leng-shui · 泼冷水
-专治 AI 拍马屁的反谄媚开关。一开它就切到「魔鬼代言人」，不给情绪价值，专挑你想法里的毛病、戳破你没看见的风险、指出最可能崩的那一点；泼完还帮你收口（把问题分成必须改/可不改两堆 + 一句总判断 + 你拍板）。
-适合：需求或技术方案 review、产品定价决策、入场某个市场前、跳槽搬家 all in 等重大个人决定、判断一篇稿子值不值得发。
-详见 [junyi-po-leng-shui/SKILL.md](junyi-po-leng-shui/SKILL.md)。
-
-### junyi-doc-reader · 大文档归档与检索
-把大文档安全地转成结构化 Markdown，做分块索引、可选 LLM 提炼摘要，最终存进 Obsidian。支持本地文件（Word/PDF/TXT/Markdown）和飞书云文档，还能把飞书工作日志按日期拆成 daily notes。基础管线完全离线；读飞书凭据仅在你用飞书源时、网络出口仅限官方 API，LLM 外发默认关闭、需你显式开启。
-适合：归档或检索超长文档、把飞书文档或工作日志存进 Obsidian、按日期拆成 daily notes、文档超出上下文窗口需要分块处理。
-详见 [junyi-doc-reader/SKILL.md](junyi-doc-reader/SKILL.md)。
-
-## 怎么安装
-
-每个 skill 都遵循 [agentskills.io](https://agentskills.io) 开放标准，Claude Code / OpenClaw / Codex / Hermes / WorkBuddy 都能用。把需要的 skill 文件夹复制进对应平台的 skills 目录即可自动发现，例如装 junyi-po-leng-shui：
-
-```
-cp -r junyi-po-leng-shui ~/.claude/skills/           # Claude Code
-cp -r junyi-po-leng-shui ~/.openclaw/shared-skills/   # OpenClaw
-cp -r junyi-po-leng-shui ~/.agents/skills/           # Codex
-cp -r junyi-po-leng-shui ~/.hermes/skills/            # Hermes
-cp -r junyi-po-leng-shui ~/.workbuddy/skills/        # WorkBuddy
+```text
+/junyi 我现在想做的事是……我手上已有的材料是……
 ```
 
-装完重开一个新会话 / 重启 agent 即生效。
+在支持 `$skill-name` 的工具中也可以写：
 
-**或者让 AI 一键装**——不想手动复制的话，把下面这段整段发给对方的 agent（任何工具通用）：
+```text
+$junyi 帮我选择最短路径，不要让我重跑已经完成的步骤。
+```
 
-> 帮我从 https://github.com/junyifei/junyi-skills 装一个 skill，只装 `junyi-growth-spark-recorder` 这一个（换成你要的那个）。请把仓库克隆到临时目录，只把这个文件夹复制到你这个工具的 skills 目录——Claude Code `~/.claude/skills/`、OpenClaw `~/.openclaw/shared-skills/`、Codex `~/.agents/skills/`、Hermes `~/.hermes/skills/`、WorkBuddy `~/.workbuddy/skills/`，你是哪个就放哪个——再删掉临时克隆、别留下仓库里其它 skill。装好后读一下它的 SKILL.md，告诉我用什么话触发。
+总入口只做诊断与路由，随后把任务交给职责最明确的 Skill。详见 [`junyi/SKILL.md`](junyi/SKILL.md)。
 
-## 许可
+## 产品结构
 
-本仓库的文字内容（各 skill 的 `SKILL.md` 与 `references/`）采用 [CC BY 4.0（署名 4.0 国际）](https://creativecommons.org/licenses/by/4.0/) 许可：可自由使用、修改、再分发（含商用），前提是署名「君一」。许可全文见 [LICENSE](LICENSE)。
+```text
+真实问题与真实材料
+        ↓
+junyi 总入口：判断目标、证据与当前阶段
+        ↓
+单个 Skill 或最短调用链
+        ↓
+可追溯产出 → 人工判断 → 真实反馈
+        ↓
+修订方法、案例和质量门
+```
 
-## 关于
+仓库内有四层：
 
-作者：君一
+- `junyi/`：总入口，只负责路由。
+- `<skill-name>/`：可独立安装、具有明确任务边界的正式 Skill。
+- `knowledge/`：尚未蒸馏成 Skill 的知识卡与待验证方法。
+- `tools/`：资产盘点和仓库维护工具，不是用户 Skill。
+
+机器可读清单见 [`skill-index.json`](skill-index.json)，方法成熟度与版本不会写进 `SKILL.md` frontmatter，以保持跨平台兼容。
+
+## 基础方法能力
+
+| Skill | 用途 | 成熟度 |
+|---|---|---|
+| [`junyi-deep-dialogue`](junyi-deep-dialogue/SKILL.md) | 通过苏格拉底式追问把体验变成自己的判断 | 已发布 |
+| [`junyi-po-leng-shui`](junyi-po-leng-shui/SKILL.md) | 只有用户明确说“泼冷水、挑刺”等触发词时，才启动魔鬼代言人评审 | 已发布 |
+| [`junyi-growth-spark-recorder`](junyi-growth-spark-recorder/SKILL.md) | 把亲子片段变成记录、发展分析与模型复盘 | 已发布 |
+| [`junyi-doc-reader`](junyi-doc-reader/SKILL.md) | 转换、分块、索引并归档大文档 | 已发布 |
+
+## 证据型个人 IP 能力链
+
+| 阶段 | Skill | 作用 | 当前成熟度 |
+|---|---|---|---|
+| 战略定位 | [`build-evidence-based-ip-book`](build-evidence-based-ip-book/SKILL.md) | 定位诊断；建立、审核和迭代证据型 IP 战略书 | 已投入项目 |
+| 用户研究 | [`research-audience-insights`](research-audience-insights/SKILL.md) | 研究用户经历、原话、问题、付费与目标 | 测试中 |
+| 对标研究 | [`find-xiaohongshu-benchmarks`](find-xiaohongshu-benchmarks/SKILL.md) | 发现、核验、分层和选择对标样本 | 测试中 |
+| 选题规划 | [`plan-xiaohongshu-topics`](plan-xiaohongshu-topics/SKILL.md) | 生成、去重、筛选、评分和排序选题 | 已建立，待验证 |
+| 小红书标题 | [`write-xiaohongshu-titles`](write-xiaohongshu-titles/SKILL.md) | 生成封面文案与笔记标题 | 已建立，待验证 |
+| 视频号标题 | [`write-wechat-channels-titles`](write-wechat-channels-titles/SKILL.md) | 生成封面文案与发布标题 | 已建立，待验证 |
+| 小红书创作 | [`write-xiaohongshu-content`](write-xiaohongshu-content/SKILL.md) | 从真实材料创建完整内容包 | 已多轮测试，待实盘校准 |
+| 小红书审核 | [`audit-xiaohongshu-content`](audit-xiaohongshu-content/SKILL.md) | 审核、评分并重写已有草稿 | 已多轮测试，待实盘校准 |
+| 视频号创作 | [`write-wechat-channels-content`](write-wechat-channels-content/SKILL.md) | 创建口播、镜头、证据与验证方案 | 已多轮测试，待实盘校准 |
+| 视频号审核 | [`audit-wechat-channels-content`](audit-wechat-channels-content/SKILL.md) | 审核并重写标题、口播与镜头稿 | 已多轮测试，待实盘校准 |
+
+推荐链路不是强制流水线：已有草稿就直接审核，已有素材只缺标题就直接做标题。只有当前产出确实依赖上一步时，才继续向上追溯。
+
+## 方法论原则
+
+- **真实证据先于漂亮结论**：事实、推断、假设和未知分开。
+- **一项职责一个入口**：新写与审核、研究与选题不混在同一个 Skill。
+- **先候选，再晋升**：反复有效、有边界、可复用，才升级为正式方法。
+- **不替用户编故事**：不把外部案例冒充个人经历，不制造不存在的效果。
+- **结果进入反馈环**：好结果、差结果和人工修改都用于下一版本校准。
+
+## 安装
+
+复制整个仓库，或只复制需要的 Skill 目录到你使用的 Agent 的 skills 目录。以 Codex 为例：
+
+```bash
+cp -R junyi ~/.codex/skills/
+cp -R build-evidence-based-ip-book ~/.codex/skills/
+```
+
+不同工具的目录可能不同；安装前先检查是否存在同名目录，避免覆盖本地未同步的修改。安装后开启新会话，让工具重新发现 Skill。
+
+## 原创与许可
+
+本仓库是君一基于自己的实战、记录、课程、咨询和内容项目独立蒸馏的方法论实现，不复制第三方项目的具体文案、代码、视觉资产或品牌表达。
+
+本仓库采用 [CC BY 4.0](LICENSE)：可以使用、修改和再分发，包括商业使用；请署名“君一”并保留许可链接。权利与迁移记录见 [`RIGHTS.md`](RIGHTS.md)。
+
+## 作者
+
+君一 · 费君一
