@@ -4,7 +4,7 @@
 
 `junyi-skills` 不是提示词陈列柜。每个正式 Skill 都要回答四个问题：什么任务触发、需要什么证据、按什么流程做、怎样判断结果可信。尚未形成稳定流程的内容先保留为知识，不为了数量硬包装成 Skill。
 
-当前版本：**0.1.1** · 正式入口与 Skill：**7 个**
+当前版本：**0.2.0** · 正式入口与 Skill：**7 个**
 
 ## 从这里开始
 
@@ -58,8 +58,8 @@ junyi 总入口：判断目标、证据与当前阶段
 
 | 阶段 | Skill | 作用 | 当前成熟度 |
 |---|---|---|---|
-| 战略定位 | [`build-evidence-based-ip-book`](build-evidence-based-ip-book/SKILL.md) | 定位诊断；建立、审核和迭代证据型 IP 战略书 | 已投入项目 |
-| 对标研究 | [`find-xiaohongshu-benchmarks`](find-xiaohongshu-benchmarks/SKILL.md) | 发现、核验、分层和选择对标样本 | 测试中 |
+| 战略定位 | [`junyi-positioning`](junyi-positioning/SKILL.md) | 定位诊断；建立、审核和迭代证据型 IP 战略书 | 已投入项目 |
+| 对标研究 | [`junyi-xhs-benchmark`](junyi-xhs-benchmark/SKILL.md) | 发现、核验、分层和选择对标样本 | 测试中 |
 
 这里公开的是目前愿意承担方法承诺的能力。用户研究、选题、标题、内容生产与审核等方法仍在本地实盘验证，跑通并积累可说明的证据后再发布。
 
@@ -77,8 +77,8 @@ junyi 总入口：判断目标、证据与当前阶段
 
 ```bash
 cp -R junyi ~/.codex/skills/
-cp -R build-evidence-based-ip-book ~/.codex/skills/
-cp -R find-xiaohongshu-benchmarks ~/.codex/skills/
+cp -R junyi-positioning ~/.codex/skills/
+cp -R junyi-xhs-benchmark ~/.codex/skills/
 ```
 
 不同工具的目录可能不同；安装前先检查是否存在同名目录，避免覆盖本地未同步的修改。安装后开启新会话，让工具重新发现 Skill。

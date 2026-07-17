@@ -1,9 +1,9 @@
 ---
-name: find-xiaohongshu-benchmarks
+name: junyi-xhs-benchmark
 description: Broadly discover, then verify, tier, score, and select Xiaohongshu benchmark accounts, specialist references, and post-level breakout specimens from a creator's positioning, audience, content system, capabilities, and monetization path. Use when users ask to find 小红书对标账号、竞品账号、同赛道账号、低粉爆款素人、大中小号分层样本、内容/人设/转化参考账号，compare user-supplied accounts, or want a reproducible candidate pool and shortlist rather than a popularity list.
 ---
 
-# Find Xiaohongshu Benchmarks
+# 君一小红书对标研究
 
 Select accounts that answer specific strategic questions. Do not treat “benchmark” as “admired large creator” or recommend one account for wholesale imitation. Keep discovery broad and evaluation strict: maximize recall in paths 1–5, then apply buyer, repeatability, and commercial-fit filters in path 6.
 

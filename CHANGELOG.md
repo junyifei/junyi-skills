@@ -2,6 +2,12 @@
 
 版本统一记录在根目录 [`VERSION`](VERSION) 与 [`skill-index.json`](skill-index.json)；`SKILL.md` frontmatter 只保留跨平台标准字段 `name` 和 `description`。
 
+## [0.2.0] — 2026-07-17
+
+- 将两个公开 IP Skills 统一迁移到君一命名空间：`junyi-positioning` 与 `junyi-xhs-benchmark`。
+- 同步更新目录、frontmatter、调用名、默认提示词、总路由、README、索引与权利迁移记录。
+- 旧名称不再作为公开安装入口；本次命名迁移不改变方法、输入输出契约与成熟度判断。
+
 ## [0.1.1] — 2026-07-17
 
 - 收紧公开范围，只保留已发布基础能力、IP 战略报告与小红书对标研究。

@@ -30,13 +30,13 @@ description: 君一方法论总入口。仅在用户显式调用 /junyi、$junyi
 
 | 用户现在要做什么 | 路由 |
 |---|---|
-| 定位诊断、战略书、商业与内容验证设计 | `build-evidence-based-ip-book` |
-| 找小红书对标账号、样本和爆款标本 | `find-xiaohongshu-benchmarks` |
+| 定位诊断、战略书、商业与内容验证设计 | `junyi-positioning` |
+| 找小红书对标账号、样本和爆款标本 | `junyi-xhs-benchmark` |
 
 ## 最短调用链
 
-- 要建立或审核个人 IP 战略：直接走 `build-evidence-based-ip-book`。
-- 只需要研究小红书对标账号与内容样本：直接走 `find-xiaohongshu-benchmarks`。
+- 要建立或审核个人 IP 战略：直接走 `junyi-positioning`。
+- 只需要研究小红书对标账号与内容样本：直接走 `junyi-xhs-benchmark`。
 - 对一个重大方向既想看见自己又想防止自欺：先 `junyi-deep-dialogue`，形成明确判断后，仅在用户显式要求时再调用 `junyi-po-leng-shui`。
 - 已有一个亲子片段，只想记录与复盘：直接走 `junyi-growth-spark-recorder`。
 

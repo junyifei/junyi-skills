@@ -1,4 +1,4 @@
 interface:
   display_name: "寻找小红书对标账号"
   short_description: "宽召回发现、逐层验证、评分并筛选可复制的小红书对标样本"
-  default_prompt: "Use $find-xiaohongshu-benchmarks to discover broadly, verify rigorously, and rank Xiaohongshu benchmark accounts for my positioning."
+  default_prompt: "Use $junyi-xhs-benchmark to discover broadly, verify rigorously, and rank Xiaohongshu benchmark accounts for my positioning."

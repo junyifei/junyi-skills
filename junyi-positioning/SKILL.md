@@ -1,9 +1,9 @@
 ---
-name: build-evidence-based-ip-book
+name: junyi-positioning
 description: Build, audit, or iterate an evidence-based personal-IP strategy book or run a focused evidence-based positioning diagnosis for any creator, founder, expert, coach, artist, or professional. Use for 个人IP战略书、商业IP定位书、个人IP定位、账号定位、定位诊断、定位收窄、定位改版、从零设计个人IP、审核现有定位、迭代旧战略书、比较定位方向、设计内容与商业验证、制定30天或90天验证计划，尤其当事实、市场信号和个人愿望容易混在一起，或需要输出可执行的 Markdown 战略书时。
 ---
 
-# Build Evidence-Based IP Book
+# 君一 IP 定位战略
 
 把个人经历、用户证据、内容数据和商业行动变成一份可决策、可验证、可修订的战略书。把未经检验的方向写成假设，不把好听的表达冒充证据。
 
