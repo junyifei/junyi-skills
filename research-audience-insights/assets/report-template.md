@@ -1,10 +1,10 @@
 # Audience insights research report
 
-> Research ID:  
-> Generated at:  
-> Time range:  
-> Business question:  
-> Evidence boundary:  
+> Research ID:<br>
+> Generated at:<br>
+> Time range:<br>
+> Business question:<br>
+> Evidence boundary:
 
 ## 1. Research decision boundary
 
