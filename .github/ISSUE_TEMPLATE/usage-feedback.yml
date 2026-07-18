@@ -1,0 +1,67 @@
+name: 提交脱敏使用反馈
+description: 记录真实任务中有效、失败和人工修改的部分
+title: "[使用反馈] "
+labels:
+  - feedback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        反馈用于修订方法，不要求公开原始业务或家庭材料。请只描述任务结构，并用合成示例说明问题。
+  - type: dropdown
+    id: skill
+    attributes:
+      label: 使用的 Skill
+      options:
+        - junyi
+        - junyi-deep-dialogue
+        - junyi-doc-reader
+        - junyi-growth-spark-recorder
+        - junyi-po-leng-shui
+        - junyi-positioning
+        - junyi-xhs-benchmark
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: 任务结构
+      description: 说明目标、输入类型和期望交付，不要粘贴私有原文。
+    validations:
+      required: true
+  - type: textarea
+    id: worked
+    attributes:
+      label: 哪些部分真正有用
+    validations:
+      required: true
+  - type: textarea
+    id: failed
+    attributes:
+      label: 哪些部分错误、遗漏或不适用
+    validations:
+      required: true
+  - type: textarea
+    id: edits
+    attributes:
+      label: 你做了什么人工修改
+      description: 可以描述修改逻辑，不必公开完整内容。
+    validations:
+      required: true
+  - type: dropdown
+    id: permission
+    attributes:
+      label: 这份反馈能否用于公开版本记录
+      options:
+        - 可以公开引用这份 Issue
+        - 只允许统计，不引用原文
+        - 不允许公开使用
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我已经删除凭据、私有路径、身份信息和未授权材料。
+          required: true

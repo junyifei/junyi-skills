@@ -1,0 +1,48 @@
+name: 提交经验共创意向
+description: 用非敏感信息判断“让 AI 开始学会你”的任务是否适合首轮验证
+title: "[共创意向] "
+labels:
+  - co-creation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这是公开 Issue，只用于任务适配初筛。不要上传客户资料、业务数据、合同、内部流程、私有链接或联系方式。
+  - type: textarea
+    id: context
+    attributes:
+      label: 你的业务或专业工作处于什么阶段
+      description: 只写可以公开的概况，例如业务是否稳定、你承担什么关键判断。
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: 哪一个高频任务总是回到你手里
+      description: 描述任务类型、频率和当前做法，不上传原始材料。
+    validations:
+      required: true
+  - type: textarea
+    id: judgment
+    attributes:
+      label: 这个任务最依赖你的哪些经验或判断
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 7 天后出现什么变化才算值得继续
+      description: 写可观察变化，不写收入增长等无法由一次共创负责的结果。
+    validations:
+      required: true
+  - type: checkboxes
+    id: fit
+    attributes:
+      label: 共创边界确认
+      options:
+        - label: 我理解首轮仍在验证，不是成熟的企业级实施服务。
+          required: true
+        - label: 我愿意本人参与，不把关键判断完全外包给 AI 或君一。
+          required: true
+        - label: 我不会在公开 Issue 中提交敏感或未授权材料。
+          required: true

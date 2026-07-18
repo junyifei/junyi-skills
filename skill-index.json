@@ -2,17 +2,17 @@
   "name": "君一方法论",
   "repository": "junyi-skills",
   "entrypoint": "junyi",
-  "version": "0.2.0",
-  "updated_at": "2026-07-17",
+  "version": "1.1.0",
+  "updated_at": "2026-07-18",
   "license": "CC-BY-4.0",
   "official_skill_count": 7,
   "skills": [
-    {"name": "junyi", "category": "总入口", "path": "junyi", "version": "0.2.0", "maturity": "已发布", "role": "根据任务、证据、平台与阶段选择最短 Skill 路径"},
-    {"name": "junyi-deep-dialogue", "category": "思考与判断", "path": "junyi-deep-dialogue", "version": "1.0.0", "maturity": "已发布", "role": "通过苏格拉底式追问把体验转化为自己的判断"},
-    {"name": "junyi-po-leng-shui", "category": "思考与判断", "path": "junyi-po-leng-shui", "version": "1.0.0", "maturity": "已发布", "role": "只有用户明确说出触发词时才进行反谄媚与魔鬼代言人评审"},
-    {"name": "junyi-growth-spark-recorder", "category": "家庭成长", "path": "junyi-growth-spark-recorder", "version": "1.0.0", "maturity": "已发布", "role": "记录亲子片段并完成发展分析和模型复盘"},
-    {"name": "junyi-doc-reader", "category": "知识处理", "path": "junyi-doc-reader", "version": "1.0.0", "maturity": "已发布", "role": "转换、分块、索引和归档大文档"},
-    {"name": "junyi-positioning", "category": "IP战略定位", "path": "junyi-positioning", "version": "0.2.0", "maturity": "已投入项目", "role": "定位诊断并建立、审核和迭代证据型 IP 战略书"},
+    {"name": "junyi", "category": "总入口", "path": "junyi", "version": "1.1.0", "maturity": "已发布", "role": "根据任务、证据与当前阶段选择最短 Skill 路径"},
+    {"name": "junyi-deep-dialogue", "category": "人的判断", "path": "junyi-deep-dialogue", "version": "1.0.0", "maturity": "已发布", "role": "通过苏格拉底式追问把体验转化为自己的判断"},
+    {"name": "junyi-po-leng-shui", "category": "人的判断", "path": "junyi-po-leng-shui", "version": "1.0.0", "maturity": "已发布", "role": "只有用户明确说出触发词时才进行反谄媚与魔鬼代言人评审"},
+    {"name": "junyi-growth-spark-recorder", "category": "家庭实践", "path": "junyi-growth-spark-recorder", "version": "1.0.0", "maturity": "已发布", "role": "记录亲子片段并完成发展观察和模型复盘"},
+    {"name": "junyi-doc-reader", "category": "真实材料", "path": "junyi-doc-reader", "version": "1.0.0", "maturity": "已发布", "role": "转换、分块、索引和归档大文档"},
+    {"name": "junyi-positioning", "category": "IP战略定位", "path": "junyi-positioning", "version": "0.2.0", "maturity": "已投入真实项目", "role": "定位诊断并建立、审核和迭代证据型 IP 战略书"},
     {"name": "junyi-xhs-benchmark", "category": "IP对标研究", "path": "junyi-xhs-benchmark", "version": "0.2.0", "maturity": "测试中", "role": "发现、核验、分层和选择小红书对标样本"}
   ]
 }

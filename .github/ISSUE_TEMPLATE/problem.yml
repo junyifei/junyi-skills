@@ -1,0 +1,58 @@
+name: 报告安装或 Skill 问题
+description: 提交可以公开复现的安装、触发、脚本或输出结构问题
+title: "[问题] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请只提交可以公开的信息。不要上传客户资料、孩子身份、账号凭据、私有链接或本地绝对路径。
+  - type: dropdown
+    id: skill
+    attributes:
+      label: 涉及哪个 Skill
+      options:
+        - junyi
+        - junyi-deep-dialogue
+        - junyi-doc-reader
+        - junyi-growth-spark-recorder
+        - junyi-po-leng-shui
+        - junyi-positioning
+        - junyi-xhs-benchmark
+        - 安装或仓库问题
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Agent、版本与安装方式
+      placeholder: 例如 Codex；skills CLI 项目级复制安装
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望发生什么
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际发生什么
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 最小复现步骤
+      description: 使用合成内容替代私有材料。
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我已经删除凭据、私有路径、身份信息和未授权材料。
+          required: true

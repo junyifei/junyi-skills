@@ -39,7 +39,7 @@ BACKUP_MARKERS = (
 )
 
 HARD_CODED_PATH_RE = re.compile(
-    r"/Users/|/home/|[A-Za-z]:\\\\Users\\\\|~/(?:\.openclaw|\.codex|\.claude|\.agents)"
+    r"/" r"Users/|/home/|[A-Za-z]:\\\\Users\\\\|~/(?:\.openclaw|\.codex|\.claude|\.agents)"
 )
 CREDENTIAL_TERM_RE = re.compile(
     r"api[_ -]?key|app[_ -]?secret|client[_ -]?secret|password|private[_ -]?key|access[_ -]?token",

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全与隐私说明
+    url: https://github.com/junyifei/junyi-skills/blob/main/SECURITY.md
+    about: 提交 Issue 前先检查哪些信息不能公开。

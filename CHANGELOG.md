@@ -2,6 +2,14 @@
 
 版本统一记录在根目录 [`VERSION`](VERSION) 与 [`skill-index.json`](skill-index.json)；`SKILL.md` frontmatter 只保留跨平台标准字段 `name` 和 `description`。
 
+## [1.1.0] — 2026-07-18
+
+- 按“一人公司经营者与知识型创作者怎样让 AI 学会经验和判断”重写公开首页，形成识别问题、试用、安装、信任、反馈和共创的完整路径。
+- 增加新手指南、兼容性记录、方法与证据说明、安全边界、真实定位案例和合成对标示例。
+- 增加安装问题、脱敏使用反馈和经验共创意向三类 GitHub Issue 模板。
+- 在隔离项目中验证 `skills` CLI 能够发现并复制 7/7 个公开 Skills。
+- 将公开版本恢复到既有 v1.0.0 之后的 1.1.0，统一 README、VERSION、索引与 GitHub Release。
+
 ## [0.2.0] — 2026-07-17
 
 - 将两个公开 IP Skills 统一迁移到君一命名空间：`junyi-positioning` 与 `junyi-xhs-benchmark`。
