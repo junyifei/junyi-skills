@@ -103,6 +103,14 @@ $junyi-vault
 npx -y skills add junyifei/junyi-skills -g --all
 ```
 
+### 只安装单个 Skill
+
+```bash
+npx -y skills add junyifei/junyi-skills --skill junyi-positioning
+```
+
+只安装指定的 Skill，不写入其他公开 Skills。把名称替换为任意一个公开 Skill 即可。全局安装与更多写法见 [新手指南](guide/START-HERE.md)。
+
 查看仓库能被识别出的 Skills，不执行安装：
 
 ```bash
