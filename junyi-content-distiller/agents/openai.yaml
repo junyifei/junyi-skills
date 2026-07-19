@@ -1,0 +1,4 @@
+interface:
+  display_name: "君一内容蒸馏"
+  short_description: "从生活录音、日记和对话中提取可追溯、可复用的真实创作素材"
+  default_prompt: "Use $junyi-content-distiller to distill this recording transcript into traceable content materials and a daily index."

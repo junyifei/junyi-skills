@@ -7,6 +7,10 @@ description: Broadly discover, then verify, tier, score, and select Xiaohongshu 
 
 Select accounts that answer specific strategic questions. Do not treat “benchmark” as “admired large creator” or recommend one account for wholesale imitation. Keep discovery broad and evaluation strict: maximize recall in paths 1–5, then apply buyer, repeatability, and commercial-fit filters in path 6.
 
+## 读取正式定位
+
+工作区存在当前 `IP战略书.md` 时，研究前读取 `B00`、`B03`、`B08`、`B09`。它们分别提供正式定位、用户情境、商业承接和边界。读取范围由本 Skill 维护，不要求战略书另外生成摘要。没有战略书时可从用户提供的 brief 继续，但要把关键缺口标为 `unknown`。
+
 ## Required references
 
 Read before research:

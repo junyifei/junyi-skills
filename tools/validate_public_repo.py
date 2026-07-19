@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import argparse
 import re
 import subprocess
 import sys
@@ -22,10 +23,12 @@ SENSITIVE_PATTERNS = {
 }
 
 
-def git_files(pattern: str | None = None) -> list[str]:
+def git_files(pattern: str | None = None, *, include_untracked: bool = False) -> list[str]:
     command = ["git", "ls-files"]
+    if include_untracked:
+        command.extend(["--cached", "--others", "--exclude-standard"])
     if pattern:
-        command.append(pattern)
+        command.extend(["--", pattern])
     result = subprocess.run(
         command,
         cwd=ROOT,
@@ -56,7 +59,7 @@ def parse_frontmatter(path: Path) -> dict[str, str]:
     return metadata
 
 
-def validate_skills(errors: list[str]) -> None:
+def validate_skills(errors: list[str], public_files: set[str]) -> None:
     data = json.loads(SKILL_INDEX.read_text(encoding="utf-8"))
     skills = data.get("skills", [])
     expected_count = data.get("official_skill_count")
@@ -66,16 +69,17 @@ def validate_skills(errors: list[str]) -> None:
         )
 
     indexed_paths = {item["path"] for item in skills}
-    tracked_paths = {
+    present_paths = {
         str(Path(name).parent)
-        for name in git_files("*/SKILL.md")
+        for name in public_files
+        if name.endswith("/SKILL.md")
         if len(Path(name).parts) == 2
     }
-    if indexed_paths != tracked_paths:
+    if indexed_paths != present_paths:
         errors.append(
-            "tracked Skill folders differ from skill-index: "
-            f"only_index={sorted(indexed_paths - tracked_paths)}, "
-            f"only_git={sorted(tracked_paths - indexed_paths)}"
+            "public Skill folders differ from skill-index: "
+            f"only_index={sorted(indexed_paths - present_paths)}, "
+            f"only_files={sorted(present_paths - indexed_paths)}"
         )
 
     for item in skills:
@@ -137,12 +141,23 @@ def validate_sensitive_text(errors: list[str], tracked: set[str]) -> None:
                 errors.append(f"{name}: detected {label}")
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--working-tree",
+        action="store_true",
+        help="Include untracked, non-ignored release-candidate files for pre-commit validation",
+    )
+    return parser.parse_args()
+
+
 def main() -> int:
+    args = parse_args()
     errors: list[str] = []
-    tracked = set(git_files())
-    validate_skills(errors)
-    validate_links(errors, tracked)
-    validate_sensitive_text(errors, tracked)
+    public_files = set(git_files(include_untracked=args.working_tree))
+    validate_skills(errors, public_files)
+    validate_links(errors, public_files)
+    validate_sensitive_text(errors, public_files)
 
     if errors:
         print("Public repository validation failed:", file=sys.stderr)
@@ -153,7 +168,8 @@ def main() -> int:
     data = json.loads(SKILL_INDEX.read_text(encoding="utf-8"))
     print(
         f"Public repository valid: {data['official_skill_count']} Skills, "
-        f"version {data['version']}, {len(tracked)} tracked files checked."
+        f"version {data['version']}, {len(public_files)} "
+        f"{'working-tree' if args.working_tree else 'tracked'} files checked."
     )
     return 0
 

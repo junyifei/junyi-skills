@@ -10,7 +10,7 @@ description: 君一方法论总入口。仅在用户显式调用 /junyi、$junyi
 ## 路由流程
 
 1. 读取用户已经提供的目标、材料、事实、边界和当前上下文。
-2. 判断任务是人的思考与反方审查、真实材料处理、家庭实践记录，还是个人 IP 定位与对标研究。
+2. 判断任务是人的思考与反方审查、真实材料蒸馏、学习消化、知识库管理、家庭实践、个人 IP，还是个人官网。
 3. 优先选择一个 Skill。只有上一步产出确实是下一步必要输入时，才组合多个 Skill。
 4. 告诉用户选择了哪个 Skill、为什么、还缺什么关键输入。
 5. 调用所选 Skill，并遵循它自己的边界、步骤和质量门。不要在本入口内模拟下游流程。
@@ -22,9 +22,13 @@ description: 君一方法论总入口。仅在用户显式调用 /junyi、$junyi
 | 通过追问想清楚体验、情绪、矛盾或选择 | `junyi-deep-dialogue` |
 | 主动要求挑刺、找漏洞、做魔鬼代言人评审 | `junyi-po-leng-shui` |
 | 转换、分块、索引或归档大文档 | `junyi-doc-reader` |
+| 从短记录、每日录音或超长录音中提炼真实内容、证据、原则和待办 | `junyi-content-distiller` |
+| 把课程、文章、书、访谈或长材料转成自己的理解、边界和实验 | `junyi-learning-distiller` |
+| 新建知识库、归档新内容，或只读诊断已有混乱知识库 | `junyi-vault` |
 | 记录孩子的具体片段并做发展观察与模型复盘 | `junyi-growth-spark-recorder` |
 | 定位诊断、战略书、商业与内容验证设计 | `junyi-positioning` |
 | 找小红书对标账号、样本和爆款标本 | `junyi-xhs-benchmark` |
+| 从定位、真实素材和设计方向构建或重做个人/品牌官网 | `junyi-personal-website` |
 
 ## 最短调用链
 
@@ -34,6 +38,12 @@ description: 君一方法论总入口。仅在用户显式调用 /junyi、$junyi
 - 对重大方向既想看见自己又想防止自欺：先 `junyi-deep-dialogue`；形成明确判断后，仅在用户显式要求时调用 `junyi-po-leng-shui`。
 - 已有一个亲子片段，只想记录与复盘：直接走 `junyi-growth-spark-recorder`。
 - 已有大文档，只需要转换、索引或归档：直接走 `junyi-doc-reader`。
+- 要从生活、录音或日常记录中找内容素材：走 `junyi-content-distiller`；它不代替外部课程学习蒸馏。
+- 要消化外部课程、文章、书或访谈：走 `junyi-learning-distiller`；它不把来源观点冒充自己的结论。
+- 要从零搭知识库：`junyi-vault` 建库模式；已有稳定结构只需放新内容：同一 Skill 的归档模式；结构混乱时先走只读诊断模式。
+- 从零建立个人 IP 战略：直接走 `junyi-positioning`；需要独立研究小红书对标时，再走 `junyi-xhs-benchmark`。
+- 建个人官网：已有完整《IP战略书》时直接走 `junyi-personal-website`；定位仍不清楚时先走 `junyi-positioning`。官网 Skill 自己判断静态站、内容站或应用，不默认堆框架。
+- 长期个人材料路径：`junyi-content-distiller` → `junyi-learning-distiller` → `junyi-vault`；只调用当前缺少的一步，不强迫重跑全链。
 
 ## 证据门
 

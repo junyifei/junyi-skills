@@ -1,0 +1,4 @@
+interface:
+  display_name: "君一学习蒸馏"
+  short_description: "把课程、分享和外部材料转化为可追溯、可验证、可行动的学习成果"
+  default_prompt: "Use $junyi-learning-distiller to turn this source material into a traceable understanding, transfer model, and small validation plan."

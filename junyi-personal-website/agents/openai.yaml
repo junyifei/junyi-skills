@@ -1,0 +1,4 @@
+interface:
+  display_name: "君一个人官网"
+  short_description: "用文件型 AI 从定位、设计到部署构建可信的个人官网"
+  default_prompt: "请使用 $junyi-personal-website，根据我的定位与真实素材，先判断适合静态官网还是应用型网站，再分阶段搭建、截图验收并部署。"

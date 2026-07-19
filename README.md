@@ -5,10 +5,10 @@
 面向已经开始用 AI 做真实工作的一人公司经营者、知识型创作者和创业父母：把真实材料、长期经验与判断标准，变成 Agent 可以调用、可以验证、可以持续修订的方法。
 
 [![Release](https://img.shields.io/github/v/release/junyifei/junyi-skills?style=flat-square&label=release)](https://github.com/junyifei/junyi-skills/releases)
-[![Public Skills](https://img.shields.io/badge/public_skills-7-2563EB.svg?style=flat-square)](skill-index.json)
+[![Public Skills](https://img.shields.io/badge/public_skills-11-2563EB.svg?style=flat-square)](skill-index.json)
 [![License](https://img.shields.io/badge/license-CC_BY_4.0-16A34A.svg?style=flat-square)](LICENSE)
 
-当前公开版：**1.1.0** · 正式入口与 Skills：**7 个**
+当前公开版：**1.2.0** · 正式入口与 Skills：**11 个**
 
 [30 秒开始](#30-秒开始) · [安装](#安装) · [公开能力](#公开能力) · [案例与示例](#案例与输出示例) · [方法证据](#方法从哪里来) · [反馈与共创](#反馈与共创)
 
@@ -29,6 +29,26 @@
 最鲜明的核心人群，是同时承担事业、家庭和自我成长的创业妈妈；公开 Skills 也适用于有相同任务结构的创作者、咨询师、教练、专家和一人公司经营者。
 
 这里不提供最新工具清单、一键搞钱承诺、企业级系统实施，也不替用户承担最终判断。
+
+## 一条可以持续使用的方法路径
+
+君一方法论不从“让 AI 多写一点”开始，而从个人每天真实产生的材料开始：
+
+```text
+把自己的生活提炼出来
+→ 把外部学习消化掉
+→ 搭好自己的知识库
+→ 把新内容持续归进去
+```
+
+| 真实任务 | 对应 Skill | 得到什么 |
+|---|---|---|
+| 每日录音、长录音或生活记录很散 | `junyi-content-distiller` | 核心事件、情绪、故事、观点、证据、原则与待办 |
+| 课程、文章、书和访谈看过却没有变成自己的理解 | `junyi-learning-distiller` | 主张证据、自己的复述、适用边界和小实验 |
+| 想从零搭知识库，或已有知识库越来越乱 | `junyi-vault` | 建库、诊断、归档三种模式与可预览的安全变更 |
+| 想让真实经验最终成为对外可理解的个人品牌 | `junyi-positioning`、`junyi-personal-website` | 唯一《IP战略书》和一条可验证的网站转化路径 |
+
+这条路径不是强制流水线。已有清楚知识库的人可以直接归档，已有完整定位的人可以直接建官网；总入口只选择当前最短的一步。
 
 ## 30 秒开始
 
@@ -57,6 +77,22 @@ $junyi-xhs-benchmark
 不要只给粉丝最多的账号，请区分内容参考、人设参考、产品参考和低粉爆款样本。
 ```
 
+需要整理一段每日录音时：
+
+```text
+$junyi-content-distiller
+请把这段录音按“今日核心事件、情绪地图、故事、观点、金句、场景、冲突、数据案例、决策原则、工作待办安排”的顺序蒸馏。
+所有结论保留原话或时间戳证据，先确认说话人，不要补写没有发生的事。
+```
+
+知识库很乱、不敢直接搬文件时：
+
+```text
+$junyi-vault
+先只读扫描我的知识库，告诉我现有规则、冲突和最小修复方案。
+未经我确认，不要创建目录、移动文件或覆盖笔记。
+```
+
 不同 Agent 的显式调用方式不完全相同：Codex 等环境可使用 `$skill-name`；只有原生支持斜杠命令的客户端才使用 `/junyi`。自然语言写“使用 junyi 帮我选择”也可以。详见 [新手指南](guide/START-HERE.md)。
 
 ## 安装
@@ -73,7 +109,7 @@ npx -y skills add junyifei/junyi-skills -g --all
 npx -y skills add junyifei/junyi-skills --list
 ```
 
-本仓库已在隔离项目中验证：安装工具能够发现并复制全部 7 个公开 Skills。不同 Agent 的目录、调用语法和能力支持仍可能不同，请查看 [兼容性与安装说明](guide/COMPATIBILITY.md)。
+本仓库已在隔离项目中验证：安装工具能够发现并复制全部 11 个公开 Skills。不同 Agent 的目录、调用语法和能力支持仍可能不同，请查看 [兼容性与安装说明](guide/COMPATIBILITY.md)。
 
 如果不使用安装工具，也可以只复制需要的 Skill 目录。以 Codex 项目级安装为例：
 
@@ -116,6 +152,23 @@ cp -R junyi-xhs-benchmark .agents/skills/
 | [`junyi-xhs-benchmark`](junyi-xhs-benchmark/SKILL.md) | 需要发现、核验、分层和选择小红书对标 | 候选池、排除理由、分层评分与使用建议 | 测试中 |
 
 这里只公开目前愿意承担方法承诺的能力。用户研究、选题、标题、内容生产与审核等方法仍在本地实盘验证；验证通过前，不因为数量好看而发布。
+
+### 1.2.0 新增公开能力
+
+| Skill | 什么时候使用 | 已完成的质量门 | 当前状态 |
+|---|---|---|---|
+| [`junyi-content-distiller`](junyi-content-distiller/SKILL.md) | 蒸馏短记录、每日录音或超长录音，并保留证据与断点 | 29 项分块、隔离、合并、证据、隐私与结构测试 | 已发布 |
+| [`junyi-learning-distiller`](junyi-learning-distiller/SKILL.md) | 把课程、文章、书和访谈转成自己的理解与实验 | 7 项长材料、层级、证据与边界测试 | 已发布 |
+| [`junyi-vault`](junyi-vault/SKILL.md) | 新建知识库、把新内容归档，或只读诊断混乱知识库 | 15 项安全测试、26 项五类用户情境测试 | 已发布 |
+| [`junyi-personal-website`](junyi-personal-website/SKILL.md) | 用文件型 AI 从定位、设计、实现走到部署验收 | 官方技术复核、9 项静态站点校验测试 | 已发布 |
+
+这些质量门证明结构、脚本与安全约束已经过测试，不等同于承诺涨粉、收入或其他市场结果。
+
+## 尚未公开的能力
+
+儿童成长全年规划与 IP 用户研究、选题、标题、内容生产、内容审核等能力仍在本地实盘验证，不进入公开总路由和机器索引。验证通过前，不因为数量好看而发布。
+
+`daily-recording-distiller` 的通用方法已经吸收到 `junyi-content-distiller`，不会公开家庭成员、内部 Agent、账号或私人路径。`junyi-vault-builder` 与 `junyi-vault-filer` 已在产品层合并为 `junyi-vault`，由模式路由保持建库、归档和只读诊断的操作隔离。
 
 ## 案例与输出示例
 

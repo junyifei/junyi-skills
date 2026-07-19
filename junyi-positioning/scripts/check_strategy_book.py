@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run structural, evidence-language, portability, and plain-language checks."""
+"""Validate the canonical B00-B11 Markdown personal-IP strategy book."""
 
 from __future__ import annotations
 
@@ -9,17 +9,8 @@ import sys
 from pathlib import Path
 
 
-SECTION_GROUPS = {
-    "decision": ("决策先行", "推荐方向"),
-    "evidence": ("证据", "事实"),
-    "layers": ("五层定位", "传播入口"),
-    "audience": ("触达人群", "真正买方"),
-    "change": ("用户从之前到之后", "用户变化"),
-    "content": ("内容、故事与证明", "内容支柱"),
-    "business": ("产品与商业", "最小付费"),
-    "comparison": ("候选比较", "基础检查"),
-    "validation": ("30 天", "90 天"),
-}
+CHAPTERS = [f"B{i:02d}" for i in range(12)]
+CHAPTER_RE = re.compile(r"^##\s+(B\d{2})[｜|:]", flags=re.MULTILINE)
 
 EVIDENCE_MARKERS = ("【事实", "【推断", "【假设", "【未知")
 
@@ -28,6 +19,85 @@ PLAIN_LANGUAGE = (
     "成为主定位前必须通过的基础检查",
     "什么情况说明这条路不成立",
 )
+
+B00_TERMS = (
+    "用户在什么情况下会想起你",
+    "触达人群",
+    "真正买方",
+    "不需要吸引的人",
+    "传播入口",
+    "人物标签",
+    "内容承诺",
+    "商业落点",
+    "长期价值观",
+    "表达身位",
+    "内容主线",
+    "当前信心",
+    "待验证假设",
+    "什么情况说明这条路不成立",
+)
+
+B09_TERMS = ("隐私边界", "真实性边界", "伦理边界", "产品边界", "能力边界")
+
+
+def chapter_body(text: str, chapter: str) -> str:
+    match = re.search(
+        rf"^##\s+{re.escape(chapter)}[｜|:].*?(?=^##\s+B\d{{2}}[｜|:]|\Z)",
+        text,
+        flags=re.MULTILINE | re.DOTALL,
+    )
+    return match.group(0) if match else ""
+
+
+def check_text(text: str, *, forbid_names: list[str] | None = None) -> tuple[list[str], list[str]]:
+    """Return structural errors and review warnings for a strategy book."""
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    if not re.search(r"^#\s+.+", text, flags=re.MULTILINE):
+        errors.append("missing H1 title")
+
+    found_chapters = CHAPTER_RE.findall(text)
+    if found_chapters != CHAPTERS:
+        errors.append(
+            "chapters must appear exactly once and in order B00-B11; "
+            f"found: {', '.join(found_chapters) or 'none'}"
+        )
+
+    b00 = chapter_body(text, "B00")
+    for term in B00_TERMS:
+        if term not in b00:
+            errors.append(f"B00 missing required field: {term}")
+
+    b09 = chapter_body(text, "B09")
+    for term in B09_TERMS:
+        if term not in b09:
+            errors.append(f"B09 missing required boundary: {term}")
+
+    for marker in EVIDENCE_MARKERS:
+        if marker not in text:
+            errors.append(f"missing evidence label: {marker}】")
+
+    for phrase in PLAIN_LANGUAGE:
+        if phrase not in text:
+            errors.append(f"missing preferred plain-language phrase: {phrase}")
+
+    if re.search(r"/Users/[^\s)]+|[A-Za-z]:\\Users\\", text):
+        errors.append("contains a machine-specific absolute user path")
+
+    for name in forbid_names or []:
+        if name and name in text:
+            errors.append(f"forbidden case-specific name appears: {name}")
+
+    if "已验证" in text and not any(
+        term in text for term in ("付款", "定金", "复购", "续费", "转介绍", "重复购买")
+    ):
+        warnings.append("uses 已验证 without an obvious costly-commitment term; review payment evidence")
+
+    if "100" not in text or not any(term in text for term in ("内容燃料", "100 题", "100条", "100 条")):
+        warnings.append("100-topic content-fuel check is not visible")
+
+    return errors, warnings
 
 
 def parse_args() -> argparse.Namespace:
@@ -48,44 +118,13 @@ def main() -> int:
         print(f"ERROR: file not found: {args.book}", file=sys.stderr)
         return 2
 
-    errors: list[str] = []
-    warnings: list[str] = []
-
     if args.book.suffix.lower() not in {".md", ".markdown"}:
-        warnings.append("output is not a Markdown file")
+        suffix_warnings = ["output is not a Markdown file"]
+    else:
+        suffix_warnings = []
 
-    if not re.search(r"^#\s+.+", text, flags=re.MULTILINE):
-        errors.append("missing H1 title")
-
-    for label, alternatives in SECTION_GROUPS.items():
-        if not any(term in text for term in alternatives):
-            errors.append(f"missing required content group: {label} ({' / '.join(alternatives)})")
-
-    for marker in EVIDENCE_MARKERS:
-        if marker not in text:
-            errors.append(f"missing evidence label: {marker}】")
-
-    for phrase in PLAIN_LANGUAGE:
-        if phrase not in text:
-            errors.append(f"missing preferred plain-language phrase: {phrase}")
-
-    if re.search(r"/Users/[^\s)]+|[A-Za-z]:\\Users\\", text):
-        errors.append("contains a machine-specific absolute user path")
-
-    for name in args.forbid_name:
-        if name and name in text:
-            errors.append(f"forbidden case-specific name appears: {name}")
-
-    if "已验证" in text and not any(
-        term in text for term in ("付款", "定金", "复购", "续费", "转介绍", "重复购买")
-    ):
-        warnings.append("uses 已验证 without an obvious costly-commitment term; review payment evidence")
-
-    if "100" not in text or not any(term in text for term in ("内容燃料", "100 题", "100条", "100 条")):
-        warnings.append("100-topic content-fuel check is not visible")
-
-    if not any(term in text for term in ("不需要吸引", "排除人群", "不适配人群")):
-        warnings.append("excluded or non-target audiences are not explicit")
+    errors, warnings = check_text(text, forbid_names=args.forbid_name)
+    warnings = suffix_warnings + warnings
 
     for warning in warnings:
         print(f"WARNING: {warning}")

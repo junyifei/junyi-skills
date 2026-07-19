@@ -1,0 +1,4 @@
+interface:
+  display_name: "君一知识库"
+  short_description: "搭建域类档知识库、归档新内容，并在不破坏原结构的前提下诊断混乱目录"
+  default_prompt: "Use $junyi-vault to inspect my current knowledge base, propose the smallest useful structure, and preview every file operation before applying it."
