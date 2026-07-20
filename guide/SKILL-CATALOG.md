@@ -24,10 +24,10 @@
 
 | 年龄与任务 | 使用入口 | 准备什么 | 会得到什么 |
 |---|---|---|---|
-| 0—12 岁首次采集、导入、补充或审核资料 | [`junyi-collect-child-growth-intake`](../junyi-collect-child-growth-intake/SKILL.md) | 计划日期、出生日期、家庭观察；按需要补孩子或教师视角 | `intake.json`、证据地图、完整度和唯一年龄路由 |
-| 计划日 0—35 月龄，资料已通过校验 | [`junyi-build-infant-growth-plan`](../junyi-build-infant-growth-plan/SKILL.md) | `plan_track=infant` 的有效资料包 | 婴幼儿全年判断底座、首轮实验和四季度路线图 |
-| 计划日 36—71 月龄，资料已通过校验 | [`junyi-build-preschool-growth-plan`](../junyi-build-preschool-growth-plan/SKILL.md) | `plan_track=preschool` 的有效资料包 | 学前全年判断底座、首轮实验和四季度路线图 |
-| 计划日 72—144 月龄，资料已通过校验 | [`junyi-build-school-age-growth-plan`](../junyi-build-school-age-growth-plan/SKILL.md) | `plan_track=school-age` 的有效资料包和孩子视角 | 学龄全年判断底座、共同行动实验和四季度路线图 |
+| 0—12 岁首次采集、导入、补充或审核资料 | [`junyi-child-annual-intake`](../junyi-child-annual-intake/SKILL.md) | 计划日期、出生日期、家庭观察；按需要补孩子或教师视角 | `intake.json`、证据地图、完整度和唯一年龄路由 |
+| 计划日 0—35 月龄，资料已通过校验 | [`junyi-infant-annual-plan`](../junyi-infant-annual-plan/SKILL.md) | `plan_track=infant` 的有效资料包 | 婴幼儿全年判断底座、首轮实验和四季度路线图 |
+| 计划日 36—71 月龄，资料已通过校验 | [`junyi-preschool-annual-plan`](../junyi-preschool-annual-plan/SKILL.md) | `plan_track=preschool` 的有效资料包 | 学前全年判断底座、首轮实验和四季度路线图 |
+| 计划日 72—144 月龄，资料已通过校验 | [`junyi-school-age-annual-plan`](../junyi-school-age-annual-plan/SKILL.md) | `plan_track=school-age` 的有效资料包和孩子视角 | 学龄全年判断底座、共同行动实验和四季度路线图 |
 
 ### 更新未来 90 天
 
@@ -35,10 +35,10 @@
 
 | 年龄与任务 | 使用入口 | 准备什么 | 会得到什么 |
 |---|---|---|---|
-| 导入本季记录、填写季度问卷或检查资料状态 | [`junyi-collect-child-quarterly-update`](../junyi-collect-child-quarterly-update/SKILL.md) | 全年底座、本季新资料或问卷、上季结果 | `quarterly-update.md`、资料状态、补问或观察方案 |
-| 季度开始日 0—35 月龄，资料为 `ready` | [`junyi-build-infant-quarterly-growth-plan`](../junyi-build-infant-quarterly-growth-plan/SKILL.md) | 全年底座与本季更新 | 观察线、环境提供、互动话术和复盘信号 |
-| 季度开始日 36—71 月龄，资料为 `ready` | [`junyi-build-preschool-quarterly-growth-plan`](../junyi-build-preschool-quarterly-growth-plan/SKILL.md) | 全年底座与本季更新 | 聚焦方向、自然维持方向和游戏化支持 |
-| 季度开始日 72—144 月龄，资料为 `ready` | [`junyi-build-school-age-quarterly-growth-plan`](../junyi-build-school-age-quarterly-growth-plan/SKILL.md) | 全年底座、本季更新与孩子表达 | 主攻、维持、最多四个每周行动和最低版本 |
+| 导入本季记录、填写季度问卷或检查资料状态 | [`junyi-child-quarterly-intake`](../junyi-child-quarterly-intake/SKILL.md) | 全年底座、本季新资料或问卷、上季结果 | `quarterly-update.md`、资料状态、补问或观察方案 |
+| 季度开始日 0—35 月龄，资料为 `ready` | [`junyi-infant-quarterly-plan`](../junyi-infant-quarterly-plan/SKILL.md) | 全年底座与本季更新 | 观察线、环境提供、互动话术和复盘信号 |
+| 季度开始日 36—71 月龄，资料为 `ready` | [`junyi-preschool-quarterly-plan`](../junyi-preschool-quarterly-plan/SKILL.md) | 全年底座与本季更新 | 聚焦方向、自然维持方向和游戏化支持 |
+| 季度开始日 72—144 月龄，资料为 `ready` | [`junyi-school-age-quarterly-plan`](../junyi-school-age-quarterly-plan/SKILL.md) | 全年底座、本季更新与孩子表达 | 主攻、维持、最多四个每周行动和最低版本 |
 
 这些 Skill 不做医学心理诊断、发育筛查、学习类型测评或结果预测，也不替代合格专业人员。
 

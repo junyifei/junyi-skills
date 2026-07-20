@@ -85,8 +85,8 @@ npx -y skills add junyifei/junyi-skills --list
 | 什么时候使用 | 最短路径 | 会得到什么 |
 |---|---|---|
 | 只想记录并理解一个孩子的具体片段 | [`junyi-growth-spark-recorder`](junyi-growth-spark-recorder/SKILL.md) | 事件记录、发展观察与家长复盘 |
-| 第一次建立 0—12 岁孩子的全年成长底座 | [`junyi-collect-child-growth-intake`](junyi-collect-child-growth-intake/SKILL.md) → 一个分龄全年规划 Skill | `intake.json`、证据地图和给 Agent 长期读取的全年底座 |
-| 已有全年底座，要更新未来 90 天 | [`junyi-collect-child-quarterly-update`](junyi-collect-child-quarterly-update/SKILL.md) → 一个分龄季度计划 Skill | 本季证据状态、家长行动指南、最低版本和复盘信号 |
+| 第一次建立 0—12 岁孩子的全年成长底座 | [`junyi-child-annual-intake`](junyi-child-annual-intake/SKILL.md) → 一个分龄全年规划 Skill | `intake.json`、证据地图和给 Agent 长期读取的全年底座 |
+| 已有全年底座，要更新未来 90 天 | [`junyi-child-quarterly-intake`](junyi-child-quarterly-intake/SKILL.md) → 一个分龄季度计划 Skill | 本季证据状态、家长行动指南、最低版本和复盘信号 |
 
 全年与季度都只进入一个年龄轨道。季度问卷不能替代首次全年资料采集；没有持续日常记录时，可以使用年龄自适应季度问卷。完整的 9 个家庭教育 Skill、年龄边界和输入要求见[全部 Skill 用户目录](guide/SKILL-CATALOG.md#陪孩子成长)。
 

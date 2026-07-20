@@ -36,14 +36,14 @@ junyi-po-leng-shui
 junyi-positioning
 junyi-vault
 junyi-xhs-benchmark
-junyi-collect-child-growth-intake
-junyi-build-infant-growth-plan
-junyi-build-preschool-growth-plan
-junyi-build-school-age-growth-plan
-junyi-collect-child-quarterly-update
-junyi-build-infant-quarterly-growth-plan
-junyi-build-preschool-quarterly-growth-plan
-junyi-build-school-age-quarterly-growth-plan
+junyi-child-annual-intake
+junyi-infant-annual-plan
+junyi-preschool-annual-plan
+junyi-school-age-annual-plan
+junyi-child-quarterly-intake
+junyi-infant-quarterly-plan
+junyi-preschool-quarterly-plan
+junyi-school-age-quarterly-plan
 ```
 
 ## Codex 项目级安装
