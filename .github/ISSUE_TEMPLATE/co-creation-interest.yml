@@ -1,5 +1,5 @@
 name: 提交经验共创意向
-description: 用非敏感信息判断“让 AI 开始学会你”的任务是否适合首轮验证
+description: 用非敏感信息判断“让 AI 学会你”的任务是否适合首轮验证
 title: "[共创意向] "
 labels:
   - co-creation
@@ -7,18 +7,18 @@ body:
   - type: markdown
     attributes:
       value: |
-        这是公开 Issue，只用于任务适配初筛。不要上传客户资料、业务数据、合同、内部流程、私有链接或联系方式。
+        这是公开 Issue，只用于任务适配初筛。不要上传孩子身份、家庭记录、客户资料、业务数据、合同、内部流程、私有链接或联系方式。
   - type: textarea
     id: context
     attributes:
-      label: 你的业务或专业工作处于什么阶段
-      description: 只写可以公开的概况，例如业务是否稳定、你承担什么关键判断。
+      label: 这个任务处于什么生活或工作背景
+      description: 只写可以公开的概况，例如家庭教育、个人学习、内容表达或专业工作，以及你承担什么关键判断。
     validations:
       required: true
   - type: textarea
     id: task
     attributes:
-      label: 哪一个高频任务总是回到你手里
+      label: 哪一个真实任务最需要 AI 学会你的经验
       description: 描述任务类型、频率和当前做法，不上传原始材料。
     validations:
       required: true

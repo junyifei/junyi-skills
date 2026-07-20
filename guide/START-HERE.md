@@ -1,6 +1,6 @@
-# 君一方法论新手指南
+# 君一的 AI 时代家庭教育 Skills 新手指南
 
-这份指南帮助第一次使用的人完成三件事：安装、选择入口、完成第一次真实任务。
+这份指南帮助第一次使用的人完成三件事：安装、判断自己正处于“陪孩子成长、父母先成长、把成长表达出来”中的哪个阶段，并完成第一次真实任务。
 
 ## 1. 先选择安装范围
 
@@ -41,13 +41,12 @@ $junyi
 
 `junyi` 只负责判断最短路径，不代替下游 Skill 完成所有工作。
 
+如果想按普通人的任务语言浏览全部能力，先看[全部 Skill 用户目录](SKILL-CATALOG.md)。
+
 ## 3. 已经知道任务时直接调用
 
 | 现在要做什么 | 直接使用 |
 |---|---|
-| 通过追问想清楚体验、矛盾或选择 | `$junyi-deep-dialogue` |
-| 明确要求挑刺、找漏洞或魔鬼代言人 | `$junyi-po-leng-shui` |
-| 转换、分块、索引或归档大文档 | `$junyi-doc-reader` |
 | 记录孩子的具体片段并复盘 | `$junyi-growth-spark-recorder` |
 | 首次收集、导入或审核孩子的全年成长规划资料 | `$collect-child-growth-intake` |
 | 为计划日 0—35 月龄孩子生成全年判断底座 | `$build-infant-growth-plan` |
@@ -57,8 +56,15 @@ $junyi
 | 为季度开始日 0—35 月龄孩子生成季度计划 | `$build-infant-quarterly-growth-plan` |
 | 为季度开始日 36—71 月龄孩子生成季度计划 | `$build-preschool-quarterly-growth-plan` |
 | 为季度开始日 72—144 月龄孩子生成季度计划 | `$build-school-age-quarterly-growth-plan` |
+| 把课程、文章、书或访谈转成自己的理解与实验 | `$junyi-learning-distiller` |
+| 转换、分块、索引或归档大文档 | `$junyi-doc-reader` |
+| 新建、归档或只读诊断知识库 | `$junyi-vault` |
+| 通过追问想清楚体验、矛盾或选择 | `$junyi-deep-dialogue` |
+| 明确要求挑刺、找漏洞或魔鬼代言人 | `$junyi-po-leng-shui` |
+| 从录音、日记或聊天记录中提炼真实内容 | `$junyi-content-distiller` |
 | 设计、审核或迭代个人 IP 定位 | `$junyi-positioning` |
 | 发现并核验小红书对标 | `$junyi-xhs-benchmark` |
+| 从定位与真实素材建立个人官网 | `$junyi-personal-website` |
 
 不要为了看起来完整而从第一步重跑。已有草稿、材料或决定时，直接从当前缺失的一层开始。
 

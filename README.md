@@ -1,8 +1,14 @@
-# 君一方法论
+# 君一的 AI 时代家庭教育 Skills
 
-**让 AI 学会你的经验和判断，而不是让更多工作回到你手里。**
+**Junyi’s AI-Era Family Education Skills**
 
-面向已经开始用 AI 做真实工作的一人公司经营者、知识型创作者和创业父母：把真实材料、长期经验与判断标准，变成 Agent 可以调用、可以验证、可以持续修订的方法。
+## 育儿先育己，让 AI 学会你
+
+这里的 AI 时代家庭教育，不是让孩子更早使用 AI，而是帮助父母理解孩子、成长自己，并把家庭实践中的经验与判断转化为行动、表达和事业。
+
+让 AI 学会你的真实材料、长期经验和判断标准，让真实生活成为教育发生的地方。
+
+首先为关心 AI 时代家庭成长、事业发展和自我成长的父母设计；也适用于希望从真实生活出发，理解孩子、更新自己，并把成长经验转化为内容、影响力或事业能力的人。
 
 [![Release](https://img.shields.io/github/v/release/junyifei/junyi-skills?style=flat-square&label=release)](https://github.com/junyifei/junyi-skills/releases)
 [![Public Skills](https://img.shields.io/badge/public_skills-19-2563EB.svg?style=flat-square)](skill-index.json)
@@ -10,328 +16,160 @@
 
 当前公开版：**1.4.0** · 正式入口与 Skills：**19 个**
 
-[30 秒开始](#30-秒开始) · [安装](#安装) · [公开能力](#公开能力) · [案例与示例](#案例与输出示例) · [方法证据](#方法从哪里来) · [反馈与共创](#反馈与共创)
+[成长闭环](#一条完整的成长闭环) · [30 秒开始](#30-秒开始) · [安装](#安装) · [三个成长阶段](#三个成长阶段) · [代表案例](#三个可检查的代表案例) · [反馈与共创](#继续使用关注与共创)
 
-## 君一方法论首先服务谁
+## 一条完整的成长闭环
 
-首先服务这样的人：已经有真实业务、专业经验或长期创作，也已经开始使用 AI，但仍然遇到这些情况：
+这些 Skills 不是三个互不相关的领域，而是一条从家庭出发、回到家庭与事业的成长路径：
 
-| 真实处境 | 君一方法论帮助推进什么 |
-|---|---|
-| 每次使用 AI 都要重新解释背景 | 整理真实材料、上下文和任务边界 |
-| AI 输出越来越多，审核反而越来越累 | 说清 AI、团队和人的判断边界 |
-| 多年经验都在脑子里，难以交给别人 | 把经验、标准和流程变成可调用的方法 |
-| 个人 IP 什么都能讲，用户却记不住 | 用证据区分定位、愿望和待验证假设 |
-| 找了很多对标，只学到标题和表面形式 | 建立可核验、可比较的对标研究 |
-| 面对重要选择，AI 总顺着自己说 | 用追问和反方审查保留人的判断 |
-| 工作更高效了，事业与生活却没有变轻 | 重新判断什么值得做、什么可以停止 |
-
-最鲜明的核心人群，是同时承担事业、家庭和自我成长的创业妈妈；公开 Skills 也适用于有相同任务结构的创作者、咨询师、教练、专家和一人公司经营者。
-
-这里不提供最新工具清单、一键搞钱承诺、企业级系统实施，也不替用户承担最终判断。
-
-## 一条可以持续使用的方法路径
-
-君一方法论不从“让 AI 多写一点”开始，而从个人每天真实产生的材料开始：
-
-```text
-把自己的生活提炼出来
-→ 把外部学习消化掉
-→ 搭好自己的知识库
-→ 把新内容持续归进去
+```mermaid
+flowchart LR
+    A["陪孩子成长<br/>从真实家庭实践开始"] --> B["父母先成长<br/>学习、反思并形成判断"]
+    B --> C["把成长表达出来<br/>内容、IP 与个人事业"]
+    C --> D["用新的能力<br/>反哺家庭与事业"]
+    D --> A
 ```
 
-| 真实任务 | 对应 Skill | 得到什么 |
+| 你正处在哪个阶段 | 什么时候使用 | 用完得到什么 |
 |---|---|---|
-| 每日录音、长录音或生活记录很散 | `junyi-content-distiller` | 核心事件、情绪、故事、观点、证据、原则与待办 |
-| 课程、文章、书和访谈看过却没有变成自己的理解 | `junyi-learning-distiller` | 主张证据、自己的复述、适用边界和小实验 |
-| 想从零搭知识库，或已有知识库越来越乱 | `junyi-vault` | 建库、诊断、归档三种模式与可预览的安全变更 |
-| 想让真实经验最终成为对外可理解的个人品牌 | `junyi-positioning`、`junyi-personal-website` | 唯一《IP战略书》和一条可验证的网站转化路径 |
+| [陪孩子成长](#陪孩子成长) | 想记录和理解孩子，建立全年成长底座，或更新未来 90 天行动 | 成长记录、Agent 可读的全年底座和家长可执行的季度计划 |
+| [父母先成长](#父母先成长) | 想消化外部学习、整理知识，或把一个重要问题真正想清楚 | 自己的理解、知识结构、判断、反证和行动实验 |
+| [把成长表达出来](#把成长表达出来) | 想把育儿、生活与专业经验转化为内容、IP 或个人事业 | 可追溯内容素材、IP 战略、对标研究和个人官网 |
 
-这条路径不是强制流水线。已有清楚知识库的人可以直接归档，已有完整定位的人可以直接建官网；总入口只选择当前最短的一步。
+不知道自己处在哪个阶段时，使用总入口 `$junyi`。它只选择当前最需要的一个 Skill 或一条最短路径，不会把 19 个 Skill 全部运行一遍。
+
+这里不鼓励把孩子变成项目，也不让 AI 代替父母作教育决定；不提供一键搞钱承诺、医学心理诊断或未经证据支持的成长结果预测。
 
 ## 30 秒开始
 
-不知道该从哪里开始时，在支持 Skills 的 Agent 中输入：
+在支持 Skills 的 Agent 中复制：
 
 ```text
 $junyi
-我已经在用 AI 做内容，但产量增加以后，审核时间也增加了。
-请判断我现在需要整理材料、明确判断标准，还是调整工作流。
+我现在要完成的是：……
+我已经有的真实材料是：……
+我最担心 AI 编造或误判的是：……
+请只选择当前最短的一步，并告诉我用完会得到什么。
 ```
 
-需要做个人 IP 定位时：
-
-```text
-$junyi-positioning
-我是一名有十年经验的家庭教育从业者，已经有课程和客户，
-但账号同时讲育儿、女性成长和创业，用户记不住我。
-请先区分事实、推断、假设和未知，再判断定位问题出在哪里。
-```
-
-需要找小红书对标时：
-
-```text
-$junyi-xhs-benchmark
-我要为“创业妈妈使用 AI”寻找小红书对标。
-不要只给粉丝最多的账号，请区分内容参考、人设参考、产品参考和低粉爆款样本。
-```
-
-需要整理一段每日录音时：
-
-```text
-$junyi-content-distiller
-请把这段录音按“今日核心事件、情绪地图、故事、观点、金句、场景、冲突、数据案例、决策原则、工作待办安排”的顺序蒸馏。
-所有结论保留原话或时间戳证据，先确认说话人，不要补写没有发生的事。
-```
-
-第一次为孩子建立全年成长底座时：
-
-```text
-$collect-child-growth-intake
-请根据计划日期和出生日期确定唯一年龄轨道，
-用对应问卷逐步收集资料；不要读取另外两个年龄段的问题库。
-资料通过校验后，再路由到对应的全年规划 Skill。
-```
-
-已经有全年成长底座，需要更新下一季度时：
-
-```text
-$collect-child-quarterly-update
-我已经有兼容的全年 intake 和全年规划，但没有持续写月报。
-请按孩子季度开始日的月龄使用对应问卷，先整理本季度资料；
-只有 status: ready 时，再路由到对应年龄段季度报告 Skill。
-```
-
-知识库很乱、不敢直接搬文件时：
-
-```text
-$junyi-vault
-先只读扫描我的知识库，告诉我现有规则、冲突和最小修复方案。
-未经我确认，不要创建目录、移动文件或覆盖笔记。
-```
-
-不同 Agent 的显式调用方式不完全相同：Codex 等环境可使用 `$skill-name`；只有原生支持斜杠命令的客户端才使用 `/junyi`。自然语言写“使用 junyi 帮我选择”也可以。详见 [新手指南](guide/START-HERE.md)。
+如果客户端不支持 `$skill-name`，直接写“使用 junyi 帮我选择”即可。只有原生注册斜杠命令的客户端才使用 `/junyi`。
 
 ## 安装
 
-### 一键安装全部公开 Skills
+安装全部公开 Skills：
 
 ```bash
 npx -y skills add junyifei/junyi-skills -g --all
 ```
 
-### 只安装单个 Skill
+只安装一个 Skill：
 
 ```bash
-npx -y skills add junyifei/junyi-skills --skill junyi-positioning
+npx -y skills add junyifei/junyi-skills --skill junyi-content-distiller
 ```
 
-只安装指定的 Skill，不写入其他公开 Skills。把名称替换为任意一个公开 Skill 即可。全局安装与更多写法见 [新手指南](guide/START-HERE.md)。
-
-查看仓库能被识别出的 Skills，不执行安装：
+先查看仓库能够识别出哪些 Skills，不执行安装：
 
 ```bash
 npx -y skills add junyifei/junyi-skills --list
 ```
 
-本仓库已在隔离项目中验证：安装工具能够发现并复制全部 19 个公开 Skills。不同 Agent 的目录、调用语法和能力支持仍可能不同，请查看 [兼容性与安装说明](guide/COMPATIBILITY.md)。
+本仓库已在隔离项目中验证 19/19 发现与复制安装。安装后开启新会话，让 Agent 重新发现 Skills。不同 Agent 的目录、调用语法和脚本能力仍可能不同，详见[兼容性与安装说明](guide/COMPATIBILITY.md)。
 
-如果不使用安装工具，也可以只复制需要的 Skill 目录。以 Codex 项目级安装为例：
+## 三个成长阶段
 
-```bash
-mkdir -p .agents/skills
-cp -R junyi .agents/skills/
-cp -R junyi-positioning .agents/skills/
-cp -R junyi-xhs-benchmark .agents/skills/
-```
+### 陪孩子成长
 
-安装前先检查同名目录，避免覆盖本地未同步的修改。安装后开启新会话，让 Agent 重新发现 Skills。
+孩子成长链按“成长记录 → 全年底座 → 季度行动”工作。全年底座优先给 Agent 长期读取，季度计划优先给家长行动。
 
-## 公开能力
-
-### 总入口
-
-| Skill | 什么时候使用 | 常见产出 | 成熟度 |
-|---|---|---|---|
-| [`junyi`](junyi/SKILL.md) | 不知道该用哪个 Skill，或希望选择最短路径 | 一个明确入口、缺失材料和下一步 | 已发布 |
-
-### 人的判断
-
-| Skill | 什么时候使用 | 常见产出 | 成熟度 |
-|---|---|---|---|
-| [`junyi-deep-dialogue`](junyi-deep-dialogue/SKILL.md) | 有体验、矛盾或选择，但还没有想清楚 | 逐层追问、自己的判断、可选觉知记录 | 已发布 |
-| [`junyi-po-leng-shui`](junyi-po-leng-shui/SKILL.md) | 只有用户明确要求挑刺、找漏洞或魔鬼代言人时 | 关键漏洞、反证、失败风险 | 已发布 |
-
-### 真实材料与家庭实践
-
-| Skill | 什么时候使用 | 常见产出 | 成熟度 |
-|---|---|---|---|
-| [`junyi-doc-reader`](junyi-doc-reader/SKILL.md) | 大文档需要转换、分块、索引或归档 | 结构化 Markdown、分块索引和归档结果 | 已发布 |
-| [`junyi-growth-spark-recorder`](junyi-growth-spark-recorder/SKILL.md) | 想记录孩子的具体片段并理解为什么有效 | 事件记录、发展观察、思维模型复盘 | 已发布 |
-
-### 儿童全年与季度成长
-
-全年规划是 Agent 长期读取的知识底座，季度计划是家长未来 90 天的行动指南。首次使用先完成全年资料采集，并按计划日期的完整月龄只进入一个全年报告 Skill；之后每个季度导入本季新资料或填写年龄自适应问卷，再按季度开始日的完整月龄进入一个季度报告 Skill。季度问卷不能替代首次全年资料采集。
-
-```text
-家庭已有资料或适龄全年问卷
-→ collect-child-growth-intake
-→ 按计划日期完整月龄，只进入一个全年报告 Skill
-→ collect-child-quarterly-update
-→ 按季度开始日完整月龄，只进入一个季度报告 Skill
-```
-
-| Skill | 什么时候使用 | 常见产出 | 成熟度 |
-|---|---|---|---|
-| [`collect-child-growth-intake`](collect-child-growth-intake/SKILL.md) | 首次收集、导入、补充或审核 0—12 岁儿童全年规划资料 | `intake.json`、证据地图、完整度与唯一路由 | 15 案例前向回归与独立复测完成 |
-| [`build-infant-growth-plan`](build-infant-growth-plan/SKILL.md) | 计划日为 0—35 月龄，全年资料已通过校验 | 证据型全年判断底座、首轮实验与四季度路线图 | 15 案例前向回归与独立复测完成 |
-| [`build-preschool-growth-plan`](build-preschool-growth-plan/SKILL.md) | 计划日为 36—71 月龄，全年资料已通过校验 | 证据型全年判断底座、首轮实验与四季度路线图 | 15 案例前向回归与独立复测完成 |
-| [`build-school-age-growth-plan`](build-school-age-growth-plan/SKILL.md) | 计划日为 72—144 月龄，全年资料已通过校验 | 证据型全年判断底座、共同行动实验与四季度路线图 | 15 案例前向回归与独立复测完成 |
-| [`collect-child-quarterly-update`](collect-child-quarterly-update/SKILL.md) | 导入本季记录，或没有日常记录时按年龄完成季度问卷 | `quarterly-update.md`、资料状态、补问或 7—14 天观察方案 | 公开转换验证完成 |
-| [`build-infant-quarterly-growth-plan`](build-infant-quarterly-growth-plan/SKILL.md) | 季度开始日为 0—35 月龄，且季度资料已 ready | 3—5 条观察线、3—5 个环境提供方案与家长话术 | 已投入真实家庭项目 |
-| [`build-preschool-quarterly-growth-plan`](build-preschool-quarterly-growth-plan/SKILL.md) | 季度开始日为 36—71 月龄，且季度资料已 ready | 聚焦方向、自然维持方向与游戏化支持 | 已投入真实家庭项目 |
-| [`build-school-age-quarterly-growth-plan`](build-school-age-quarterly-growth-plan/SKILL.md) | 季度开始日为 72—144 月龄，且季度资料已 ready | 主攻/维持、最多四个核心行动与最低版本 | 已投入真实家庭项目 |
-
-全年轨道以计划日期计算，季度轨道以季度开始日计算；季度中途跨过 36、72 或 144 月龄，不在中途切换方法。具体季度所需的全年底座格式见[上游要求](collect-child-quarterly-update/references/upstream-requirements.md)。
-
-### 证据型个人 IP
-
-| Skill | 什么时候使用 | 常见产出 | 成熟度 |
-|---|---|---|---|
-| [`junyi-positioning`](junyi-positioning/SKILL.md) | 设计、审核或迭代个人 IP 定位与战略 | 定位决定、证据边界、验证计划或完整战略书 | 已投入真实项目 |
-| [`junyi-xhs-benchmark`](junyi-xhs-benchmark/SKILL.md) | 需要发现、核验、分层和选择小红书对标 | 候选池、排除理由、分层评分与使用建议 | 测试中 |
-
-这里只公开目前愿意承担方法承诺的能力。用户研究、选题、标题、内容生产与审核等方法仍在本地实盘验证；验证通过前，不因为数量好看而发布。
-
-### 1.4.0 新增公开能力
-
-| Skill | 本版本公开了什么 | 已完成的质量门 |
+| 什么时候使用 | 最短路径 | 会得到什么 |
 |---|---|---|
-| `collect-child-growth-intake` | 一个统一入口、三套物理隔离的适龄问题库、证据地图和唯一路由 | 结构、自检、年龄边界、资料完整度、安全与隐私回归 |
-| 三个年龄段全年报告 Skill | 分龄生成给 Agent 长期读取的全年判断底座，不用统一模板混写 0—12 岁 | 15 个匿名合成案例前向回归；严重能动性归因缺陷修复；3 个关键案例独立重跑；7 个脚本自检 |
+| 只想记录并理解一个孩子的具体片段 | [`junyi-growth-spark-recorder`](junyi-growth-spark-recorder/SKILL.md) | 事件记录、发展观察与家长复盘 |
+| 第一次建立 0—12 岁孩子的全年成长底座 | [`collect-child-growth-intake`](collect-child-growth-intake/SKILL.md) → 一个分龄全年规划 Skill | `intake.json`、证据地图和给 Agent 长期读取的全年底座 |
+| 已有全年底座，要更新未来 90 天 | [`collect-child-quarterly-update`](collect-child-quarterly-update/SKILL.md) → 一个分龄季度计划 Skill | 本季证据状态、家长行动指南、最低版本和复盘信号 |
 
-这次发布补齐“首次全年资料采集 → 分龄全年底座 → 季度资料更新 → 分龄季度计划”的公开闭环。测试证明的是证据忠实度、年龄隔离、结构、门禁和安全边界，不代表特定儿童发展结果。
+全年与季度都只进入一个年龄轨道。季度问卷不能替代首次全年资料采集；没有持续日常记录时，可以使用年龄自适应季度问卷。完整的 9 个家庭教育 Skill、年龄边界和输入要求见[全部 Skill 用户目录](guide/SKILL-CATALOG.md#陪孩子成长)。
 
-### 1.3.0 新增公开能力
+### 父母先成长
 
-| Skill | 本版本公开了什么 | 已完成的质量门 |
+| 什么时候使用 | 使用入口 | 会得到什么 |
 |---|---|---|
-| `collect-child-quarterly-update` | 一套共同核心问卷、三个年龄问题库、结构化证据与四状态门禁 | 结构、自检、跨龄、资料不足、安全与隐私回归 |
-| 三个年龄段季度报告 Skill | 输入、方法、输出和验证物理隔离，不用一个 0—12 岁模板混写 | OpenClaw 上游映射 14/14、Skill 结构 4/4、脚本自检 7/7 |
+| 课程、文章和书看过，却没有变成自己的理解 | [`junyi-learning-distiller`](junyi-learning-distiller/SKILL.md) | 来源主张、自己的复述、适用边界和小实验 |
+| 大文档需要转换、分块、索引或归档 | [`junyi-doc-reader`](junyi-doc-reader/SKILL.md) | 结构化 Markdown、分块索引和归档结果 |
+| 想从零搭知识库，或已有知识库越来越乱 | [`junyi-vault`](junyi-vault/SKILL.md) | 建库、归档或只读诊断方案 |
+| 有体验、情绪、矛盾或选择，但还没想清楚 | [`junyi-deep-dialogue`](junyi-deep-dialogue/SKILL.md) | 逐层追问、自己的判断和可选觉知记录 |
+| 已有一个方案，明确希望有人挑刺、找漏洞 | [`junyi-po-leng-shui`](junyi-po-leng-shui/SKILL.md) | 关键漏洞、反证与最可能失败的位置 |
 
-这些方法已用于真实家庭季度计划；公开转换测试证明的是方法映射、结构、门禁和安全边界，不代表任何儿童发展结果，也不替代医疗、心理、发育筛查或教育专业评估。
+学习不是囤积答案，而是形成自己的理解、边界和行动实验。反方审查必须由用户明确触发；普通对话不会因为 Agent 猜测用户需要“被泼冷水”而自动调用。
 
-### 1.2.0 新增公开能力
+### 把成长表达出来
 
-| Skill | 什么时候使用 | 已完成的质量门 | 当前状态 |
+| 什么时候使用 | 使用入口 | 会得到什么 |
+|---|---|---|
+| 录音、日记和生活记录很多，想提炼真实内容 | [`junyi-content-distiller`](junyi-content-distiller/SKILL.md) | 核心事件、情绪、故事、观点、证据、原则和待办 |
+| 育儿与专业经验很多，但别人记不住你是谁 | [`junyi-positioning`](junyi-positioning/SKILL.md) | 证据型《IP 战略书》、定位决定与验证计划 |
+| 需要寻找和核验小红书对标 | [`junyi-xhs-benchmark`](junyi-xhs-benchmark/SKILL.md) | 候选池、排除理由、分层评分与使用建议 |
+| 已有定位与真实素材，想建立个人官网 | [`junyi-personal-website`](junyi-personal-website/SKILL.md) | 原创、可验证、可部署的网站 |
+
+表达不是把孩子当作内容素材，也不是要求每位父母都经营 IP。它只在用户主动选择时，帮助把自己的学习、育儿感悟与专业经验变成可追溯的公共表达。
+
+查看[全部 19 个 Skill 用户目录](guide/SKILL-CATALOG.md)：按“什么时候用、准备什么、得到什么”选择；机器可读的版本与成熟度见 [`skill-index.json`](skill-index.json)。
+
+## 三个可检查的代表案例
+
+| 案例 | 输入 | 可检查产出 | 人工修改与边界 |
 |---|---|---|---|
-| [`junyi-content-distiller`](junyi-content-distiller/SKILL.md) | 蒸馏短记录、每日录音或超长录音，并保留证据与断点 | 29 项分块、隔离、合并、证据、隐私与结构测试 | 已发布 |
-| [`junyi-learning-distiller`](junyi-learning-distiller/SKILL.md) | 把课程、文章、书和访谈转成自己的理解与实验 | 7 项长材料、层级、证据与边界测试 | 已发布 |
-| [`junyi-vault`](junyi-vault/SKILL.md) | 新建知识库、把新内容归档，或只读诊断混乱知识库 | 15 项安全测试、26 项五类用户情境测试 | 已发布 |
-| [`junyi-personal-website`](junyi-personal-website/SKILL.md) | 用文件型 AI 从定位、设计、实现走到部署验收 | 官方技术复核、9 项静态站点校验测试 | 已发布 |
+| [GitHub 定位改版](examples/junyi-positioning-junyi-methodology.md) | 一个能力很多、共同问题不清楚的 Skill 仓库 | 首先服务谁、共同问题、证据与验证项 | 撤下未验证能力；不把 Stars、涨粉和成交写成既有结果 |
+| [超长录音隔离回归](examples/content-distiller-regression.md) | 多分块录音与说话人、时间戳证据 | 分块产物、合并顺序、断点和证据门 | 把“建议并行”改成超过阈值必须隔离执行；不公开真实家庭录音 |
+| [儿童计划能动性回归](examples/child-growth-agency-regression.md) | 明确未让孩子参与设计的合成资料 | 证据型全年底座与待确认行动 | 删除“孩子共同设计”等虚假归因；不把结构测试冒充成长结果 |
 
-这些质量门证明结构、脚本与安全约束已经过测试，不等同于承诺涨粉、收入或其他市场结果。
+案例用于展示输入、方法、人工修订和边界，不证明任何人使用后一定涨粉、成交或获得特定儿童发展结果。
+
+## 方法与证据
+
+这些 Skills 来自家庭教育实践、一人公司经营、内容创作、课程与咨询、长期记录以及 Agent 真实工作流。每个正式 Skill 必须说清：什么时候触发、需要什么材料、怎样执行、何时完成或停机、哪些决定必须留给人。
+
+重要陈述分为四类：
+
+| 标签 | 含义 |
+|---|---|
+| 事实 | 有原始记录、可观察结果或可靠来源 |
+| 推断 | 由事实支持的当前解释，仍可能有其他解释 |
+| 假设 | 可以用行动检验、但尚未被证明 |
+| 未知 | 做决定需要、当前没有的信息 |
+
+结构测试和脚本通过只说明已知规则得到验证，不等于市场结果、家庭结果或专业评估成立。详细质量门、成熟度和当前能说到什么程度，见[方法与证据说明](guide/METHOD-AND-EVIDENCE.md)。
+
+## 本次更新
+
+**v1.4.0**：补齐儿童全年资料采集、三个分龄全年知识底座，以及它们与季度行动计划的完整公开链。全年四个 Skill 完成 15 个匿名合成案例前向回归、严重能动性归因缺陷修复和关键案例独立重跑。
+
+历史版本与完整变更进入 [`CHANGELOG.md`](CHANGELOG.md) 和 [GitHub Releases](https://github.com/junyifei/junyi-skills/releases)，不在首页重复展开。
+
+## 继续使用、关注与共创
+
+| 你想继续做什么 | 入口 |
+|---|---|
+| 立即安装并完成第一个任务 | [回到 30 秒开始](#30-秒开始) |
+| 关注公开版本、案例和修订 | [GitHub Releases](https://github.com/junyifei/junyi-skills/releases) · [君一的 GitHub](https://github.com/junyifei) |
+| 报告安装或 Skill 问题 | [提交可公开复现的问题](https://github.com/junyifei/junyi-skills/issues/new?template=problem.yml) |
+| 告诉我哪里有效、哪里失败、你怎样修改 | [提交脱敏使用反馈](https://github.com/junyifei/junyi-skills/issues/new?template=usage-feedback.yml) |
+| 有一个真实的家庭、学习或表达任务，希望让 AI 开始学会你的经验 | [申请首轮经验共创验证](https://github.com/junyifei/junyi-skills/issues/new?template=co-creation-interest.yml) |
+
+公开 Issue 不接收客户资料、孩子身份、业务数据、账号凭据、私有链接或联系方式。敏感问题请先阅读 [`SECURITY.md`](SECURITY.md)。共创仍处于首轮验证，不是成熟的企业级实施服务，也不承诺收入增长。
 
 ## 尚未公开的能力
 
-IP 用户研究、选题、标题、内容生产、内容审核等能力仍在本地实盘验证，不进入公开总路由和机器索引。验证通过前，不因为数量好看而发布。
+IP 用户研究、选题、标题、内容生产和内容审核等能力仍在本地实盘验证，不进入公开总路由和机器索引。验证通过前，不因为数量好看而发布。
 
-`daily-recording-distiller` 的通用方法已经吸收到 `junyi-content-distiller`，不会公开家庭成员、内部 Agent、账号或私人路径。`junyi-vault-builder` 与 `junyi-vault-filer` 已在产品层合并为 `junyi-vault`，由模式路由保持建库、归档和只读诊断的操作隔离。
+`daily-recording-distiller` 的通用方法已吸收到 `junyi-content-distiller`；`junyi-vault-builder` 与 `junyi-vault-filer` 已在产品层合并为 `junyi-vault`。家庭成员、内部 Agent、账号资源、私人路径和未授权案例不属于公开仓库。
 
-## 案例与输出示例
+## 原创、许可与作者
 
-- [`junyi-positioning` 真实仓库定位案例](examples/junyi-positioning-junyi-methodology.md)：展示“Skill 合集”怎样被重新判断为“公开方法实验室”，包含证据、决定、未知与不承诺事项。
-- [`junyi-xhs-benchmark` 合成输出示例](examples/junyi-xhs-benchmark-synthetic.md)：展示候选池、核验、分层和排除逻辑；示例账号与数字均为合成数据，不代表平台事实。
-
-示例的目的不是证明“使用后一定涨粉或成交”，而是让用户在安装前看清输入要求、推理边界和交付结构。
-
-## 方法从哪里来
-
-君一方法论来自一人公司经营、内容创作、课程与咨询、家庭实践、长期记录以及 Agent 真实工作流。它不是把一组好听的提示词包装成产品。
-
-每个正式 Skill 都必须回答：
-
-1. 什么真实任务会触发它；
-2. 需要哪些材料和证据；
-3. 按什么步骤执行；
-4. 怎样判断完成、失败或需要补充信息；
-5. 哪些决定必须留给人；
-6. 好结果、差结果和人工修改怎样进入下一版本。
-
-```mermaid
-flowchart LR
-    A["真实任务与材料"] --> B["候选方法"]
-    B --> C["真实使用与失败记录"]
-    C --> D["人工修改与边界检查"]
-    D --> E["结构、脚本与隐私验证"]
-    E --> F{"达到公开质量门？"}
-    F -- "否" --> G["保留为本地知识或待验证 Skill"]
-    F -- "是" --> H["公开发布"]
-    H --> I["用户反馈与版本修订"]
-    I --> C
-```
-
-详细的证据等级、公开质量门和当前能说到什么程度，见 [方法与证据说明](guide/METHOD-AND-EVIDENCE.md)。
-
-## GitHub 怎样承接用户
-
-```mermaid
-flowchart LR
-    A["内容与搜索\nAI 越强为什么越忙"] --> B["README\n确认是不是自己的问题"]
-    B --> C["复制示例或安装 Skill"]
-    C --> D["完成一个真实任务"]
-    D --> E["查看案例、边界与修改记录"]
-    E --> F{"下一步"}
-    F --> G["继续免费使用"]
-    F --> H["提交使用反馈"]
-    F --> I["申请经验共创验证"]
-```
-
-GitHub 是方法体验和能力证明中心，不是结果承诺页。真正的信任来自可检查的过程、产物、边界和持续修订，而不是 Stars、粉丝数或一条爆款。
-
-## 产品结构
-
-```text
-junyi-skills/
-├── junyi/                 # 总入口，只负责诊断与路由
-├── <skill-name>/          # 可以独立安装的正式 Skill
-├── examples/              # 真实案例或明确标注的合成示例
-├── guide/                 # 新手、兼容性、证据与使用说明
-├── knowledge/             # 尚未晋升为 Skill 的公开规则与知识卡
-├── tools/                 # 资产盘点和仓库维护工具
-└── skill-index.json       # 机器可读的公开清单
-```
-
-方法成熟度与版本不写进 `SKILL.md` frontmatter，以保持跨平台兼容；机器可读状态统一记录在 [`skill-index.json`](skill-index.json)。
-
-## 反馈与共创
-
-### 使用中遇到问题
-
-- [报告 Skill 或安装问题](https://github.com/junyifei/junyi-skills/issues/new?template=problem.yml)
-- [提交一次脱敏使用反馈](https://github.com/junyifei/junyi-skills/issues/new?template=usage-feedback.yml)
-
-提交前请删除客户姓名、孩子身份、联系方式、账号凭据、私有链接和未授权材料。敏感问题请先阅读 [`SECURITY.md`](SECURITY.md)，不要放入公开 Issue。
-
-### “让 AI 开始学会你”共创验证
-
-如果你已经有稳定业务或专业工作，关键任务仍依赖你的经验和判断，可以提交一份[公开的、非敏感的共创意向](https://github.com/junyifei/junyi-skills/issues/new?template=co-creation-interest.yml)。
-
-当前状态：**首轮验证中**。这不是企业级技术实施，也不承诺收入增长。公开 Issue 只用于确认任务是否适合；客户资料、业务数据和正式交付材料不得上传到 GitHub。
-
-## 更新
-
-查看 [GitHub Releases](https://github.com/junyifei/junyi-skills/releases) 与 [`CHANGELOG.md`](CHANGELOG.md)。更新前保留自己的本地修改和私有资料；公开仓库不会保存你的个人工作记录。
-
-## 原创与许可
-
-本仓库是君一基于自己的实战、记录、课程、咨询和内容项目独立蒸馏的方法论实现，不复制第三方项目的具体文案、代码、视觉资产或品牌表达。
+本仓库由君一基于自己的实战、记录、课程、咨询和内容项目独立蒸馏，不复制第三方项目的具体文案、代码、视觉资产或品牌表达。
 
 本仓库采用 [CC BY 4.0](LICENSE)：可以使用、修改和再分发，包括商业使用；请署名“君一”并保留许可链接。权利与迁移记录见 [`RIGHTS.md`](RIGHTS.md)。
 
-## 作者
+**君一 · 费君一**
 
-君一 · 费君一
-
-一人公司妈妈，持续记录一群 AI 怎样进入真实公司与生活，以及人怎样把判断、责任、关系和重要生活留给自己。
+一人公司妈妈，持续实践 AI 时代的家庭教育：陪孩子成长，也让父母在教育中成长，并把新的理解与能力带回家庭和事业。

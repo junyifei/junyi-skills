@@ -1,7 +1,7 @@
 interface:
-  display_name: "君一方法论"
-  short_description: "从真实问题路由到合适的君一方法论与实战 Skill"
+  display_name: "君一的 AI 时代家庭教育 Skills"
+  short_description: "从陪孩子成长，到父母成长与表达的总路由"
   brand_color: "#C65A3A"
-  default_prompt: "Use $junyi to route my current task to the shortest suitable Junyi Method workflow, starting from the evidence I already have."
+  default_prompt: "Use $junyi to route my current task to the shortest suitable Junyi AI-Era Family Education workflow, starting from the evidence I already have."
 policy:
   allow_implicit_invocation: false

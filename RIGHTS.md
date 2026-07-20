@@ -4,13 +4,13 @@
 
 除非某个目录另有明确的 `LICENSE`，本仓库中的 Skill、reference、模板、资源与随附材料统一按 [CC BY 4.0](LICENSE) 发布。推荐署名格式：
 
-> 君一方法论，作者：君一（费君一），许可：CC BY 4.0，来源：https://github.com/junyifei/junyi-skills
+> 君一的 AI 时代家庭教育 Skills，作者：君一（费君一），许可：CC BY 4.0，来源：https://github.com/junyifei/junyi-skills
 
 CC BY 4.0 不包含对“君一”姓名、肖像或商标的额外授权，也不代表作者为衍生作品背书。
 
 ## 2026-07-17 迁移记录
 
-以下 10 个 Skill 曾在 `million-follower-ip-skills` 仓库以 MIT 发布。作者确认它们均为本人原创，或本人持有完整的重新许可权；迁入君一方法论后统一使用 `junyi-*` 名称。当前 GitHub 公开版只发布其中前两项，其余继续保留在本地验证：
+以下 10 个 Skill 曾在 `million-follower-ip-skills` 仓库以 MIT 发布。作者确认它们均为本人原创，或本人持有完整的重新许可权；迁入本仓库后统一使用 `junyi-*` 名称。当前 GitHub 公开版只发布其中前两项，其余继续保留在本地验证：
 
 - `junyi-positioning`（原 `build-evidence-based-ip-book`）
 - `junyi-xhs-benchmark`（原 `find-xiaohongshu-benchmarks`）
