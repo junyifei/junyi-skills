@@ -1,4 +1,0 @@
-interface:
-  display_name: "6—12 岁季度成长计划"
-  short_description: "把全年底座与季度新证据转成学龄家庭未来九十天行动指南"
-  default_prompt: "Use $build-school-age-quarterly-growth-plan to create an evidence-based quarterly growth plan for a child aged 72 to 144 months."

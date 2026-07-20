@@ -1,0 +1,4 @@
+interface:
+  display_name: "儿童季度更新资料采集"
+  short_description: "按年龄整理季度变化、补齐证据并生成可校验的标准资料包"
+  default_prompt: "Use $junyi-collect-child-quarterly-update to collect and normalize the evidence needed for a child quarterly growth plan."

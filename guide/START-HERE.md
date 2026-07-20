@@ -48,14 +48,14 @@ $junyi
 | 现在要做什么 | 直接使用 |
 |---|---|
 | 记录孩子的具体片段并复盘 | `$junyi-growth-spark-recorder` |
-| 首次收集、导入或审核孩子的全年成长规划资料 | `$collect-child-growth-intake` |
-| 为计划日 0—35 月龄孩子生成全年判断底座 | `$build-infant-growth-plan` |
-| 为计划日 36—71 月龄孩子生成全年判断底座 | `$build-preschool-growth-plan` |
-| 为计划日 72—144 月龄孩子生成全年判断底座 | `$build-school-age-growth-plan` |
-| 已有全年成长底座，要整理本季度新资料或填写季度问卷 | `$collect-child-quarterly-update` |
-| 为季度开始日 0—35 月龄孩子生成季度计划 | `$build-infant-quarterly-growth-plan` |
-| 为季度开始日 36—71 月龄孩子生成季度计划 | `$build-preschool-quarterly-growth-plan` |
-| 为季度开始日 72—144 月龄孩子生成季度计划 | `$build-school-age-quarterly-growth-plan` |
+| 首次收集、导入或审核孩子的全年成长规划资料 | `$junyi-collect-child-growth-intake` |
+| 为计划日 0—35 月龄孩子生成全年判断底座 | `$junyi-build-infant-growth-plan` |
+| 为计划日 36—71 月龄孩子生成全年判断底座 | `$junyi-build-preschool-growth-plan` |
+| 为计划日 72—144 月龄孩子生成全年判断底座 | `$junyi-build-school-age-growth-plan` |
+| 已有全年成长底座，要整理本季度新资料或填写季度问卷 | `$junyi-collect-child-quarterly-update` |
+| 为季度开始日 0—35 月龄孩子生成季度计划 | `$junyi-build-infant-quarterly-growth-plan` |
+| 为季度开始日 36—71 月龄孩子生成季度计划 | `$junyi-build-preschool-quarterly-growth-plan` |
+| 为季度开始日 72—144 月龄孩子生成季度计划 | `$junyi-build-school-age-quarterly-growth-plan` |
 | 把课程、文章、书或访谈转成自己的理解与实验 | `$junyi-learning-distiller` |
 | 转换、分块、索引或归档大文档 | `$junyi-doc-reader` |
 | 新建、归档或只读诊断知识库 | `$junyi-vault` |
@@ -68,7 +68,7 @@ $junyi
 
 不要为了看起来完整而从第一步重跑。已有草稿、材料或决定时，直接从当前缺失的一层开始。
 
-儿童成长链有两次分龄：首次使用先通过 `collect-child-growth-intake` 生成并校验全年资料，再按计划日期完整月龄只进入一个全年报告 Skill；更新季度时，三个季度报告 Skill 都要求兼容的全年 `intake.json`、完整全年规划和 `status: ready` 的季度更新。没有持续日常记录时可以填写季度问卷；没有全年底座时先回到全年资料采集，不能直接生成正式季度计划。详见[全年底座要求](../collect-child-quarterly-update/references/upstream-requirements.md)。
+儿童成长链有两次分龄：首次使用先通过 `junyi-collect-child-growth-intake` 生成并校验全年资料，再按计划日期完整月龄只进入一个全年报告 Skill；更新季度时，三个季度报告 Skill 都要求兼容的全年 `intake.json`、完整全年规划和 `status: ready` 的季度更新。没有持续日常记录时可以填写季度问卷；没有全年底座时先回到全年资料采集，不能直接生成正式季度计划。详见[全年底座要求](../junyi-collect-child-quarterly-update/references/upstream-requirements.md)。
 
 ## 4. 第一次任务怎样提供材料
 

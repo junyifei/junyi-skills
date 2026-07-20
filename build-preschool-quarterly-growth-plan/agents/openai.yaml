@@ -1,4 +1,0 @@
-interface:
-  display_name: "3—6 岁季度成长计划"
-  short_description: "把全年底座与季度新证据转成学前家庭未来九十天行动指南"
-  default_prompt: "Use $build-preschool-quarterly-growth-plan to create an evidence-based quarterly growth plan for a child aged 36 to 71 months."

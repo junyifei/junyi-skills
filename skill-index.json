@@ -21,13 +21,13 @@
     {"name": "junyi-personal-website", "category": "把成长表达出来", "path": "junyi-personal-website", "version": "1.0.0", "maturity": "已发布／9 项测试通过", "role": "从定位与真实素材构建原创、可验证、可部署的个人官网"},
     {"name": "junyi-positioning", "category": "把成长表达出来", "path": "junyi-positioning", "version": "0.3.0", "maturity": "已投入真实项目／B00—B11 结构", "role": "建立、审核和迭代唯一的 B00—B11 证据型 IP 战略书"},
     {"name": "junyi-xhs-benchmark", "category": "把成长表达出来", "path": "junyi-xhs-benchmark", "version": "0.2.0", "maturity": "测试中", "role": "发现、核验、分层和选择小红书对标样本"},
-    {"name": "collect-child-growth-intake", "category": "陪孩子成长", "path": "collect-child-growth-intake", "version": "1.0.0", "maturity": "15 案例前向回归与独立复测完成", "role": "按唯一年龄轨道采集、导入和校验全年成长规划资料"},
-    {"name": "build-infant-growth-plan", "category": "陪孩子成长", "path": "build-infant-growth-plan", "version": "1.0.0", "maturity": "15 案例前向回归与独立复测完成", "role": "为 0—35 月龄儿童生成证据可追溯的全年成长规划底座"},
-    {"name": "build-preschool-growth-plan", "category": "陪孩子成长", "path": "build-preschool-growth-plan", "version": "1.0.0", "maturity": "15 案例前向回归与独立复测完成", "role": "为 36—71 月龄儿童生成证据可追溯的全年成长规划底座"},
-    {"name": "build-school-age-growth-plan", "category": "陪孩子成长", "path": "build-school-age-growth-plan", "version": "1.0.0", "maturity": "15 案例前向回归与独立复测完成", "role": "为 72—144 月龄儿童生成证据可追溯的全年成长规划底座"},
-    {"name": "collect-child-quarterly-update", "category": "陪孩子成长", "path": "collect-child-quarterly-update", "version": "1.0.0", "maturity": "公开转换验证完成", "role": "导入或问卷采集本季度新资料，完成证据、年龄、状态与下游路由校验"},
-    {"name": "build-infant-quarterly-growth-plan", "category": "陪孩子成长", "path": "build-infant-quarterly-growth-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 0—35 月龄儿童生成观察线与环境提供方案"},
-    {"name": "build-preschool-quarterly-growth-plan", "category": "陪孩子成长", "path": "build-preschool-quarterly-growth-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 36—71 月龄儿童生成聚焦、自然维持与游戏化支持计划"},
-    {"name": "build-school-age-quarterly-growth-plan", "category": "陪孩子成长", "path": "build-school-age-quarterly-growth-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 72—144 月龄儿童生成主攻、维持与每周行动计划"}
+    {"name": "junyi-collect-child-growth-intake", "category": "陪孩子成长", "path": "junyi-collect-child-growth-intake", "version": "1.0.0", "maturity": "15 案例前向回归与独立复测完成", "role": "按唯一年龄轨道采集、导入和校验全年成长规划资料"},
+    {"name": "junyi-build-infant-growth-plan", "category": "陪孩子成长", "path": "junyi-build-infant-growth-plan", "version": "1.0.0", "maturity": "15 案例前向回归与独立复测完成", "role": "为 0—35 月龄儿童生成证据可追溯的全年成长规划底座"},
+    {"name": "junyi-build-preschool-growth-plan", "category": "陪孩子成长", "path": "junyi-build-preschool-growth-plan", "version": "1.0.0", "maturity": "15 案例前向回归与独立复测完成", "role": "为 36—71 月龄儿童生成证据可追溯的全年成长规划底座"},
+    {"name": "junyi-build-school-age-growth-plan", "category": "陪孩子成长", "path": "junyi-build-school-age-growth-plan", "version": "1.0.0", "maturity": "15 案例前向回归与独立复测完成", "role": "为 72—144 月龄儿童生成证据可追溯的全年成长规划底座"},
+    {"name": "junyi-collect-child-quarterly-update", "category": "陪孩子成长", "path": "junyi-collect-child-quarterly-update", "version": "1.0.0", "maturity": "公开转换验证完成", "role": "导入或问卷采集本季度新资料，完成证据、年龄、状态与下游路由校验"},
+    {"name": "junyi-build-infant-quarterly-growth-plan", "category": "陪孩子成长", "path": "junyi-build-infant-quarterly-growth-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 0—35 月龄儿童生成观察线与环境提供方案"},
+    {"name": "junyi-build-preschool-quarterly-growth-plan", "category": "陪孩子成长", "path": "junyi-build-preschool-quarterly-growth-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 36—71 月龄儿童生成聚焦、自然维持与游戏化支持计划"},
+    {"name": "junyi-build-school-age-quarterly-growth-plan", "category": "陪孩子成长", "path": "junyi-build-school-age-quarterly-growth-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 72—144 月龄儿童生成主攻、维持与每周行动计划"}
   ]
 }
