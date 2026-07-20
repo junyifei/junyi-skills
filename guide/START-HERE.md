@@ -49,10 +49,16 @@ $junyi
 | 明确要求挑刺、找漏洞或魔鬼代言人 | `$junyi-po-leng-shui` |
 | 转换、分块、索引或归档大文档 | `$junyi-doc-reader` |
 | 记录孩子的具体片段并复盘 | `$junyi-growth-spark-recorder` |
+| 已有全年成长底座，要整理本季度新资料或填写季度问卷 | `$collect-child-quarterly-update` |
+| 为季度开始日 0—35 月龄孩子生成季度计划 | `$build-infant-quarterly-growth-plan` |
+| 为季度开始日 36—71 月龄孩子生成季度计划 | `$build-preschool-quarterly-growth-plan` |
+| 为季度开始日 72—144 月龄孩子生成季度计划 | `$build-school-age-quarterly-growth-plan` |
 | 设计、审核或迭代个人 IP 定位 | `$junyi-positioning` |
 | 发现并核验小红书对标 | `$junyi-xhs-benchmark` |
 
 不要为了看起来完整而从第一步重跑。已有草稿、材料或决定时，直接从当前缺失的一层开始。
+
+儿童季度链是一个例外：三个报告 Skill 都要求兼容的全年 `intake.json`、完整全年规划和 `status: ready` 的季度更新。没有持续日常记录时可以填写季度问卷；没有全年底座时不能直接生成正式季度计划。详见[全年底座要求](../collect-child-quarterly-update/references/upstream-requirements.md)。
 
 ## 4. 第一次任务怎样提供材料
 

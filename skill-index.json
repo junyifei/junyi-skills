@@ -2,15 +2,15 @@
   "name": "君一方法论",
   "repository": "junyi-skills",
   "entrypoint": "junyi",
-  "version": "1.2.0",
-  "public_release_version": "1.2.0",
+  "version": "1.3.0",
+  "public_release_version": "1.3.0",
   "catalog_scope": "public-release",
-  "updated_at": "2026-07-19",
+  "updated_at": "2026-07-20",
   "license": "CC-BY-4.0",
-  "public_skill_count": 11,
-  "official_skill_count": 11,
+  "public_skill_count": 15,
+  "official_skill_count": 15,
   "skills": [
-    {"name": "junyi", "category": "总入口", "path": "junyi", "version": "1.2.0", "maturity": "已发布", "role": "根据任务、证据与当前阶段选择最短 Skill 路径"},
+    {"name": "junyi", "category": "总入口", "path": "junyi", "version": "1.3.0", "maturity": "已发布", "role": "根据任务、证据与当前阶段选择最短 Skill 路径"},
     {"name": "junyi-deep-dialogue", "category": "人的判断", "path": "junyi-deep-dialogue", "version": "1.0.0", "maturity": "已发布", "role": "通过苏格拉底式追问把体验转化为自己的判断"},
     {"name": "junyi-po-leng-shui", "category": "人的判断", "path": "junyi-po-leng-shui", "version": "1.0.0", "maturity": "已发布", "role": "只有用户明确说出触发词时才进行反谄媚与魔鬼代言人评审"},
     {"name": "junyi-growth-spark-recorder", "category": "家庭实践", "path": "junyi-growth-spark-recorder", "version": "1.0.0", "maturity": "已发布", "role": "记录亲子片段并完成发展观察和模型复盘"},
@@ -20,6 +20,10 @@
     {"name": "junyi-vault", "category": "知识库", "path": "junyi-vault", "version": "1.0.0", "maturity": "已发布／15 项安全测试与 26 项情境测试通过", "role": "建库、归档新内容，或只读诊断混乱知识库"},
     {"name": "junyi-personal-website", "category": "个人品牌", "path": "junyi-personal-website", "version": "1.0.0", "maturity": "已发布／9 项测试通过", "role": "从定位与真实素材构建原创、可验证、可部署的个人官网"},
     {"name": "junyi-positioning", "category": "IP战略定位", "path": "junyi-positioning", "version": "0.3.0", "maturity": "已投入真实项目／B00—B11 结构", "role": "建立、审核和迭代唯一的 B00—B11 证据型 IP 战略书"},
-    {"name": "junyi-xhs-benchmark", "category": "IP对标研究", "path": "junyi-xhs-benchmark", "version": "0.2.0", "maturity": "测试中", "role": "发现、核验、分层和选择小红书对标样本"}
+    {"name": "junyi-xhs-benchmark", "category": "IP对标研究", "path": "junyi-xhs-benchmark", "version": "0.2.0", "maturity": "测试中", "role": "发现、核验、分层和选择小红书对标样本"},
+    {"name": "collect-child-quarterly-update", "category": "儿童季度成长", "path": "collect-child-quarterly-update", "version": "1.0.0", "maturity": "公开转换验证完成", "role": "导入或问卷采集本季度新资料，完成证据、年龄、状态与下游路由校验"},
+    {"name": "build-infant-quarterly-growth-plan", "category": "儿童季度成长", "path": "build-infant-quarterly-growth-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 0—35 月龄儿童生成观察线与环境提供方案"},
+    {"name": "build-preschool-quarterly-growth-plan", "category": "儿童季度成长", "path": "build-preschool-quarterly-growth-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 36—71 月龄儿童生成聚焦、自然维持与游戏化支持计划"},
+    {"name": "build-school-age-quarterly-growth-plan", "category": "儿童季度成长", "path": "build-school-age-quarterly-growth-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 72—144 月龄儿童生成主攻、维持与每周行动计划"}
   ]
 }

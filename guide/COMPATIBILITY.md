@@ -1,13 +1,13 @@
 # 兼容性与安装说明
 
-最后核验：2026-07-19（本次重新核验仓库自动发现与 Codex 项目级安装；其余项沿用 2026-07-18 结果）。
+最后核验：2026-07-20（本次重新核验仓库自动发现与 Codex 项目级安装；其余项沿用此前结果）。
 
 ## 已验证范围
 
 | 项目 | 状态 | 核验结果 |
 |---|---|---|
-| 仓库自动发现 | 已验证 | `skills` CLI 能发现 11 个公开 Skills |
-| Codex 项目级复制安装 | 已验证 | 隔离目录中安装 11/11，`SKILL.md` 与资源目录完整 |
+| 仓库自动发现 | 已验证 | `skills` CLI 能发现 15 个公开 Skills |
+| Codex 项目级复制安装 | 已验证 | 隔离目录中安装 15/15，`SKILL.md` 与资源目录完整 |
 | Codex 显式调用 | 已验证 | 支持 `$skill-name` 与自然语言指定 Skill |
 | GitHub Copilot 目录发现 | 部分验证 | 安装工具识别共享 `.agents/skills`，未完成独立任务回归 |
 | Claude Code | 结构兼容，待回归 | 尚未完成本版本的独立端到端测试 |
@@ -36,6 +36,10 @@ junyi-po-leng-shui
 junyi-positioning
 junyi-vault
 junyi-xhs-benchmark
+collect-child-quarterly-update
+build-infant-quarterly-growth-plan
+build-preschool-quarterly-growth-plan
+build-school-age-quarterly-growth-plan
 ```
 
 ## Codex 项目级安装

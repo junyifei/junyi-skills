@@ -17,6 +17,14 @@ body:
         - junyi-deep-dialogue
         - junyi-doc-reader
         - junyi-growth-spark-recorder
+        - collect-child-quarterly-update
+        - build-infant-quarterly-growth-plan
+        - build-preschool-quarterly-growth-plan
+        - build-school-age-quarterly-growth-plan
+        - junyi-content-distiller
+        - junyi-learning-distiller
+        - junyi-vault
+        - junyi-personal-website
         - junyi-po-leng-shui
         - junyi-positioning
         - junyi-xhs-benchmark

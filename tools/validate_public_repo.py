@@ -13,6 +13,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL_INDEX = ROOT / "skill-index.json"
+VERSION_FILE = ROOT / "VERSION"
+README_FILE = ROOT / "README.md"
 MARKDOWN_LINK = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 SENSITIVE_PATTERNS = {
     "macOS user path": re.compile(r"/" r"Users/[^/\s]+/"),
@@ -67,6 +69,24 @@ def validate_skills(errors: list[str], public_files: set[str]) -> None:
         errors.append(
             f"skill-index count mismatch: official_skill_count={expected_count}, entries={len(skills)}"
         )
+    if data.get("public_skill_count") != expected_count:
+        errors.append(
+            "skill-index public/official count mismatch: "
+            f"public_skill_count={data.get('public_skill_count')}, "
+            f"official_skill_count={expected_count}"
+        )
+
+    version = VERSION_FILE.read_text(encoding="utf-8").strip()
+    if data.get("version") != version or data.get("public_release_version") != version:
+        errors.append(
+            "version mismatch: "
+            f"VERSION={version}, index.version={data.get('version')}, "
+            f"index.public_release_version={data.get('public_release_version')}"
+        )
+    readme = README_FILE.read_text(encoding="utf-8")
+    expected_summary = f"当前公开版：**{version}** · 正式入口与 Skills：**{expected_count} 个**"
+    if expected_summary not in readme:
+        errors.append(f"README missing current release summary: {expected_summary}")
 
     indexed_paths = {item["path"] for item in skills}
     present_paths = {
@@ -106,6 +126,15 @@ def validate_skills(errors: list[str], public_files: set[str]) -> None:
             )
         if not agent_file.is_file():
             errors.append(f"missing {agent_file.relative_to(ROOT)}")
+        else:
+            agent_text = agent_file.read_text(encoding="utf-8")
+            for field in ("display_name:", "short_description:", "default_prompt:"):
+                if field not in agent_text:
+                    errors.append(f"{agent_file.relative_to(ROOT)} missing {field[:-1]}")
+            if f"${item['name']}" not in agent_text:
+                errors.append(
+                    f"{agent_file.relative_to(ROOT)} default_prompt does not reference ${item['name']}"
+                )
 
 
 def validate_links(errors: list[str], tracked: set[str]) -> None:

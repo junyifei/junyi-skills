@@ -2,6 +2,16 @@
 
 版本统一记录在根目录 [`VERSION`](VERSION) 与 [`skill-index.json`](skill-index.json)；`SKILL.md` frontmatter 只保留跨平台标准字段 `name` 和 `description`。
 
+## [1.3.0] — 2026-07-20
+
+- 发布 `collect-child-quarterly-update`：可从成长记录、学校或托育反馈、上一季度复盘和年龄自适应问卷整理 `quarterly-update.md`，并区分 `ready`、资料不足、安全停机与上游缺失。
+- 发布三个物理隔离的季度报告 Skill：`build-infant-quarterly-growth-plan`、`build-preschool-quarterly-growth-plan`、`build-school-age-quarterly-growth-plan`。
+- 0—35 月龄使用发展观察线与环境提供；36—71 月龄使用聚焦方向、自然维持与游戏化支持；72—144 月龄使用主攻、维持、每周行动和条件式学科学习方案。
+- 明确季度中途跨过年龄边界不切换方法；下一季度再按季度开始日完整月龄路由。
+- 对外公开版移除家庭姓名、私人路径、内部 Agent、默认外部写入和家庭专用流转规则；增加证据、隐私、专业边界与未确认家庭承诺拦截。
+- 明确当前公开季度链只服务已经持有兼容全年知识底座的使用者；全年规划生成能力仍留在本地，缺少底座时返回 `blocked-upstream`。
+- 公开总路由与机器索引扩展到 15 个 Skill。
+
 ## [1.2.0] — 2026-07-19
 
 - 首页新增“生活蒸馏 → 学习消化 → 知识库 → 持续归档”的公开方法路径，并同步用户转化、指南、案例、反馈和自动质量门。
