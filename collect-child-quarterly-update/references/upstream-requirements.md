@@ -1,6 +1,6 @@
 # 季度计划的全年底座要求
 
-季度资料采集和三个季度报告 Skill 不负责首次建立全年成长规划。使用者必须已经持有兼容的全年知识底座；缺少时返回 `blocked-upstream`，不得临时拼出一份全年判断。
+季度资料采集和三个季度报告 Skill 不负责首次建立全年成长规划。使用者必须已经持有兼容的全年知识底座；缺少时返回 `blocked-upstream`，再使用 `collect-child-growth-intake` 和对应年龄段全年报告 Skill 建立底座，不得临时拼出一份全年判断。
 
 ## 必需文件
 
@@ -55,4 +55,7 @@
 1. 将 `quarterly-update.md` 标为 `status: blocked-upstream`；
 2. 列出缺少或需要更新的资料；
 3. 不生成正式季度报告；
-4. 不声称本仓库当前公开版可以完成首次全年规划。
+4. 路由到 `collect-child-growth-intake`，资料通过后再按 `plan_track` 进入：
+   - `build-infant-growth-plan`
+   - `build-preschool-growth-plan`
+   - `build-school-age-growth-plan`

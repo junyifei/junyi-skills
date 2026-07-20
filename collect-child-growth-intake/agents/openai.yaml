@@ -1,0 +1,5 @@
+interface:
+  display_name: "儿童成长资料采集"
+  short_description: "按年龄引导家庭完成问卷、补齐证据并输出可校验的标准资料包"
+  brand_color: "#C65A3A"
+  default_prompt: "Use $collect-child-growth-intake to collect and normalize the evidence needed for an age-appropriate annual child growth plan."

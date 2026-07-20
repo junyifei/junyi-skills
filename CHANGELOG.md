@@ -2,6 +2,15 @@
 
 版本统一记录在根目录 [`VERSION`](VERSION) 与 [`skill-index.json`](skill-index.json)；`SKILL.md` frontmatter 只保留跨平台标准字段 `name` 和 `description`。
 
+## [1.4.0] — 2026-07-20
+
+- 发布 `collect-child-growth-intake`：通过表单、对话、材料导入或资料审核，按计划日完整月龄只读取一个年龄问题库，生成标准 `intake.json`、证据地图、完整性报告和唯一年龄路由。
+- 发布 `build-infant-growth-plan`、`build-preschool-growth-plan`、`build-school-age-growth-plan` 三个物理隔离的全年规划 Skill，分别服务 0—35、36—71、72—144 月龄。
+- 全年规划定位为 Agent 的长期知识底座；季度计划定位为家长未来 90 天的行动指南。完整公开链路升级为“全年资料采集 → 一个分龄全年底座 → 季度资料采集 → 一个分龄季度计划”。
+- 修正三个全年报告 Skill 仍指向旧统一季度入口的问题，统一改为 `collect-child-quarterly-update` 后进入对应年龄段季度报告 Skill。
+- 全年四个 Skill 已完成 15 个匿名合成案例前向回归、严重能动性归因缺陷修复、3 个关键案例独立黑盒重跑和 7 个脚本自检。
+- 公开总路由与机器索引扩展到 19 个 Skill。
+
 ## [1.3.0] — 2026-07-20
 
 - 发布 `collect-child-quarterly-update`：可从成长记录、学校或托育反馈、上一季度复盘和年龄自适应问卷整理 `quarterly-update.md`，并区分 `ready`、资料不足、安全停机与上游缺失。

@@ -5,10 +5,10 @@
 面向已经开始用 AI 做真实工作的一人公司经营者、知识型创作者和创业父母：把真实材料、长期经验与判断标准，变成 Agent 可以调用、可以验证、可以持续修订的方法。
 
 [![Release](https://img.shields.io/github/v/release/junyifei/junyi-skills?style=flat-square&label=release)](https://github.com/junyifei/junyi-skills/releases)
-[![Public Skills](https://img.shields.io/badge/public_skills-15-2563EB.svg?style=flat-square)](skill-index.json)
+[![Public Skills](https://img.shields.io/badge/public_skills-19-2563EB.svg?style=flat-square)](skill-index.json)
 [![License](https://img.shields.io/badge/license-CC_BY_4.0-16A34A.svg?style=flat-square)](LICENSE)
 
-当前公开版：**1.3.0** · 正式入口与 Skills：**15 个**
+当前公开版：**1.4.0** · 正式入口与 Skills：**19 个**
 
 [30 秒开始](#30-秒开始) · [安装](#安装) · [公开能力](#公开能力) · [案例与示例](#案例与输出示例) · [方法证据](#方法从哪里来) · [反馈与共创](#反馈与共创)
 
@@ -85,7 +85,16 @@ $junyi-content-distiller
 所有结论保留原话或时间戳证据，先确认说话人，不要补写没有发生的事。
 ```
 
-已经有孩子全年成长规划，需要更新下一季度时：
+第一次为孩子建立全年成长底座时：
+
+```text
+$collect-child-growth-intake
+请根据计划日期和出生日期确定唯一年龄轨道，
+用对应问卷逐步收集资料；不要读取另外两个年龄段的问题库。
+资料通过校验后，再路由到对应的全年规划 Skill。
+```
+
+已经有全年成长底座，需要更新下一季度时：
 
 ```text
 $collect-child-quarterly-update
@@ -126,7 +135,7 @@ npx -y skills add junyifei/junyi-skills --skill junyi-positioning
 npx -y skills add junyifei/junyi-skills --list
 ```
 
-本仓库已在隔离项目中验证：安装工具能够发现并复制全部 15 个公开 Skills。不同 Agent 的目录、调用语法和能力支持仍可能不同，请查看 [兼容性与安装说明](guide/COMPATIBILITY.md)。
+本仓库已在隔离项目中验证：安装工具能够发现并复制全部 19 个公开 Skills。不同 Agent 的目录、调用语法和能力支持仍可能不同，请查看 [兼容性与安装说明](guide/COMPATIBILITY.md)。
 
 如果不使用安装工具，也可以只复制需要的 Skill 目录。以 Codex 项目级安装为例：
 
@@ -161,24 +170,30 @@ cp -R junyi-xhs-benchmark .agents/skills/
 | [`junyi-doc-reader`](junyi-doc-reader/SKILL.md) | 大文档需要转换、分块、索引或归档 | 结构化 Markdown、分块索引和归档结果 | 已发布 |
 | [`junyi-growth-spark-recorder`](junyi-growth-spark-recorder/SKILL.md) | 想记录孩子的具体片段并理解为什么有效 | 事件记录、发展观察、思维模型复盘 | 已发布 |
 
-### 儿童季度成长
+### 儿童全年与季度成长
 
-这条公开链适用于已经持有兼容全年 `intake.json` 和完整全年规划的家庭。全年规划是 Agent 长期读取的知识底座，季度计划是家长未来 90 天的行动指南；当前公开版不生成首次全年规划。没有全年底座时会停止并返回 `blocked-upstream`，不会用一份季度问卷冒充全年理解。
+全年规划是 Agent 长期读取的知识底座，季度计划是家长未来 90 天的行动指南。首次使用先完成全年资料采集，并按计划日期的完整月龄只进入一个全年报告 Skill；之后每个季度导入本季新资料或填写年龄自适应问卷，再按季度开始日的完整月龄进入一个季度报告 Skill。季度问卷不能替代首次全年资料采集。
 
 ```text
-兼容全年知识底座
+家庭已有资料或适龄全年问卷
+→ collect-child-growth-intake
+→ 按计划日期完整月龄，只进入一个全年报告 Skill
 → collect-child-quarterly-update
-→ 按季度开始日完整月龄，只进入一个报告 Skill
+→ 按季度开始日完整月龄，只进入一个季度报告 Skill
 ```
 
 | Skill | 什么时候使用 | 常见产出 | 成熟度 |
 |---|---|---|---|
+| [`collect-child-growth-intake`](collect-child-growth-intake/SKILL.md) | 首次收集、导入、补充或审核 0—12 岁儿童全年规划资料 | `intake.json`、证据地图、完整度与唯一路由 | 15 案例前向回归与独立复测完成 |
+| [`build-infant-growth-plan`](build-infant-growth-plan/SKILL.md) | 计划日为 0—35 月龄，全年资料已通过校验 | 证据型全年判断底座、首轮实验与四季度路线图 | 15 案例前向回归与独立复测完成 |
+| [`build-preschool-growth-plan`](build-preschool-growth-plan/SKILL.md) | 计划日为 36—71 月龄，全年资料已通过校验 | 证据型全年判断底座、首轮实验与四季度路线图 | 15 案例前向回归与独立复测完成 |
+| [`build-school-age-growth-plan`](build-school-age-growth-plan/SKILL.md) | 计划日为 72—144 月龄，全年资料已通过校验 | 证据型全年判断底座、共同行动实验与四季度路线图 | 15 案例前向回归与独立复测完成 |
 | [`collect-child-quarterly-update`](collect-child-quarterly-update/SKILL.md) | 导入本季记录，或没有日常记录时按年龄完成季度问卷 | `quarterly-update.md`、资料状态、补问或 7—14 天观察方案 | 公开转换验证完成 |
 | [`build-infant-quarterly-growth-plan`](build-infant-quarterly-growth-plan/SKILL.md) | 季度开始日为 0—35 月龄，且季度资料已 ready | 3—5 条观察线、3—5 个环境提供方案与家长话术 | 已投入真实家庭项目 |
 | [`build-preschool-quarterly-growth-plan`](build-preschool-quarterly-growth-plan/SKILL.md) | 季度开始日为 36—71 月龄，且季度资料已 ready | 聚焦方向、自然维持方向与游戏化支持 | 已投入真实家庭项目 |
 | [`build-school-age-quarterly-growth-plan`](build-school-age-quarterly-growth-plan/SKILL.md) | 季度开始日为 72—144 月龄，且季度资料已 ready | 主攻/维持、最多四个核心行动与最低版本 | 已投入真实家庭项目 |
 
-年龄以季度开始日计算；季度中途跨过 36、72 或 144 月龄，不在中途切换方法。具体全年底座格式见[上游要求](collect-child-quarterly-update/references/upstream-requirements.md)。
+全年轨道以计划日期计算，季度轨道以季度开始日计算；季度中途跨过 36、72 或 144 月龄，不在中途切换方法。具体季度所需的全年底座格式见[上游要求](collect-child-quarterly-update/references/upstream-requirements.md)。
 
 ### 证据型个人 IP
 
@@ -188,6 +203,15 @@ cp -R junyi-xhs-benchmark .agents/skills/
 | [`junyi-xhs-benchmark`](junyi-xhs-benchmark/SKILL.md) | 需要发现、核验、分层和选择小红书对标 | 候选池、排除理由、分层评分与使用建议 | 测试中 |
 
 这里只公开目前愿意承担方法承诺的能力。用户研究、选题、标题、内容生产与审核等方法仍在本地实盘验证；验证通过前，不因为数量好看而发布。
+
+### 1.4.0 新增公开能力
+
+| Skill | 本版本公开了什么 | 已完成的质量门 |
+|---|---|---|
+| `collect-child-growth-intake` | 一个统一入口、三套物理隔离的适龄问题库、证据地图和唯一路由 | 结构、自检、年龄边界、资料完整度、安全与隐私回归 |
+| 三个年龄段全年报告 Skill | 分龄生成给 Agent 长期读取的全年判断底座，不用统一模板混写 0—12 岁 | 15 个匿名合成案例前向回归；严重能动性归因缺陷修复；3 个关键案例独立重跑；7 个脚本自检 |
+
+这次发布补齐“首次全年资料采集 → 分龄全年底座 → 季度资料更新 → 分龄季度计划”的公开闭环。测试证明的是证据忠实度、年龄隔离、结构、门禁和安全边界，不代表特定儿童发展结果。
 
 ### 1.3.0 新增公开能力
 
@@ -211,7 +235,7 @@ cp -R junyi-xhs-benchmark .agents/skills/
 
 ## 尚未公开的能力
 
-儿童成长首次资料采集、全年规划生成，以及 IP 用户研究、选题、标题、内容生产、内容审核等能力仍在本地实盘验证，不进入公开总路由和机器索引。验证通过前，不因为数量好看而发布。
+IP 用户研究、选题、标题、内容生产、内容审核等能力仍在本地实盘验证，不进入公开总路由和机器索引。验证通过前，不因为数量好看而发布。
 
 `daily-recording-distiller` 的通用方法已经吸收到 `junyi-content-distiller`，不会公开家庭成员、内部 Agent、账号或私人路径。`junyi-vault-builder` 与 `junyi-vault-filer` 已在产品层合并为 `junyi-vault`，由模式路由保持建库、归档和只读诊断的操作隔离。
 

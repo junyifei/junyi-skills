@@ -10,12 +10,6 @@ growth-preview/
 # 本地回归测试记录，可能包含测试输入与内部评语，不得发布
 .private-regression/
 
-# 待完成独立回归测试的儿童成长 Skills，验证后再显式加入
-collect-child-growth-intake/
-build-infant-growth-plan/
-build-preschool-growth-plan/
-build-school-age-growth-plan/
-
 # 尚未完成实盘验证的 IP Skills，验证后再显式加入
 junyi-audience/
 junyi-xhs-topics/

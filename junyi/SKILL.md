@@ -1,6 +1,6 @@
 ---
 name: junyi
-description: 君一方法论总入口。仅在用户显式调用 /junyi、$junyi、君一方法论，或明确要求“帮我选择君一的哪个 Skill/从哪里开始”时使用。面向已经在用 AI 做真实工作、希望把经验与判断变成可调用方法的一人公司经营者、知识型创作者和创业父母；识别当前任务、已有证据与所处阶段，路由到仓库中最合适的一个 Skill 或最短调用链，包括已有全年知识底座后的儿童季度资料采集与分龄报告。它不代替下游 Skill 执行，也不在证据不足时编造经历、案例、用户洞察、儿童资料或平台数据。
+description: 君一方法论总入口。仅在用户显式调用 /junyi、$junyi、君一方法论，或明确要求“帮我选择君一的哪个 Skill/从哪里开始”时使用。面向已经在用 AI 做真实工作、希望把经验与判断变成可调用方法的一人公司经营者、知识型创作者和创业父母；识别当前任务、已有证据与所处阶段，路由到仓库中最合适的一个 Skill 或最短调用链，包括儿童全年资料采集、分龄全年知识底座、季度资料更新与分龄季度行动计划。它不代替下游 Skill 执行，也不在证据不足时编造经历、案例、用户洞察、儿童资料或平台数据。
 ---
 
 # 君一方法论
@@ -10,7 +10,7 @@ description: 君一方法论总入口。仅在用户显式调用 /junyi、$junyi
 ## 路由流程
 
 1. 读取用户已经提供的目标、材料、事实、边界和当前上下文。
-2. 判断任务是人的思考与反方审查、真实材料蒸馏、学习消化、知识库管理、家庭实践、儿童季度成长、个人 IP，还是个人官网。
+2. 判断任务是人的思考与反方审查、真实材料蒸馏、学习消化、知识库管理、家庭实践、儿童全年或季度成长、个人 IP，还是个人官网。
 3. 优先选择一个 Skill。只有上一步产出确实是下一步必要输入时，才组合多个 Skill。
 4. 告诉用户选择了哪个 Skill、为什么、还缺什么关键输入。
 5. 调用所选 Skill，并遵循它自己的边界、步骤和质量门。不要在本入口内模拟下游流程。
@@ -26,6 +26,10 @@ description: 君一方法论总入口。仅在用户显式调用 /junyi、$junyi
 | 把课程、文章、书、访谈或长材料转成自己的理解、边界和实验 | `junyi-learning-distiller` |
 | 新建知识库、归档新内容，或只读诊断已有混乱知识库 | `junyi-vault` |
 | 记录孩子的具体片段并做发展观察与模型复盘 | `junyi-growth-spark-recorder` |
+| 首次收集、导入、补充或审核孩子全年成长规划资料 | `collect-child-growth-intake` |
+| 计划日期为 0—35 月龄，全年资料已通过校验，要生成全年判断底座 | `build-infant-growth-plan` |
+| 计划日期为 36—71 月龄，全年资料已通过校验，要生成全年判断底座 | `build-preschool-growth-plan` |
+| 计划日期为 72—144 月龄，全年资料已通过校验，要生成全年判断底座 | `build-school-age-growth-plan` |
 | 已有全年底座，要导入记录、填写季度问卷或判断资料能否生成正式季度计划 | `collect-child-quarterly-update` |
 | 季度开始日为 0—35 月龄，资料已 ready，要生成观察线与环境提供方案 | `build-infant-quarterly-growth-plan` |
 | 季度开始日为 36—71 月龄，资料已 ready，要生成聚焦与游戏化支持计划 | `build-preschool-quarterly-growth-plan` |
@@ -41,9 +45,10 @@ description: 君一方法论总入口。仅在用户显式调用 /junyi、$junyi
 - 只需要研究小红书对标账号与内容样本：直接走 `junyi-xhs-benchmark`。
 - 对重大方向既想看见自己又想防止自欺：先 `junyi-deep-dialogue`；形成明确判断后，仅在用户显式要求时调用 `junyi-po-leng-shui`。
 - 已有一个亲子片段，只想记录与复盘：直接走 `junyi-growth-spark-recorder`。
+- 第一次建立儿童全年规划：先走 `collect-child-growth-intake`；校验通过后，按计划日期完整月龄只进入 `build-infant-growth-plan`、`build-preschool-growth-plan`、`build-school-age-growth-plan` 中的一个。
 - 已有兼容全年底座、要做下一季度计划：先走 `collect-child-quarterly-update`；只有 `status: ready` 时，再按季度开始日完整月龄进入三个报告 Skill 中的一个。
 - 没有日常成长故事或月报：仍走 `collect-child-quarterly-update` 的年龄自适应问卷路径；不得要求家庭必须持续录音或写月报。
-- 缺少兼容全年 `intake.json` 或完整全年规划：返回 `blocked-upstream`。本公开版本不包含首次全年规划生成 Skill，不得用季度问卷代替全年资料采集。
+- 缺少兼容全年 `intake.json` 或完整全年规划：返回 `blocked-upstream`，并路由到 `collect-child-growth-intake` 和对应全年报告 Skill；不得用季度问卷代替全年资料采集。
 - 季度中途跨过年龄边界：当前季度仍使用开始日对应 Skill；下一季度再重新路由，不中途切换方法。
 - 已有大文档，只需要转换、索引或归档：直接走 `junyi-doc-reader`。
 - 要从生活、录音或日常记录中找内容素材：走 `junyi-content-distiller`；它不代替外部课程学习蒸馏。

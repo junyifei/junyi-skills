@@ -1,0 +1,5 @@
+interface:
+  display_name: "0—3岁全年成长规划"
+  short_description: "依据标准资料包生成0—3岁婴幼儿全年成长规划与短周期行动实验"
+  brand_color: "#C65A3A"
+  default_prompt: "Use $build-infant-growth-plan to create an evidence-traceable annual plan for a child younger than 36 months."
