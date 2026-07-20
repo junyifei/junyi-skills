@@ -5,6 +5,8 @@ description: Build, audit, or iterate an evidence-based personal-IP strategy boo
 
 # 君一 IP 定位战略
 
+**「君一」是方法来源，不是服务对象。** 本 Skill 为使用者本人设计定位；除非使用者明确要求为他人（客户、学员）做，否则下文的「这个人」始终指使用者本人。
+
 把个人经历、用户证据、内容数据和商业行动变成一份可决策、可验证、可修订的战略书。把未经检验的方向写成假设，不把好听的表达冒充证据。
 
 ## 先选择任务
@@ -16,7 +18,7 @@ description: Build, audit, or iterate an evidence-based personal-IP strategy boo
 3. **迭代旧战略书**：先建立版本差异和新增证据，只修改失败层；明确保留、删除、降级和待验证内容。
 4. **仅做定位诊断**：不强制生成整本战略书；判断定位失败层、比较候选方向，输出定位决定、证据缺口、最小修复和验证条件。
 
-输出前先说明当前模式、已有资料、关键缺口和允许做出的决策。资料不足时继续完成可完成部分，把缺口标为“未知”，不要逼用户一次答完所有问题。
+输出前先说明当前模式、已有资料、关键缺口和允许做出的决策。资料不足时继续完成可完成部分，把缺口标为“未知”，不要逼使用者一次答完所有问题。
 
 ## 必读资源
 
@@ -35,7 +37,7 @@ description: Build, audit, or iterate an evidence-based personal-IP strategy boo
 
 先读取已有材料，再按 [interview-and-evidence.md](references/interview-and-evidence.md) 逐维度补缺口。七维度是资料采集顺序，不是问完七个问题就直接生成定位：IP 内核、用户、用户状态与痛点、身位、产品、选题调性、边界与底线都必须进入后续证据判断、候选比较和验证。
 
-一次只追问一个最影响当前决定的问题，并说明为什么问。用户前面已经回答或材料中已经存在的内容，先整理给用户确认，不重复采访。允许“未知”，不要为了完成访谈逼用户即时编出答案。
+一次只追问一个最影响当前决定的问题，并说明为什么问。使用者前面已经回答或材料中已经存在的内容，先整理给使用者确认，不重复采访。允许“未知”，不要为了完成访谈逼使用者即时编出答案。
 
 先整理证据，再写定位。原因是战略书的每个重要结论都在消耗可信度：没有账本，个人愿望、市场观察、旧方案和真实成交很容易混成一句“已经验证”。
 
@@ -153,7 +155,7 @@ python scripts/check_strategy_book.py strategy.md
 python scripts/check_strategy_book.py strategy.md --forbid-name "<案例人物名>"
 ```
 
-用户要求 Word、Google Docs 或 PDF 时，先完成并确认 Markdown 内容，再调用相应文档或 PDF 能力排版与视觉检查。不要把排版脚本写死为本 Skill 的运行依赖。
+使用者要求 Word、Google Docs 或 PDF 时，先完成并确认 Markdown 内容，再调用相应文档或 PDF 能力排版与视觉检查。不要把排版脚本写死为本 Skill 的运行依赖。
 
 ## 下游读取约定
 

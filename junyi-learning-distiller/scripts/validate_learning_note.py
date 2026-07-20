@@ -74,7 +74,7 @@ def validate_text(text: str) -> list[str]:
                 errors.append(f"L6 experiment missing {field}: {item.splitlines()[0]}")
 
     l5 = block_map.get("L5｜与我已有认知的关系", "")
-    if l5 and "个人应用背景：未提供" in text and not re.search(r"待用户|未提供|可能关联", l5):
+    if l5 and "个人应用背景：未提供" in text and not re.search(r"待用户|待使用者|未提供|可能关联", l5):
         errors.append("L5 invents certainty although personal application context was not provided")
 
     return errors
