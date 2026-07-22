@@ -1,5 +1,5 @@
 interface:
-  display_name: "3—6岁全年成长规划"
-  short_description: "依据标准资料包生成3—6岁儿童全年成长规划、家庭行动与过渡支持"
+  display_name: "3—6岁家庭成长顾问全年底座"
+  short_description: "为家庭成长顾问 Agent 生成3—6岁证据可追溯的全年知识底座"
   brand_color: "#C65A3A"
-  default_prompt: "Use $junyi-preschool-annual-plan to create an evidence-traceable annual plan for a child aged 36 to 71 months."
+  default_prompt: "Use $junyi-preschool-annual-plan to build the annual knowledge base for my Family Growth Advisor Agent for a child aged 36 to 71 months."

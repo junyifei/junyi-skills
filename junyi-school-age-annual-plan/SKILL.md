@@ -1,13 +1,13 @@
 ---
 name: junyi-school-age-annual-plan
-description: 从通过校验的 `junyi-child-growth-intake/v1` 资料包生成 72—144 月龄儿童的个性化全年成长规划报告。用于家庭已经完成适龄问卷、plan_track=school-age，并需要整合孩子自述、家庭观察、教师反馈和作品证据，形成优势画像、学习过程、自我管理、关系与情绪、家庭学校协作、90 天共同行动实验和四季度路线图时。不得用于其他月龄、资料采集、医学心理诊断、智力人格或学习类型测评、升学录取和竞赛结果预测；资料不足时路由到 junyi-child-annual-intake。
+description: 从通过校验的 `junyi-child-growth-intake/v1` 资料包生成 72—144 月龄儿童的个性化全年成长规划与家庭成长顾问 Agent 长期知识底座。用于家庭已经完成适龄问卷、plan_track=school-age，并需要整合孩子自述、家庭观察、教师反馈和作品证据，形成优势画像、学习过程、自我管理、关系与情绪、家庭学校协作、90 天共同行动实验和四季度路线图时。不得用于其他月龄、资料采集、医学心理诊断、智力人格或学习类型测评、升学录取和竞赛结果预测；资料不足时路由到 junyi-child-annual-intake。
 ---
 
 # 6—12 岁全年成长规划
 
 只处理 `plan_track=school-age`。不要读取婴幼儿或学前方法、问卷与报告结构。
 
-本 Skill 产出年度判断底座：整理证据、年度方向和首轮可验证假设。报告中的 90 天实验不等同于完整季度执行指南；需要更新季度计划时，先使用 `junyi-child-quarterly-intake` 整理本季新证据，资料为 `status: ready` 后再路由到 `junyi-school-age-quarterly-plan`。
+本 Skill 产出家庭成长顾问 Agent 的年度判断底座：整理证据、年度方向和首轮可验证假设。它优先作为 Agent 长期读取的基础语料，同时也应让父母和孩子能够理解、质疑和更正。报告中的 90 天实验不等同于完整季度执行指南；需要更新季度计划时，先使用 `junyi-child-quarterly-intake` 整理本季新证据，资料为 `status: ready` 后再路由到 `junyi-school-age-quarterly-plan`。
 
 ## 1. 验证输入
 

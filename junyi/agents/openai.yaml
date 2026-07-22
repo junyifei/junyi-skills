@@ -1,7 +1,7 @@
 interface:
   display_name: "君一的 AI 时代家庭教育 Skills"
-  short_description: "从陪孩子成长，到父母成长与表达的总路由"
+  short_description: "选择搭建或更新家庭成长顾问 Agent 的最短 Skill 路径"
   brand_color: "#C65A3A"
-  default_prompt: "Use $junyi to route my current task to the shortest suitable Junyi AI-Era Family Education workflow, starting from the evidence I already have."
+  default_prompt: "Use $junyi to choose the shortest suitable workflow for building or updating my Family Growth Advisor Agent from the evidence I already have."
 policy:
   allow_implicit_invocation: false

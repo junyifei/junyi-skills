@@ -1,4 +1,4 @@
 interface:
   display_name: "儿童季度更新资料采集"
-  short_description: "按年龄整理季度变化、补齐证据并生成可校验的标准资料包"
-  default_prompt: "Use $junyi-child-quarterly-intake to collect and normalize the evidence needed for a child quarterly growth plan."
+  short_description: "为家庭成长顾问 Agent 整理本季新证据并完成季度计划路由"
+  default_prompt: "Use $junyi-child-quarterly-intake to prepare the current-quarter evidence for my Family Growth Advisor Agent."

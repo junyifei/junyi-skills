@@ -1,4 +1,4 @@
 interface:
-  display_name: "3—6 岁季度成长计划"
-  short_description: "把全年底座与季度新证据转成学前家庭未来九十天行动指南"
-  default_prompt: "Use $junyi-preschool-quarterly-plan to create an evidence-based quarterly growth plan for a child aged 36 to 71 months."
+  display_name: "3—6岁家庭成长顾问季度行动"
+  short_description: "把长期底座与本季新证据转成3—6岁家庭未来九十天行动指南"
+  default_prompt: "Use $junyi-preschool-quarterly-plan to create the next 90-day action guide from my Family Growth Advisor Agent knowledge base."

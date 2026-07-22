@@ -1,5 +1,5 @@
 interface:
-  display_name: "儿童成长资料采集"
-  short_description: "按年龄引导家庭完成问卷、补齐证据并输出可校验的标准资料包"
+  display_name: "儿童全年底座资料采集"
+  short_description: "为家庭成长顾问 Agent 采集全年底座资料并完成唯一年龄路由"
   brand_color: "#C65A3A"
-  default_prompt: "Use $junyi-child-annual-intake to collect and normalize the evidence needed for an age-appropriate annual child growth plan."
+  default_prompt: "Use $junyi-child-annual-intake to collect the evidence needed to build my Family Growth Advisor Agent annual knowledge base."

@@ -6,7 +6,7 @@
 
 这里的 AI 时代家庭教育，不是让孩子更早使用 AI，而是帮助父母理解孩子、成长自己，并把家庭实践中的经验与判断转化为行动、表达和事业。
 
-让 AI 学会你的真实材料、长期经验和判断标准，让真实生活成为教育发生的地方。
+让 AI 学会你的真实材料、长期经验和判断标准，让真实生活成为教育发生的地方。这里的核心目标，是帮助你训练一个长期服务于自己家庭的「家庭成长顾问 Agent」。
 
 首先为关心 AI 时代家庭成长、事业发展和自我成长的父母设计；也适用于希望从真实生活出发，理解孩子、更新自己，并把成长经验转化为内容、影响力或事业能力的人。
 
@@ -16,7 +16,30 @@
 
 当前公开版：**1.4.0** · 正式入口与 Skills：**19 个**
 
-[成长闭环](#一条完整的成长闭环) · [30 秒开始](#30-秒开始) · [安装](#安装) · [三个成长阶段](#三个成长阶段) · [使用与共创](#继续使用与共创)
+[家庭成长顾问 Agent](#什么是家庭成长顾问-agent) · [成长闭环](#一条完整的成长闭环) · [30 秒开始](#30-秒开始) · [安装](#安装) · [三个成长阶段](#三个成长阶段) · [使用与共创](#继续使用与共创)
+
+## 什么是家庭成长顾问 Agent
+
+我不是来训练你，而是帮你去训练你自己的 Agent。
+
+家庭成长顾问 Agent，是一个部署在你自己电脑上、长期服务于同一个家庭的 AI 协作助理。它不会替你教育孩子，也不会替父母和孩子作最终决定。它帮助你持续整理真实材料、理解具体行为、形成低负担行动，并根据真实结果复盘和更正。
+
+这里的「训练」不是重新训练大模型参数。它指的是，持续把家庭的真实回答、现成报告、日常片段、行动结果和人的更正交给同一个 Agent，让它越来越了解这个家庭。
+
+长期使用后，一个家庭会逐渐拥有：
+
+- 一条会随孩子一起生长的教育规划路线；
+- 一套经过真实生活验证的家庭判断方法；
+- 一条可以回看、可以更正的成长脉络；
+- 更多用于游戏、聊天、运动、旅行和真实陪伴的时间与心力。
+
+开始时不需要准备复杂的「私密工作空间」。准备一台日常使用的电脑，在本地使用一个能安装 Skill、读取文件的 Agent 即可。第一次建立全年底座时，预留 10 到 20 分钟回答问卷；如果手边有现成的学校报告、体检报告或儿保报告，可以作为辅助材料交给本地 Agent。没有报告也可以开始，不需要额外制造材料。
+
+| 组件 | 解决的问题 | 主要使用者 | 何时使用 |
+|---|---|---|---|
+| 全年知识底座 | 让 Agent 首次系统了解这个孩子和家庭 | Agent 长期读取 | 第一次搭建，或整体情况发生重大变化时 |
+| 季度行动指南 | 把长期方向和最新证据转成未来 90 天的少数行动 | 父母与孩子 | 已有全年底座，需要进入下一季度时 |
+| 日常真实记录 | 把生活中的新变化和家长的新理解带回 Agent | 家庭成员与 Agent | 有值得保留的具体片段时 |
 
 ## 一条完整的成长闭环
 
@@ -46,26 +69,46 @@ flowchart LR
 
 ```text
 $junyi
+我想搭建或继续更新自己的家庭成长顾问 Agent。
 我现在要完成的是：……
 我已经有的真实材料是：……
 我最担心 AI 编造或误判的是：……
-请只选择当前最短的一步，并告诉我用完会得到什么。
+请只选择当前需要的 Skill，并告诉我用完会得到什么。
 ```
 
 如果客户端不支持 `$skill-name`，直接写“使用 junyi 帮我选择”即可。只有原生注册斜杠命令的客户端才使用 `/junyi`。
 
 ## 安装
 
-安装全部公开 Skills：
+如果你只想搭建家庭成长顾问 Agent，不需要安装其他无关 Skill。
+
+第一次搭建时，先只安装全年资料采集 Skill：
 
 ```bash
-npx -y skills add junyifei/junyi-skills -g --all
+npx -y skills add junyifei/junyi-skills --skill junyi-child-annual-intake
 ```
 
-只安装一个 Skill：
+完成采集后，根据 `routing-result.md` 只安装一个对应年龄的全年 Skill：
 
 ```bash
-npx -y skills add junyifei/junyi-skills --skill junyi-content-distiller
+npx -y skills add junyifei/junyi-skills --skill junyi-infant-annual-plan
+# 或 junyi-preschool-annual-plan
+# 或 junyi-school-age-annual-plan
+```
+
+已有全年底座，要更新未来 90 天时，先安装季度资料采集 Skill，再只安装它路由出的一个分龄季度 Skill：
+
+```bash
+npx -y skills add junyifei/junyi-skills --skill junyi-child-quarterly-intake
+npx -y skills add junyifei/junyi-skills --skill junyi-infant-quarterly-plan
+# 或 junyi-preschool-quarterly-plan
+# 或 junyi-school-age-quarterly-plan
+```
+
+想把具体亲子片段沉淀为日常记录时，可选安装：
+
+```bash
+npx -y skills add junyifei/junyi-skills --skill junyi-growth-spark-recorder
 ```
 
 先查看仓库能够识别出哪些 Skills，不执行安装：
@@ -74,18 +117,24 @@ npx -y skills add junyifei/junyi-skills --skill junyi-content-distiller
 npx -y skills add junyifei/junyi-skills --list
 ```
 
+只有在你确实想使用完整仓库时，才安装全部公开 Skills：
+
+```bash
+npx -y skills add junyifei/junyi-skills -g --all
+```
+
 本仓库已在隔离项目中验证 19/19 发现与复制安装。安装后开启新会话，让 Agent 重新发现 Skills。不同 Agent 的目录、调用语法和脚本能力仍可能不同，详见[兼容性与安装说明](guide/COMPATIBILITY.md)。
 
 ## 三个成长阶段
 
 ### 陪孩子成长
 
-孩子成长链按“成长记录 → 全年底座 → 季度行动”工作。全年底座优先给 Agent 长期读取，季度计划优先给家长行动。
+孩子成长链按“建立全年知识底座 → 生成季度行动 → 留下日常真实记录 → 复盘与更正”工作。全年底座优先给家庭成长顾问 Agent 长期读取，季度计划优先给父母和孩子进入真实生活。
 
 | 什么时候使用 | 最短路径 | 会得到什么 |
 |---|---|---|
 | 只想记录并理解一个孩子的具体片段 | [`junyi-growth-spark-recorder`](junyi-growth-spark-recorder/SKILL.md) | 事件记录、发展观察与家长复盘 |
-| 第一次建立 0—12 岁孩子的全年成长底座 | [`junyi-child-annual-intake`](junyi-child-annual-intake/SKILL.md) → 一个分龄全年规划 Skill | `intake.json`、证据地图和给 Agent 长期读取的全年底座 |
+| 第一次让家庭成长顾问 Agent 系统了解 0—12 岁孩子 | [`junyi-child-annual-intake`](junyi-child-annual-intake/SKILL.md) → 一个分龄全年规划 Skill | `intake.json`、证据地图和 Agent 长期读取的全年知识底座 |
 | 已有全年底座，要更新未来 90 天 | [`junyi-child-quarterly-intake`](junyi-child-quarterly-intake/SKILL.md) → 一个分龄季度计划 Skill | 本季证据状态、家长行动指南、最低版本和复盘信号 |
 
 全年与季度都只进入一个年龄轨道。季度问卷不能替代首次全年资料采集；没有持续日常记录时，可以使用年龄自适应季度问卷。完整的 9 个家庭教育 Skill、年龄边界和输入要求见[全部 Skill 用户目录](guide/SKILL-CATALOG.md#陪孩子成长)。
