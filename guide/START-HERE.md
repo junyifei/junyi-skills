@@ -4,44 +4,49 @@
 
 ## 1. 先选择安装范围
 
-### 安装全部公开 Skills
+装 Skill 不用自己敲命令行。打开一个能安装 Skill、能读文件的 AI 助手（比如 Claude），把下面对应的那句话整段发给它，它会自己去 GitHub 上装好。
 
-适合希望使用总入口，让 Agent 自动选择路径的人：
+**想全部装上，让总入口帮你自动选**：
 
-```bash
-npx -y skills add junyifei/junyi-skills -g --all
+```text
+请帮我从君一的 GitHub 仓库 junyifei/junyi-skills，把公开的 skill 都装上。
 ```
 
-### 先查看，不安装
+**只想先看看有哪些、暂时不装**：
 
-```bash
-npx -y skills add junyifei/junyi-skills --list
+```text
+帮我看看君一的 GitHub 仓库 junyifei/junyi-skills 里都有哪些 skill，先别安装。
 ```
 
-### 只安装一个 Skill
+**已经知道要哪一个（比如做 IP 定位）**：
 
-```bash
-npx -y skills add junyifei/junyi-skills -g --skill junyi-positioning -y
+```text
+请帮我从 junyifei/junyi-skills 只安装 junyi-positioning 这个 skill。
 ```
 
-安装工具会根据 Agent 选择实际目录。需要手动安装时，把整个 Skill 文件夹复制到当前 Agent 支持的 skills 目录；不要只复制 `SKILL.md`，否则 references、scripts 和 assets 可能缺失。
+装好后，新开一个对话让 AI 重新识别一下就能用了。（想手动安装或看精确命令，见[兼容性与安装说明](COMPATIBILITY.md)。）
 
-安装后开启一个新会话，让 Agent 重新发现 Skills。
+<details>
+<summary>习惯命令行？点这里</summary>
+
+```bash
+npx -y skills add junyifei/junyi-skills -g --all                          # 全部装上
+npx -y skills add junyifei/junyi-skills --list                            # 只看不装
+npx -y skills add junyifei/junyi-skills -g --skill junyi-positioning -y   # 只装一个
+```
+
+手动安装时复制**整个 Skill 文件夹**（不要只复制 `SKILL.md`，否则 references、scripts、assets 可能缺失）。安装后开启一个新会话，让 Agent 重新发现 Skills。
+</details>
 
 ## 2. 不知道从哪里开始
 
-使用总入口：
+像平时说话一样，把你的难题直接告诉 AI，比如：
 
 ```text
-$junyi
-我现在要完成的是：……
-我已经有的真实材料是：……
-我最担心 Agent 编造或误判的是：……
+我现在有个问题想解决：……。君一的 GitHub 仓库 junyifei/junyi-skills 里，有没有能帮我的 skill？是哪一个？帮我用它。
 ```
 
-`junyi` 只负责判断最短路径，不代替下游 Skill 完成所有工作。
-
-如果想按普通人的任务语言浏览全部能力，先看[全部 Skill 用户目录](SKILL-CATALOG.md)。
+它会挑出最合适的那个、帮你开始，不用你自己判断该用哪个。`junyi` 总入口只负责判断最短路径，不代替下游 Skill 完成所有工作。想按普通人的任务语言浏览全部能力，先看[全部 Skill 用户目录](SKILL-CATALOG.md)。
 
 ## 3. 已经知道任务时直接调用
 
