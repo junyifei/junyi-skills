@@ -1,6 +1,6 @@
 # 兼容性与安装说明
 
-最后核验：2026-07-20（本次重新核验仓库自动发现与 Codex 项目级安装；其余项沿用此前结果）。
+最后核验：2026-07-24（重新核验 `junyi-relationship-manager` 1.1.0 的完整资源复制安装、Git 路径硬停、本地建档、同名消歧与只读查询；其余项沿用此前结果）。
 
 > 不想敲命令行？装 Skill 的大白话版见 [README 的「安装」](../README.md#安装)和[新手指南](START-HERE.md)。这份文档是给需要**精确命令**、排查 Agent 兼容性或做手动安装的人。
 
@@ -10,6 +10,7 @@
 |---|---|---|
 | 仓库自动发现 | 已验证 | `skills` CLI 能发现 20 个公开 Skills |
 | Codex 项目级复制安装 | 已验证 | 隔离目录中安装 20/20，`SKILL.md` 与资源目录完整 |
+| `junyi-relationship-manager` 1.1.0 | 已验证 | 隔离安装包含 SKILL、agents、assets、references 与校验脚本；3 组独立前向情境和 6 项脚本自检通过 |
 | Codex 显式调用 | 已验证 | 支持 `$skill-name` 与自然语言指定 Skill |
 | GitHub Copilot 目录发现 | 部分验证 | 安装工具识别共享 `.agents/skills`，未完成独立任务回归 |
 | Claude Code | 结构兼容，待回归 | 尚未完成本版本的独立端到端测试 |

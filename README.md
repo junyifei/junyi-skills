@@ -158,7 +158,7 @@ npx -y skills add junyifei/junyi-skills --skill <SKILL>
 | 想从零搭知识库，或已有知识库越来越乱 | [`junyi-vault`](junyi-vault/SKILL.md) | 建库、归档或只读诊断方案 |
 | 有体验、情绪、矛盾或选择，但还没想清楚 | [`junyi-deep-dialogue`](junyi-deep-dialogue/SKILL.md) | 逐层追问、自己的判断和可选觉知记录 |
 | 已有一个方案，明确希望有人挑刺、找漏洞 | [`junyi-po-leng-shui`](junyi-po-leng-shui/SKILL.md) | 关键漏洞、反证与最可能失败的位置 |
-| 想记住每一个重要的人、用心经营关系，看清自己的心力流向 | [`junyi-relationship-manager`](junyi-relationship-manager/SKILL.md) | 有温度的关系档案、跟进提醒与（进阶）资源撮合、关系月报 |
+| 想记住每一个重要的人、兑现承诺，看清自己的心力流向 | [`junyi-relationship-manager`](junyi-relationship-manager/SKILL.md) | 有来源标记、支持同名消歧的关系档案与本地跟进报告；进阶可配置飞书三表和自动提醒 |
 
 记住重要的人、看清自己的心力流向，和想清楚自己一样，都是「把自己活明白」的一部分。
 

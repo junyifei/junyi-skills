@@ -25,7 +25,7 @@ description: 君一的 AI 时代家庭教育 Skills 总入口。仅在用户显�
 | 从短记录、每日录音或超长录音中提炼真实内容、证据、原则和待办 | `junyi-content-distiller` |
 | 把课程、文章、书、访谈或长材料转成自己的理解、边界和实验 | `junyi-learning-distiller` |
 | 新建知识库、归档新内容，或只读诊断已有混乱知识库 | `junyi-vault` |
-| 记住重要的人、按关系阶段提醒跟进，看清自己的心力流向 | `junyi-relationship-manager` |
+| 记住重要的人、按明确承诺和已确认阶段提醒跟进，看清自己的心力流向 | `junyi-relationship-manager` |
 | 记录孩子的具体片段并做发展观察与模型复盘 | `junyi-growth-spark-recorder` |
 | 首次收集、导入、补充或审核家庭成长顾问 Agent 的全年底座资料 | `junyi-child-annual-intake` |
 | 计划日期为 0—35 月龄，全年资料已通过校验，要生成全年判断底座 | `junyi-infant-annual-plan` |
