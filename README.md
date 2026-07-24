@@ -10,6 +10,8 @@
 
 首先为关心 AI 时代家庭成长、事业发展和自我成长的父母设计；也适用于希望从真实生活出发，理解孩子、更新自己，并把成长经验转化为内容、影响力或事业能力的人。
 
+> 这些 Skill 来自我自己的一人公司和家庭日常。完整背景和其他内容：[junyiainative.com](https://junyiainative.com)
+
 [![Release](https://img.shields.io/github/v/release/junyifei/junyi-skills?style=flat-square&label=release)](https://github.com/junyifei/junyi-skills/releases)
 [![Public Skills](https://img.shields.io/badge/public_skills-19-2563EB.svg?style=flat-square)](skill-index.json)
 [![License](https://img.shields.io/badge/license-CC_BY_4.0-16A34A.svg?style=flat-square)](LICENSE)
@@ -61,7 +63,7 @@ flowchart LR
 
 不知道自己处在哪个阶段时，使用总入口 `$junyi`。它只选择当前最需要的一个 Skill 或一条最短路径，不会把 19 个 Skill 全部运行一遍。
 
-这里不鼓励把孩子变成项目，也不让 AI 代替父母作教育决定；不提供一键搞钱承诺、医学心理诊断或未经证据支持的成长结果预测。
+这里不鼓励把孩子变成项目，也不让 AI 代替父母作教育决定；不承诺收入结果，不做医学、心理或发育诊断，也不预测未经证据支持的成长结果。
 
 ## 30 秒开始
 
@@ -184,3 +186,8 @@ npx -y skills add junyifei/junyi-skills -g --all
 **君一**
 
 一人公司妈妈，持续实践 AI 时代的家庭教育：陪孩子成长，也让父母在教育中成长，并把新的理解与能力带回家庭和事业。
+
+## 完整背景与更多内容
+
+- 完整背景、其他内容和联系方式：[junyiainative.com](https://junyiainative.com)
+- 免费知识库（不用装任何东西，打开就能读）：https://vcnnf8fylkqy.feishu.cn/wiki/space/7664065199162264514
