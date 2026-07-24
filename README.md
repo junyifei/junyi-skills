@@ -147,7 +147,7 @@ npx -y skills add junyifei/junyi-skills --skill <SKILL>
 | 第一次让家庭成长顾问 Agent 系统了解 0—12 岁孩子 | [`junyi-child-annual-intake`](junyi-child-annual-intake/SKILL.md) → 一个分龄全年规划 Skill | `intake.json`、证据地图和 Agent 长期读取的全年知识底座 |
 | 已有全年底座，要更新未来 90 天 | [`junyi-child-quarterly-intake`](junyi-child-quarterly-intake/SKILL.md) → 一个分龄季度计划 Skill | 本季证据状态、家长行动指南、最低版本和复盘信号 |
 
-全年与季度都只进入一个年龄轨道。季度问卷不能替代首次全年资料采集；没有持续日常记录时，可以使用年龄自适应季度问卷。完整的 9 个家庭教育 Skill、年龄边界和输入要求见[全部 Skill 用户目录](guide/SKILL-CATALOG.md#陪孩子成长)。
+全年与季度都只进入一个年龄轨道。季度问卷不能替代首次全年资料采集；没有持续日常记录时，可以使用年龄自适应季度问卷。完整的 9 个家庭教育 Skill、年龄边界和输入要求见[全部 Skill 用户目录](guide/SKILL-CATALOG.md#把孩子陪好)。
 
 ### 把自己活明白
 
