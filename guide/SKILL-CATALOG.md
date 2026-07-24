@@ -56,6 +56,7 @@
 | 新建、归档或诊断知识库 | [`junyi-vault`](../junyi-vault/SKILL.md) | 目标、现有目录或待归档材料 | 建库方案、归档预览或只读诊断报告 |
 | 通过追问想清楚体验、情绪、矛盾或选择 | [`junyi-deep-dialogue`](../junyi-deep-dialogue/SKILL.md) | 一个真实问题和愿意回答的当前体验 | 逐层追问、自己的判断和可选觉知记录 |
 | 明确要求挑刺、找漏洞或做魔鬼代言人评审 | [`junyi-po-leng-shui`](../junyi-po-leng-shui/SKILL.md) | 已有方案、决定或文稿，以及希望挑战的位置 | 关键漏洞、反证、失败风险和优先修改项 |
+| 记住每一个重要的人、按关系阶段提醒跟进，看清自己的心力流向 | [`junyi-relationship-manager`](../junyi-relationship-manager/SKILL.md) | 你和某人的交流片段、你想经营的关系 | 有温度的关系档案、跟进提醒与（进阶）资源撮合、关系月报 |
 
 ## 把成长表达出来
 

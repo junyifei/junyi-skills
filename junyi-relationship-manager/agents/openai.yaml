@@ -1,0 +1,5 @@
+interface:
+  display_name: "记住每一个重要的人"
+  short_description: "把重要的人记成有温度的关系档案，提醒你该问候、该跟进谁，也照见自己的心力流向"
+  brand_color: "#C65A3A"
+  default_prompt: "Use $junyi-relationship-manager to help me remember the people who matter, keep our relationships warm, and see where my attention is really going."

@@ -13,10 +13,10 @@
 > 这些 Skill 来自我自己的一人公司和家庭日常。完整背景和其他内容：[junyiainative.com](https://junyiainative.com)
 
 [![Release](https://img.shields.io/github/v/release/junyifei/junyi-skills?style=flat-square&label=release)](https://github.com/junyifei/junyi-skills/releases)
-[![Public Skills](https://img.shields.io/badge/public_skills-19-2563EB.svg?style=flat-square)](skill-index.json)
-[![License](https://img.shields.io/badge/license-CC_BY_4.0-16A34A.svg?style=flat-square)](LICENSE)
+[![Public Skills](https://img.shields.io/badge/public_skills-20-2563EB.svg?style=flat-square)](skill-index.json)
+[![License](https://img.shields.io/badge/license-CC_BY--NC_4.0-16A34A.svg?style=flat-square)](LICENSE)
 
-当前公开版：**1.4.0** · 正式入口与 Skills：**19 个**
+当前公开版：**1.5.0** · 正式入口与 Skills：**20 个**
 
 [家庭成长顾问 Agent](#什么是家庭成长顾问-agent) · [成长闭环](#一条完整的成长闭环) · [30 秒开始](#30-秒开始) · [安装](#安装) · [三个成长阶段](#三个成长阶段) · [使用与共创](#继续使用与共创)
 
@@ -61,7 +61,7 @@ flowchart LR
 | [把自己活明白](#把自己活明白) | 想消化外部学习、整理知识，或把一个重要问题真正想清楚 | 自己的理解、知识结构、判断、反证和行动实验 |
 | [把经验做成一人公司事业](#把经验做成一人公司事业) | 想把育儿、生活与专业经验转化为内容、IP 或一人公司事业 | 可追溯内容素材、IP 战略、对标研究和个人官网 |
 
-不知道自己处在哪个阶段时，使用总入口 `$junyi`。它只选择当前最需要的一个 Skill 或一条最短路径，不会把 19 个 Skill 全部运行一遍。
+不知道自己处在哪个阶段时，使用总入口 `$junyi`。它只选择当前最需要的一个 Skill 或一条最短路径，不会把 20 个 Skill 全部运行一遍。
 
 这里不鼓励把孩子变成项目，也不让 AI 代替父母作教育决定；不承诺收入结果，不做医学、心理或发育诊断，也不预测未经证据支持的成长结果。
 
@@ -115,7 +115,7 @@ flowchart LR
 请帮我把 GitHub junyifei/junyi-skills 里公开的 skill 都装上。
 ```
 
-装好后，新开一个对话让 AI 重新识别一下就能用了。本仓库已在隔离项目中验证 19/19 发现与复制安装；不同 AI 助手的目录和用法可能不太一样，详见[兼容性与安装说明](guide/COMPATIBILITY.md)。
+装好后，新开一个对话让 AI 重新识别一下就能用了。本仓库已在隔离项目中验证 20/20 发现与复制安装；不同 AI 助手的目录和用法可能不太一样，详见[兼容性与安装说明](guide/COMPATIBILITY.md)。
 
 <details>
 <summary>习惯命令行，或你的工具需要精确命令？点这里</summary>
@@ -158,6 +158,9 @@ npx -y skills add junyifei/junyi-skills --skill <SKILL>
 | 想从零搭知识库，或已有知识库越来越乱 | [`junyi-vault`](junyi-vault/SKILL.md) | 建库、归档或只读诊断方案 |
 | 有体验、情绪、矛盾或选择，但还没想清楚 | [`junyi-deep-dialogue`](junyi-deep-dialogue/SKILL.md) | 逐层追问、自己的判断和可选觉知记录 |
 | 已有一个方案，明确希望有人挑刺、找漏洞 | [`junyi-po-leng-shui`](junyi-po-leng-shui/SKILL.md) | 关键漏洞、反证与最可能失败的位置 |
+| 想记住每一个重要的人、用心经营关系，看清自己的心力流向 | [`junyi-relationship-manager`](junyi-relationship-manager/SKILL.md) | 有温度的关系档案、跟进提醒与（进阶）资源撮合、关系月报 |
+
+记住重要的人、看清自己的心力流向，和想清楚自己一样，都是「把自己活明白」的一部分。
 
 学习不是囤积答案，而是形成自己的理解、边界和行动实验。反方审查必须由用户明确触发；普通对话不会因为 Agent 猜测用户需要“被泼冷水”而自动调用。
 
@@ -172,7 +175,7 @@ npx -y skills add junyifei/junyi-skills --skill <SKILL>
 
 表达不是把孩子当作内容素材，也不是要求每位父母都经营 IP。它只在用户主动选择时，帮助把自己的学习、育儿感悟与专业经验变成可追溯的公共表达。
 
-查看[全部 19 个 Skill 用户目录](guide/SKILL-CATALOG.md)：按“什么时候用、准备什么、得到什么”选择；机器可读的版本与成熟度见 [`skill-index.json`](skill-index.json)。
+查看[全部 20 个 Skill 用户目录](guide/SKILL-CATALOG.md)：按“什么时候用、准备什么、得到什么”选择；机器可读的版本与成熟度见 [`skill-index.json`](skill-index.json)。
 
 ## 继续使用与共创
 
@@ -189,7 +192,7 @@ npx -y skills add junyifei/junyi-skills --skill <SKILL>
 
 本仓库由君一基于自己的实战、记录、课程、咨询和内容项目独立蒸馏，不复制第三方项目的具体文案、代码、视觉资产或品牌表达。
 
-本仓库采用 [CC BY 4.0](LICENSE)：可以使用、修改和再分发，包括商业使用；请署名“君一”并保留许可链接。权利与迁移记录见 [`RIGHTS.md`](RIGHTS.md)。
+本仓库采用 [CC BY-NC 4.0](LICENSE)：可以使用、修改和再分发，但仅限非商业用途；商业使用请先联系君一获得授权。请署名“君一”并保留许可链接。权利与迁移记录见 [`RIGHTS.md`](RIGHTS.md)。
 
 **君一**
 

@@ -2,13 +2,13 @@
   "name": "君一的 AI 时代家庭教育 Skills",
   "repository": "junyi-skills",
   "entrypoint": "junyi",
-  "version": "1.4.0",
-  "public_release_version": "1.4.0",
+  "version": "1.5.0",
+  "public_release_version": "1.5.0",
   "catalog_scope": "public-release",
-  "updated_at": "2026-07-23",
-  "license": "CC-BY-4.0",
-  "public_skill_count": 19,
-  "official_skill_count": 19,
+  "updated_at": "2026-07-24",
+  "license": "CC-BY-NC-4.0",
+  "public_skill_count": 20,
+  "official_skill_count": 20,
   "skills": [
     {"name": "junyi", "category": "总入口", "path": "junyi", "version": "1.4.0", "maturity": "已发布", "role": "根据任务、证据与当前阶段，选择搭建或更新家庭成长顾问 Agent 的最短 Skill 路径"},
     {"name": "junyi-deep-dialogue", "category": "父母先成长", "path": "junyi-deep-dialogue", "version": "1.0.0", "maturity": "已发布", "role": "通过苏格拉底式追问把体验转化为自己的判断"},
@@ -28,6 +28,7 @@
     {"name": "junyi-child-quarterly-intake", "category": "陪孩子成长", "path": "junyi-child-quarterly-intake", "version": "1.0.0", "maturity": "公开转换验证完成", "role": "导入或问卷采集本季度新资料，作为家庭成长顾问 Agent 更新与季度行动的证据输入"},
     {"name": "junyi-infant-quarterly-plan", "category": "陪孩子成长", "path": "junyi-infant-quarterly-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 0—35 月龄儿童生成观察线与环境提供方案"},
     {"name": "junyi-preschool-quarterly-plan", "category": "陪孩子成长", "path": "junyi-preschool-quarterly-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 36—71 月龄儿童生成聚焦、自然维持与游戏化支持计划"},
-    {"name": "junyi-school-age-quarterly-plan", "category": "陪孩子成长", "path": "junyi-school-age-quarterly-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 72—144 月龄儿童生成主攻、维持与每周行动计划"}
+    {"name": "junyi-school-age-quarterly-plan", "category": "陪孩子成长", "path": "junyi-school-age-quarterly-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 72—144 月龄儿童生成主攻、维持与每周行动计划"},
+    {"name": "junyi-relationship-manager", "category": "父母先成长", "path": "junyi-relationship-manager", "version": "1.0.0", "maturity": "已发布／第三期课程学员版转公开", "role": "记住每一个重要的人、按关系阶段提醒跟进，并照见自己的心力流向；进阶可双写飞书与 Obsidian 做资源撮合与关系月报"}
   ]
 }
