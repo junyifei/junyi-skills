@@ -49,17 +49,17 @@
 
 ```mermaid
 flowchart LR
-    A["陪孩子成长<br/>从真实家庭实践开始"] --> B["父母先成长<br/>学习、反思并形成判断"]
-    B --> C["把成长表达出来<br/>内容、IP 与个人事业"]
+    A["把孩子陪好<br/>从真实家庭实践开始"] --> B["把自己活明白<br/>学习、反思并形成判断"]
+    B --> C["把经验做成一人公司事业<br/>内容、IP 与个人官网"]
     C --> D["用新的能力<br/>反哺家庭与事业"]
     D --> A
 ```
 
 | 你正处在哪个阶段 | 什么时候使用 | 用完得到什么 |
 |---|---|---|
-| [陪孩子成长](#陪孩子成长) | 想记录和理解孩子，建立全年成长底座，或更新未来 90 天行动 | 成长记录、Agent 可读的全年底座和家长可执行的季度计划 |
-| [父母先成长](#父母先成长) | 想消化外部学习、整理知识，或把一个重要问题真正想清楚 | 自己的理解、知识结构、判断、反证和行动实验 |
-| [把成长表达出来](#把成长表达出来) | 想把育儿、生活与专业经验转化为内容、IP 或个人事业 | 可追溯内容素材、IP 战略、对标研究和个人官网 |
+| [把孩子陪好](#把孩子陪好) | 想记录和理解孩子，建立全年成长底座，或更新未来 90 天行动 | 成长记录、Agent 可读的全年底座和家长可执行的季度计划 |
+| [把自己活明白](#把自己活明白) | 想消化外部学习、整理知识，或把一个重要问题真正想清楚 | 自己的理解、知识结构、判断、反证和行动实验 |
+| [把经验做成一人公司事业](#把经验做成一人公司事业) | 想把育儿、生活与专业经验转化为内容、IP 或一人公司事业 | 可追溯内容素材、IP 战略、对标研究和个人官网 |
 
 不知道自己处在哪个阶段时，使用总入口 `$junyi`。它只选择当前最需要的一个 Skill 或一条最短路径，不会把 19 个 Skill 全部运行一遍。
 
@@ -67,69 +67,77 @@ flowchart LR
 
 ## 30 秒开始
 
-在支持 Skills 的 Agent 中复制：
+打开你平时用的 AI 助手（比如 Claude），像平时说话一样把难题告诉它，比如：
 
 ```text
-$junyi
-我想搭建或继续更新自己的家庭成长顾问 Agent。
-我现在要完成的是：……
-我已经有的真实材料是：……
-我最担心 AI 编造或误判的是：……
-请只选择当前需要的 Skill，并告诉我用完会得到什么。
+我现在有个问题想解决：……。君一的 GitHub 仓库 junyifei/junyi-skills 里，有没有能帮我的 skill？是哪一个？帮我装上。
 ```
 
-如果客户端不支持 `$skill-name`，直接写“使用 junyi 帮我选择”即可。只有原生注册斜杠命令的客户端才使用 `/junyi`。
+它会帮你挑出最合适的那个、装好，再告诉你怎么用。不用你自己判断该装哪个。
 
 ## 安装
 
-如果你只想搭建家庭成长顾问 Agent，不需要安装其他无关 Skill。
+装 Skill 不用自己敲命令行。打开一个能安装 Skill、能读文件的 AI 助手（比如 Claude），把下面对应的那句话整段发给它，它会自己去 GitHub 上装好。
 
-第一次搭建时，先只安装全年资料采集 Skill：
+**第一次搭建**——先装「全年资料采集」这一个：
 
-```bash
-npx -y skills add junyifei/junyi-skills --skill junyi-child-annual-intake
+```text
+请帮我从君一的 GitHub 仓库 junyifei/junyi-skills，安装 junyi-child-annual-intake 这个 skill。
 ```
 
-完成采集后，根据 `routing-result.md` 只安装一个对应年龄的全年 Skill：
+它装完会生成一份 `routing-result.md`，告诉你孩子该走哪个年龄轨道。照它说的，再装那一个全年规划 Skill：
 
-```bash
-npx -y skills add junyifei/junyi-skills --skill junyi-infant-annual-plan
-# 或 junyi-preschool-annual-plan
-# 或 junyi-school-age-annual-plan
+```text
+请按 routing-result.md 的结果，从 junyifei/junyi-skills 帮我装对应年龄的那一个全年规划 skill（junyi-infant-annual-plan、junyi-preschool-annual-plan、junyi-school-age-annual-plan 里选一个）。
 ```
 
-已有全年底座，要更新未来 90 天时，先安装季度资料采集 Skill，再只安装它路由出的一个分龄季度 Skill：
+**已经有全年底座，想更新未来 90 天**——先装季度采集，再装它帮你选出的那一个季度 Skill：
 
-```bash
-npx -y skills add junyifei/junyi-skills --skill junyi-child-quarterly-intake
-npx -y skills add junyifei/junyi-skills --skill junyi-infant-quarterly-plan
-# 或 junyi-preschool-quarterly-plan
-# 或 junyi-school-age-quarterly-plan
+```text
+请帮我从 junyifei/junyi-skills 安装 junyi-child-quarterly-intake，然后按它的结果，再装对应年龄的那一个季度规划 skill。
 ```
 
-想把具体亲子片段沉淀为日常记录时，可选安装：
+**想随手记录亲子片段**（可选）：
 
-```bash
-npx -y skills add junyifei/junyi-skills --skill junyi-growth-spark-recorder
+```text
+请帮我从 junyifei/junyi-skills 安装 junyi-growth-spark-recorder 这个 skill。
 ```
 
-先查看仓库能够识别出哪些 Skills，不执行安装：
+**只想先看看仓库里有哪些 Skill、暂时不装**：
 
-```bash
-npx -y skills add junyifei/junyi-skills --list
+```text
+帮我看看君一的 GitHub 仓库 junyifei/junyi-skills 里都有哪些 skill，先别安装。
 ```
 
-只有在你确实想使用完整仓库时，才安装全部公开 Skills：
+**确实想把公开的 Skill 全装上**（一般用不着）：
 
-```bash
-npx -y skills add junyifei/junyi-skills -g --all
+```text
+请帮我把 GitHub junyifei/junyi-skills 里公开的 skill 都装上。
 ```
 
-本仓库已在隔离项目中验证 19/19 发现与复制安装。安装后开启新会话，让 Agent 重新发现 Skills。不同 Agent 的目录、调用语法和脚本能力仍可能不同，详见[兼容性与安装说明](guide/COMPATIBILITY.md)。
+装好后，新开一个对话让 AI 重新识别一下就能用了。本仓库已在隔离项目中验证 19/19 发现与复制安装；不同 AI 助手的目录和用法可能不太一样，详见[兼容性与安装说明](guide/COMPATIBILITY.md)。
+
+<details>
+<summary>习惯命令行，或你的工具需要精确命令？点这里</summary>
+
+用 `skills` CLI 安装（把 `<SKILL>` 换成想装的名字）：
+
+```bash
+npx -y skills add junyifei/junyi-skills --skill <SKILL>
+```
+
+- 全年：`junyi-child-annual-intake` → 按 `routing-result.md` 再装 `junyi-infant-annual-plan`、`junyi-preschool-annual-plan`、`junyi-school-age-annual-plan` 之一
+- 季度：`junyi-child-quarterly-intake` → 再装对应年龄的 `junyi-*-quarterly-plan` 之一
+- 日常记录：`junyi-growth-spark-recorder`
+- 只看不装：`npx -y skills add junyifei/junyi-skills --list`
+- 全部装上：`npx -y skills add junyifei/junyi-skills -g --all`
+
+原生支持斜杠命令的客户端可直接用 `/junyi`；其他客户端写 `$junyi` 或“使用 junyi 帮我选择”。
+</details>
 
 ## 三个成长阶段
 
-### 陪孩子成长
+### 把孩子陪好
 
 孩子成长链按“建立全年知识底座 → 生成季度行动 → 留下日常真实记录 → 复盘与更正”工作。全年底座优先给家庭成长顾问 Agent 长期读取，季度计划优先给父母和孩子进入真实生活。
 
@@ -141,7 +149,7 @@ npx -y skills add junyifei/junyi-skills -g --all
 
 全年与季度都只进入一个年龄轨道。季度问卷不能替代首次全年资料采集；没有持续日常记录时，可以使用年龄自适应季度问卷。完整的 9 个家庭教育 Skill、年龄边界和输入要求见[全部 Skill 用户目录](guide/SKILL-CATALOG.md#陪孩子成长)。
 
-### 父母先成长
+### 把自己活明白
 
 | 什么时候使用 | 使用入口 | 会得到什么 |
 |---|---|---|
@@ -153,7 +161,7 @@ npx -y skills add junyifei/junyi-skills -g --all
 
 学习不是囤积答案，而是形成自己的理解、边界和行动实验。反方审查必须由用户明确触发；普通对话不会因为 Agent 猜测用户需要“被泼冷水”而自动调用。
 
-### 把成长表达出来
+### 把经验做成一人公司事业
 
 | 什么时候使用 | 使用入口 | 会得到什么 |
 |---|---|---|
@@ -190,4 +198,4 @@ npx -y skills add junyifei/junyi-skills -g --all
 ## 完整背景与更多内容
 
 - 完整背景、其他内容和联系方式：[junyiainative.com](https://junyiainative.com)
-- 免费知识库（不用装任何东西，打开就能读）：https://vcnnf8fylkqy.feishu.cn/wiki/space/7664065199162264514
+- 免费知识库（不用装任何东西，打开就能读）：https://ask.feishu.cn/shared-space/7664065199162264514
