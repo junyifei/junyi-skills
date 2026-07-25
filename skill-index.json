@@ -2,13 +2,13 @@
   "name": "君一的 AI 时代家庭教育 Skills",
   "repository": "junyi-skills",
   "entrypoint": "junyi",
-  "version": "1.5.0",
-  "public_release_version": "1.5.0",
+  "version": "1.6.0",
+  "public_release_version": "1.6.0",
   "catalog_scope": "public-release",
-  "updated_at": "2026-07-24",
+  "updated_at": "2026-07-25",
   "license": "CC-BY-NC-4.0",
-  "public_skill_count": 20,
-  "official_skill_count": 20,
+  "public_skill_count": 21,
+  "official_skill_count": 21,
   "skills": [
     {"name": "junyi", "category": "总入口", "path": "junyi", "version": "1.4.0", "maturity": "已发布", "role": "根据任务、证据与当前阶段，选择搭建或更新家庭成长顾问 Agent 的最短 Skill 路径"},
     {"name": "junyi-deep-dialogue", "category": "把自己活明白", "path": "junyi-deep-dialogue", "version": "1.0.0", "maturity": "已发布", "role": "通过苏格拉底式追问把体验转化为自己的判断"},
@@ -29,6 +29,7 @@
     {"name": "junyi-infant-quarterly-plan", "category": "把孩子陪好", "path": "junyi-infant-quarterly-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 0—35 月龄儿童生成观察线与环境提供方案"},
     {"name": "junyi-preschool-quarterly-plan", "category": "把孩子陪好", "path": "junyi-preschool-quarterly-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 36—71 月龄儿童生成聚焦、自然维持与游戏化支持计划"},
     {"name": "junyi-school-age-quarterly-plan", "category": "把孩子陪好", "path": "junyi-school-age-quarterly-plan", "version": "1.0.0", "maturity": "已投入真实家庭项目／公开转换验证完成", "role": "为季度开始日 72—144 月龄儿童生成主攻、维持与每周行动计划"},
-    {"name": "junyi-relationship-manager", "category": "把自己活明白", "path": "junyi-relationship-manager", "version": "1.1.0", "maturity": "已发布／6 项校验与 3 组独立前向情境", "role": "基于用户事实安全记录重要的人，以稳定人物 ID 管理同名档案、承诺和跟进；本地可查询与报告，进阶可双写飞书三表并启用自动提醒"}
+    {"name": "junyi-relationship-manager", "category": "把自己活明白", "path": "junyi-relationship-manager", "version": "1.1.0", "maturity": "已发布／6 项校验与 3 组独立前向情境", "role": "基于用户事实安全记录重要的人，以稳定人物 ID 管理同名档案、承诺和跟进；本地可查询与报告，进阶可双写飞书三表并启用自动提醒"},
+    {"name": "junyi-ai-weekly-review", "category": "把自己活明白", "path": "junyi-ai-weekly-review", "version": "1.0.0", "maturity": "已发布／第三期课程学员版转公开，脚本经审阅", "role": "把你这一周和各个 AI agent 的协作记录，本地抓取、清洗、按天蒸馏成《本周记录》与《本周内容素材》；纯本地运行、不外发，需要 Node.js"}
   ]
 }

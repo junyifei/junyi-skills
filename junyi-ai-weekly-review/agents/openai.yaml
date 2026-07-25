@@ -1,0 +1,5 @@
+interface:
+  display_name: "AI 周度复盘"
+  short_description: "把你这一周和各个 AI 的协作记录，自动汇成一份周报和一份能写的素材，全程只在本地跑、本地存"
+  brand_color: "#C65A3A"
+  default_prompt: "Use $junyi-ai-weekly-review to review what I did with my AI agents this week and turn it into a weekly log plus reusable writing material, all kept local."

@@ -59,6 +59,10 @@ CC BY-NC 4.0 不包含对“君一”姓名、肖像或商标的额外授权，�
 
 **新增公开 Skill**：`junyi-relationship-manager` 由作者本人的「AI 实战课（第三期）学员 Skill 包」中的 `relationship-manager` 转为公开通用版。公开版只保留通用的关系记录结构、字段设计、跟进节奏与资源撮合规则；示例人物均为占位（张三/李四），飞书 app_token、table_id 与 vault 路径均为占位符，不含任何真实联系人、账号资源标识或私人文件路径。
 
+## 2026-07-25 新增公开 Skill 记录
+
+**新增公开 Skill**：`junyi-ai-weekly-review` 由作者本人的「AI 实战课（第三期）学员 Skill 包」中的 `ai-weekly-review` 转为公开通用版，归入「把自己活明白」。公开版保留通用的抓取、清洗、按天蒸馏与两份产出模板；随附的 Node 脚本经逐个审阅：只用 `os.homedir()` 定位各 AI 工具的本地会话目录，纯本地读写、无任何网络请求、不外发，不含硬编码的私有路径、密钥或联系人。Hermes、WorkBuddy 适配器为未验证占位，已在文档中如实标注。
+
 ## 案例与示例
 
 - `examples/junyi-positioning-junyi-methodology.md` 使用本仓库自身的真实定位改版作为公开案例，不包含客户资料。

@@ -8,8 +8,8 @@
 
 | 项目 | 状态 | 核验结果 |
 |---|---|---|
-| 仓库自动发现 | 已验证 | `skills` CLI 能发现 20 个公开 Skills |
-| Codex 项目级复制安装 | 已验证 | 隔离目录中安装 20/20，`SKILL.md` 与资源目录完整 |
+| 仓库自动发现 | 已验证 | `skills` CLI 能发现 21 个（20 个 Skill + 1 个总入口 junyi）|
+| Codex 项目级复制安装 | 已验证 | 隔离目录中安装 21/21，`SKILL.md` 与资源目录完整 |
 | `junyi-relationship-manager` 1.1.0 | 已验证 | 隔离安装包含 SKILL、agents、assets、references 与校验脚本；3 组独立前向情境和 6 项脚本自检通过 |
 | Codex 显式调用 | 已验证 | 支持 `$skill-name` 与自然语言指定 Skill |
 | GitHub Copilot 目录发现 | 部分验证 | 安装工具识别共享 `.agents/skills`，未完成独立任务回归 |
@@ -29,6 +29,7 @@ npx -y skills add junyifei/junyi-skills --list
 
 ```text
 junyi
+junyi-ai-weekly-review
 junyi-content-distiller
 junyi-deep-dialogue
 junyi-doc-reader

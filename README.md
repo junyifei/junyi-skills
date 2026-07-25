@@ -16,7 +16,7 @@
 [![Public Skills](https://img.shields.io/badge/public_skills-20-2563EB.svg?style=flat-square)](skill-index.json)
 [![License](https://img.shields.io/badge/license-CC_BY--NC_4.0-16A34A.svg?style=flat-square)](LICENSE)
 
-当前公开版：**1.5.0** · 正式入口与 Skills：**20 个**
+当前公开版：**1.6.0** · 正式入口与 Skills：**21 个**（干活的 Skill 20 个 + 总入口 junyi 1 个）
 
 [家庭成长顾问 Agent](#什么是家庭成长顾问-agent) · [成长闭环](#一条完整的成长闭环) · [30 秒开始](#30-秒开始) · [安装](#安装) · [三个成长阶段](#三个成长阶段) · [使用与共创](#继续使用与共创)
 
@@ -115,7 +115,7 @@ flowchart LR
 请帮我把 GitHub junyifei/junyi-skills 里公开的 skill 都装上。
 ```
 
-装好后，新开一个对话让 AI 重新识别一下就能用了。本仓库已在隔离项目中验证 20/20 发现与复制安装；不同 AI 助手的目录和用法可能不太一样，详见[兼容性与安装说明](guide/COMPATIBILITY.md)。
+装好后，新开一个对话让 AI 重新识别一下就能用了。本仓库已在隔离项目中验证 21/21 发现与复制安装；不同 AI 助手的目录和用法可能不太一样，详见[兼容性与安装说明](guide/COMPATIBILITY.md)。
 
 <details>
 <summary>习惯命令行，或你的工具需要精确命令？点这里</summary>
@@ -159,6 +159,7 @@ npx -y skills add junyifei/junyi-skills --skill <SKILL>
 | 有体验、情绪、矛盾或选择，但还没想清楚 | [`junyi-deep-dialogue`](junyi-deep-dialogue/SKILL.md) | 逐层追问、自己的判断和可选觉知记录 |
 | 已有一个方案，明确希望有人挑刺、找漏洞 | [`junyi-po-leng-shui`](junyi-po-leng-shui/SKILL.md) | 关键漏洞、反证与最可能失败的位置 |
 | 想记住每一个重要的人、兑现承诺，看清自己的心力流向 | [`junyi-relationship-manager`](junyi-relationship-manager/SKILL.md) | 有来源标记、支持同名消歧的关系档案与本地跟进报告；进阶可配置飞书三表和自动提醒 |
+| 想把这一周和 AI 协作的记录，复盘成周报和能写的素材 | [`junyi-ai-weekly-review`](junyi-ai-weekly-review/SKILL.md) | 《本周记录》+《本周内容素材》，纯本地、不外发（需 Node.js） |
 
 记住重要的人、看清自己的心力流向，和想清楚自己一样，都是「把自己活明白」的一部分。
 
