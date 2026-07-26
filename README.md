@@ -103,6 +103,12 @@ flowchart LR
 请帮我从 junyifei/junyi-skills 安装 junyi-growth-spark-recorder 这个 skill。
 ```
 
+**想复盘这一周和 AI 都做了什么**：
+
+```text
+请帮我从君一的 GitHub 仓库 junyifei/junyi-skills，安装 junyi-ai-weekly-review 这个 skill。运行前先告诉我哪些步骤只在本地、哪些内容可能由云端模型处理。
+```
+
 **只想先看看仓库里有哪些 Skill、暂时不装**：
 
 ```text
@@ -159,7 +165,7 @@ npx -y skills add junyifei/junyi-skills --skill <SKILL>
 | 有体验、情绪、矛盾或选择，但还没想清楚 | [`junyi-deep-dialogue`](junyi-deep-dialogue/SKILL.md) | 逐层追问、自己的判断和可选觉知记录 |
 | 已有一个方案，明确希望有人挑刺、找漏洞 | [`junyi-po-leng-shui`](junyi-po-leng-shui/SKILL.md) | 关键漏洞、反证与最可能失败的位置 |
 | 想记住每一个重要的人、兑现承诺，看清自己的心力流向 | [`junyi-relationship-manager`](junyi-relationship-manager/SKILL.md) | 有来源标记、支持同名消歧的关系档案与本地跟进报告；进阶可配置飞书三表和自动提醒 |
-| 想把这一周和 AI 协作的记录，复盘成周报和能写的素材 | [`junyi-ai-weekly-review`](junyi-ai-weekly-review/SKILL.md) | 《本周记录》+《本周内容素材》，纯本地、不外发（需 Node.js） |
+| 想把这一周和 AI 协作的记录，复盘成周报和能写的素材 | [`junyi-ai-weekly-review`](junyi-ai-weekly-review/SKILL.md) | 本地采集并生成《本周记录》+《本周内容素材》；云端模型处理前会告知并确认（需 Node.js） |
 
 记住重要的人、看清自己的心力流向，和想清楚自己一样，都是「把自己活明白」的一部分。
 

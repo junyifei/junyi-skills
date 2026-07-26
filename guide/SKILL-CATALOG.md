@@ -57,7 +57,7 @@
 | 通过追问想清楚体验、情绪、矛盾或选择 | [`junyi-deep-dialogue`](../junyi-deep-dialogue/SKILL.md) | 一个真实问题和愿意回答的当前体验 | 逐层追问、自己的判断和可选觉知记录 |
 | 明确要求挑刺、找漏洞或做魔鬼代言人评审 | [`junyi-po-leng-shui`](../junyi-po-leng-shui/SKILL.md) | 已有方案、决定或文稿，以及希望挑战的位置 | 关键漏洞、反证、失败风险和优先修改项 |
 | 记住每一个重要的人、兑现承诺，看清自己的心力流向 | [`junyi-relationship-manager`](../junyi-relationship-manager/SKILL.md) | 你和某人的交流片段、明确事实与承诺；首次在 Git 项目中使用时需确认私人保存路径 | 有来源标记且支持同名消歧的关系档案、本地跟进与关系报告；进阶可配置飞书三表和自动提醒 |
-| 复盘这一周和各个 AI 的协作，沉淀方法和素材 | [`junyi-ai-weekly-review`](../junyi-ai-weekly-review/SKILL.md) | 各 AI 工具的本地对话记录（需 Node.js 环境） | 《本周记录》与《本周内容素材》，纯本地、不外发 |
+| 复盘这一周和各个 AI 的协作，沉淀方法和素材 | [`junyi-ai-weekly-review`](../junyi-ai-weekly-review/SKILL.md) | 各 AI 工具的本地对话记录（需 Node.js 环境） | 本地采集并生成《本周记录》与《本周内容素材》；云端模型处理前会告知并确认 |
 
 ## 把经验做成一人公司事业
 

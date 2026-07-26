@@ -32,6 +32,7 @@ function pickTs(o) {
 
 function parseRecords(raw, fp, windowSet, out, state) {
   for (const o of raw) {
+    const sourceLine = ++state.line;
     if (!o || typeof o !== 'object') continue;
     const role = pickRole(o);
     const content = pickContent(o);
@@ -40,11 +41,13 @@ function parseRecords(raw, fp, windowSet, out, state) {
     if (hasStrongSelf(content)) continue;
     if (hasSoftSelf(content)) continue;
     const ts = pickTs(o);
+    if (!ts) { out.missing_timestamp++; continue; }
     const { date, local } = toLocal(ts);
-    if (windowSet && date && !windowSet.has(date)) continue; // 有时间戳就按窗口过滤；无时间戳保留
+    if (!date) { out.invalid_timestamp++; continue; }
+    if (windowSet && !windowSet.has(date)) { out.outside_window++; continue; }
     out.records.push(makeRecord({
       source: 'custom', agent_id: o.agent || o.agent_id || 'custom', session_id: o.session_id || o.session || o.conversation_id || state.session,
-      role, content, ts, local, date, fp, line: ++state.line, uuid: o.id || o.uuid || o.record_id,
+      role, content, ts, local, date, fp, line: sourceLine, uuid: o.id || o.uuid || o.record_id,
     }));
   }
 }
@@ -57,7 +60,11 @@ export default {
     return { available: !!customPath && fs.existsSync(customPath), paths: customPath ? [customPath] : [], note: customPath ? '' : '未提供 --custom-path' };
   },
   collect({ customPath, windowSet }) {
-    const out = { source: this.source, label: this.label, status: this.status, available: !!customPath, paths: customPath ? [customPath] : [], records: [], files: 0, self_skipped: 0, unparsed: 0, note: '' };
+    const out = {
+      source: this.source, label: this.label, status: this.status, available: !!customPath,
+      paths: customPath ? [customPath] : [], records: [], files: 0, self_skipped: 0,
+      unparsed: 0, missing_timestamp: 0, invalid_timestamp: 0, outside_window: 0, note: '',
+    };
     if (!customPath) { out.note = '未提供 --custom-path，custom 适配器跳过'; return out; }
     if (!fs.existsSync(customPath)) { out.note = `路径不存在：${customPath}`; out.available = false; return out; }
     const state = { line: 0, session: 'custom-session' };
@@ -80,8 +87,14 @@ export default {
         parseRecords(raw, fp, windowSet, out, state);
       }
     }
+    const excluded = [];
+    if (out.unparsed) excluded.push(`字段无法识别 ${out.unparsed} 条`);
+    if (out.missing_timestamp) excluded.push(`缺时间戳 ${out.missing_timestamp} 条`);
+    if (out.invalid_timestamp) excluded.push(`时间戳无效 ${out.invalid_timestamp} 条`);
+    if (out.outside_window) excluded.push(`窗口外 ${out.outside_window} 条`);
+    if (excluded.length) out.note = (out.note ? out.note + ' ' : '') + `已排除：${excluded.join('，')}。`;
     if (out.records.length === 0) {
-      out.note = (out.note ? out.note + ' ' : '') + `未能推断出对话记录（unparsed=${out.unparsed}）。请把记录整理成逐行 JSON：{"role":"user|assistant","timestamp":"ISO","content":"..."}`;
+      out.note = (out.note ? out.note + ' ' : '') + '没有可用于本周复盘的记录。Custom 记录必须包含可解析的 role、content 与 timestamp；建议整理成逐行 JSON：{"role":"user|assistant","timestamp":"ISO","content":"..."}';
     }
     return out;
   },

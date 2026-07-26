@@ -1,5 +1,5 @@
 interface:
   display_name: "AI 周度复盘"
-  short_description: "把你这一周和各个 AI 的协作记录，自动汇成一份周报和一份能写的素材，全程只在本地跑、本地存"
+  short_description: "本地收集一周 AI 协作记录，生成可追溯周报与内容素材"
   brand_color: "#C65A3A"
-  default_prompt: "Use $junyi-ai-weekly-review to review what I did with my AI agents this week and turn it into a weekly log plus reusable writing material, all kept local."
+  default_prompt: "Use $junyi-ai-weekly-review to collect this week's AI collaboration records locally, explain any cloud-model processing before it happens, and create a traceable weekly log plus reusable writing material."

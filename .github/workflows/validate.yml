@@ -21,3 +21,5 @@ jobs:
           python-version: "3.12"
       - name: Validate public surface
         run: python tools/validate_public_repo.py
+      - name: Test AI weekly review
+        run: node tools/test_ai_weekly_review.mjs

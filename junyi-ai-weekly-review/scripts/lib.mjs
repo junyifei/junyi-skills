@@ -8,6 +8,27 @@ import os from 'node:os';
 export const HOME = os.homedir();
 export const sha = (s) => crypto.createHash('sha256').update(s).digest('hex');
 
+// ---- 进入模型上下文前的尽力脱敏 ----
+// records.cleaned.jsonl 保留本地原文以便追溯；day chunks 只写脱敏后的文本。
+// 这里只处理高置信度凭据、显式账号字段与金额，不声称覆盖所有个人信息。
+export function redactForModel(input) {
+  let text = String(input || '');
+  let count = 0;
+  const apply = (pattern, replacement) => {
+    text = text.replace(pattern, (...args) => {
+      count++;
+      return typeof replacement === 'function' ? replacement(...args) : replacement;
+    });
+  };
+
+  apply(/\bBearer\s+[A-Za-z0-9._~+/=-]{8,}\b/gi, 'Bearer [REDACTED]');
+  apply(/\b(?:sk|rk)-[A-Za-z0-9_-]{12,}\b|\bgh[pousr]_[A-Za-z0-9_]{20,}\b|\bgithub_pat_[A-Za-z0-9_]{20,}\b|\bxox[baprs]-[A-Za-z0-9-]{10,}\b/g, '[REDACTED_SECRET]');
+  apply(/((?:api[_ -]?key|access[_ -]?token|refresh[_ -]?token|client[_ -]?secret|app[_ -]?secret|password|passwd|cookie|authorization|账号|账户)\s*[:=：]\s*)(?!Bearer\b)(["']?)([^\s,"';，；]{4,})\2/gi, (_match, prefix) => `${prefix}[REDACTED]`);
+  apply(/(?:¥|￥|\$|€|£)\s?\d[\d,]*(?:\.\d+)?/g, '[REDACTED_AMOUNT]');
+  apply(/\d[\d,]*(?:\.\d+)?\s*(?:万元|元|块钱|人民币|美元|美金|CNY|RMB|USD|EUR)/gi, '[REDACTED_AMOUNT]');
+  return { text, count };
+}
+
 // ---- 本地时区日期（用机器本地时区，不写死，符合设计「本地时区过去 7 天」）----
 export function localDateStr(d = new Date()) {
   return new Intl.DateTimeFormat('en-CA', {

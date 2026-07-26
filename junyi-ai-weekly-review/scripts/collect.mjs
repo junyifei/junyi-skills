@@ -20,7 +20,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { HOME, windowDates, isoWeekId } from './lib.mjs';
+import { HOME, windowDates, isoWeekId, redactForModel } from './lib.mjs';
 import claudeCode from './adapters/claude-code.mjs';
 import openclaw from './adapters/openclaw.mjs';
 import codex from './adapters/codex.mjs';
@@ -52,6 +52,20 @@ const weekId = isoWeekId(dates[dates.length - 1]);
 const outRoot = args.out ? path.resolve(args.out.replace(/^~(?=$|\/)/, HOME)) : path.resolve(process.cwd(), 'ai-weekly-review-output');
 const OUT = path.join(outRoot, weekId);
 const DAYS_DIR = path.join(OUT, 'days');
+// 同一周重跑前只删除本脚本命名的旧 chunk，保留 days/ 下其他用户文件。
+function clearGeneratedChunks(root) {
+  if (!fs.existsSync(root)) return;
+  const dirs = [root];
+  while (dirs.length) {
+    const dir = dirs.pop();
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const fp = path.join(dir, entry.name);
+      if (entry.isDirectory()) dirs.push(fp);
+      else if (entry.isFile() && /^chunk_\d+\.md$/.test(entry.name)) fs.unlinkSync(fp);
+    }
+  }
+}
+clearGeneratedChunks(DAYS_DIR);
 fs.mkdirSync(DAYS_DIR, { recursive: true });
 
 // ---- 抓取层：跑各适配器 ----
@@ -69,6 +83,8 @@ function runAdapter(ad) {
   adapterReports.push({
     source: r.source, label: r.label, status: r.status, available: !!r.available,
     files: r.files || 0, self_skipped: r.self_skipped || 0, records: r.records.length,
+    unparsed: r.unparsed || 0, missing_timestamp: r.missing_timestamp || 0,
+    invalid_timestamp: r.invalid_timestamp || 0, outside_window: r.outside_window || 0,
     paths: r.paths || [], note: r.note || '',
   });
   allRecords.push(...r.records);
@@ -121,6 +137,7 @@ function chunkDay(recs) {
   }
   return chunks;
 }
+let redactedValues = 0;
 function renderChunk(ch, idx) {
   const f = ch[0];
   const out = [
@@ -133,7 +150,9 @@ function renderChunk(ch, idx) {
     '', '---', '',
   ];
   for (const r of ch) {
-    out.push(`### [${r.role}] ${r.timestamp_local}  (rec ${String(r.record_id).slice(0, 8)})`, '', r.content, '');
+    const safe = redactForModel(r.content);
+    redactedValues += safe.count;
+    out.push(`### [${r.role}] ${r.timestamp_local}  (rec ${String(r.record_id).slice(0, 8)})`, '', safe.text, '');
   }
   return out.join('\n');
 }
@@ -167,6 +186,7 @@ const manifest = [
   `- 生成时间: ${new Date().toISOString()}`,
   `- 输出目录: ${OUT}`,
   `- 状态: ${isEmpty ? 'empty-week（窗口内无有效对话）' : 'chunked'}`,
+  `- 模型输入脱敏: ${redactedValues} 处（day chunks 已替换；records.cleaned.jsonl 保留本地原文，不用于模型蒸馏）`,
   '',
   `## 适配器报告（诚实标注）`,
   `| 来源 | 状态 | 命中 | 文件 | 自指排除 | 记录数 | 说明 |`,
@@ -197,5 +217,6 @@ console.log(JSON.stringify({
   agents: agentMap.size,
   cleaned_records: totalRecords,
   total_chunks: perDay.reduce((s, d) => s + d.chunks, 0),
+  redacted_values: redactedValues,
   status: isEmpty ? 'empty-week' : 'chunked',
 }, null, 2));
