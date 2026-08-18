@@ -4,13 +4,13 @@
 
 ## 育儿先育己，让 AI 学会你
 
-这里的 AI 时代家庭教育，不是让孩子更早使用 AI，而是帮助父母理解孩子、成长自己，并把家庭实践中的经验与判断转化为行动、表达和事业。
+这里的 AI 时代家庭教育，关注父母怎样理解孩子、成长自己，并把家庭实践中的经验与判断转化为行动、表达和事业。
 
 让 AI 学会你的真实材料、长期经验和判断标准，让真实生活成为教育发生的地方。这里的核心目标，是帮助你训练一个长期服务于自己家庭的「家庭成长顾问 Agent」。
 
-首先为关心 AI 时代家庭成长、事业发展和自我成长的父母设计；也适用于希望从真实生活出发，理解孩子、更新自己，并把成长经验转化为内容、影响力或事业能力的人。
+首先为同时承担事业与家庭责任的创业者父母设计；也适用于希望从真实生活出发，理解孩子、更新自己，并把成长经验转化为行动、表达或事业能力的父母。
 
-> 这些 Skill 来自我自己的一人公司和家庭日常。完整背景和其他内容：[junyiainative.com](https://junyiainative.com)
+> 这些 Skill 来自我在家庭教育、长期社群、一人公司与 AI 协作中的真实实践。完整背景和其他内容：[junyiainative.com](https://junyiainative.com)
 
 [![Release](https://img.shields.io/github/v/release/junyifei/junyi-skills?style=flat-square&label=release)](https://github.com/junyifei/junyi-skills/releases)
 [![Public Skills](https://img.shields.io/badge/public_skills-20-2563EB.svg?style=flat-square)](skill-index.json)
@@ -22,7 +22,7 @@
 
 ## 什么是家庭成长顾问 Agent
 
-我不是来训练你，而是帮你去训练你自己的 Agent。
+我的角色，是帮你训练自己的 Agent。
 
 家庭成长顾问 Agent，是一个部署在你自己电脑上、长期服务于同一个家庭的 AI 协作助理。它不会替你教育孩子，也不会替父母和孩子作最终决定。它帮助你持续整理真实材料、理解具体行为、形成低负担行动，并根据真实结果复盘和更正。
 
@@ -201,9 +201,9 @@ npx -y skills add junyifei/junyi-skills --skill <SKILL>
 
 本仓库采用 [CC BY-NC 4.0](LICENSE)：可以使用、修改和再分发，但仅限非商业用途；商业使用请先联系君一获得授权。请署名“君一”并保留许可链接。权利与迁移记录见 [`RIGHTS.md`](RIGHTS.md)。
 
-**君一**
+**费君一｜享育心塾创始人｜企业 AI 转型与落地顾问**
 
-一人公司妈妈，持续实践 AI 时代的家庭教育：陪孩子成长，也让父母在教育中成长，并把新的理解与能力带回家庭和事业。
+长期服务创业者父母，也是一位两个孩子的妈妈。我持续把家庭教育、一人公司与 AI 协作中的真实经验，整理成可复用的方法与 Skill。
 
 ## 完整背景与更多内容
 
