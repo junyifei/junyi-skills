@@ -8,7 +8,7 @@
 
 | 项目 | 状态 | 核验结果 |
 |---|---|---|
-| 仓库自动发现 | 已验证 | `skills` CLI 能发现 21 个（20 个 Skill + 1 个总入口 junyi）|
+| 仓库自动发现 | 已验证 | `skills` CLI 能发现 21 个（20 个 Skill + 1 个「君一 Skills 导航」，技术名称 `junyi`）|
 | Codex 项目级复制安装 | 已验证 | 隔离目录中安装 21/21，`SKILL.md` 与资源目录完整 |
 | `junyi-relationship-manager` 1.1.0 | 已验证 | 隔离安装包含 SKILL、agents、assets、references 与校验脚本；3 组独立前向情境和 6 项脚本自检通过 |
 | Codex 显式调用 | 已验证 | 支持 `$skill-name` 与自然语言指定 Skill |
