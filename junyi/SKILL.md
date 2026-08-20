@@ -1,6 +1,6 @@
 ---
 name: junyi
-description: 君一 Skills 导航。仅在用户显式调用 /junyi、$junyi、君一 Skills 导航、君一的 AI 时代家庭教育 Skills、家庭成长顾问 Agent、君一方法论（旧称），或明确要求“帮我选择君一的哪个 Skill/从哪里开始”时使用。帮助父母搭建或更新自己的家庭成长顾问 Agent，并识别用户正处于理解孩子、支持成长，理解自己、形成判断，或沉淀经验、长成事业的哪个阶段；根据当前任务、已有证据与必要边界，路由到最合适的一个 Skill 或最短调用链。它不代替下游 Skill 执行，也不在证据不足时编造经历、案例、用户洞察、儿童资料或平台数据。
+description: 君一 Skills 导航。仅在用户显式调用 /junyi、$junyi、君一 Skills 导航、君一的 AI 协作 Skills、君一的 AI 时代家庭教育 Skills（旧称）、家庭成长 Agent、家庭成长顾问 Agent（旧称）、君一方法论（旧称），或明确要求“帮我选择君一的哪个 Skill/从哪里开始”时使用。根据用户在事业创造、家庭经营、关系经营或生命成长中的真实任务，识别其正处于理解孩子、支持成长，理解自己、形成判断，或沉淀经验、长成事业的哪个阶段；结合已有证据与必要边界，路由到最合适的一个 Skill 或最短调用链。它不代替下游 Skill 执行，也不在证据不足时编造经历、案例、用户洞察、儿童资料或平台数据。
 ---
 
 # 君一 Skills 导航
@@ -28,7 +28,7 @@ description: 君一 Skills 导航。仅在用户显式调用 /junyi、$junyi、�
 | 记住重要的人、按明确承诺和已确认阶段提醒跟进，看清自己的心力流向 | `junyi-relationship-manager` |
 | 复盘这一周和各个 AI 的协作，沉淀成周报和内容素材 | `junyi-ai-weekly-review` |
 | 记录孩子的具体片段并做发展观察与模型复盘 | `junyi-growth-spark-recorder` |
-| 首次收集、导入、补充或审核家庭成长顾问 Agent 的全年底座资料 | `junyi-child-annual-intake` |
+| 首次收集、导入、补充或审核家庭成长 Agent 的全年底座资料 | `junyi-child-annual-intake` |
 | 计划日期为 0—35 月龄，全年资料已通过校验，要生成全年判断底座 | `junyi-infant-annual-plan` |
 | 计划日期为 36—71 月龄，全年资料已通过校验，要生成全年判断底座 | `junyi-preschool-annual-plan` |
 | 计划日期为 72—144 月龄，全年资料已通过校验，要生成全年判断底座 | `junyi-school-age-annual-plan` |
@@ -47,7 +47,7 @@ description: 君一 Skills 导航。仅在用户显式调用 /junyi、$junyi、�
 - 只需要研究小红书对标账号与内容样本：直接走 `junyi-xhs-benchmark`。
 - 对重大方向既想看见自己又想防止自欺：先 `junyi-deep-dialogue`；形成明确判断后，仅在用户显式要求时调用 `junyi-po-leng-shui`。
 - 已有一个亲子片段，只想记录与复盘：直接走 `junyi-growth-spark-recorder`。
-- 第一次建立家庭成长顾问 Agent 的全年知识底座：先走 `junyi-child-annual-intake`；校验通过后，按计划日期完整月龄只进入 `junyi-infant-annual-plan`、`junyi-preschool-annual-plan`、`junyi-school-age-annual-plan` 中的一个。
+- 第一次建立家庭成长 Agent 的全年知识底座：先走 `junyi-child-annual-intake`；校验通过后，按计划日期完整月龄只进入 `junyi-infant-annual-plan`、`junyi-preschool-annual-plan`、`junyi-school-age-annual-plan` 中的一个。
 - 已有兼容全年底座、要生成下一季度行动指南：先走 `junyi-child-quarterly-intake`；只有 `status: ready` 时，再按季度开始日完整月龄进入三个季度 Skill 中的一个。
 - 没有日常成长故事或月报：仍走 `junyi-child-quarterly-intake` 的年龄自适应问卷路径；不得要求家庭必须持续录音或写月报。
 - 缺少兼容全年 `intake.json` 或完整全年规划：返回 `blocked-upstream`，并路由到 `junyi-child-annual-intake` 和对应全年报告 Skill；不得用季度问卷代替全年资料采集。

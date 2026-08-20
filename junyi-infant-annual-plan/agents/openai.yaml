@@ -1,5 +1,5 @@
 interface:
   display_name: "0—3岁家庭成长顾问全年底座"
-  short_description: "为家庭成长顾问 Agent 生成0—3岁证据可追溯的全年知识底座"
+  short_description: "为家庭成长 Agent 生成0—3岁证据可追溯的全年知识底座"
   brand_color: "#C65A3A"
   default_prompt: "Use $junyi-infant-annual-plan to build the annual knowledge base for my Family Growth Advisor Agent for a child younger than 36 months."
