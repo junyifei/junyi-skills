@@ -19,7 +19,7 @@
     {"name": "junyi-learning-distiller", "category": "理解自己，形成判断", "path": "junyi-learning-distiller", "version": "1.0.0", "maturity": "已发布／7 项测试通过", "role": "把外部材料转成来源证据、自己的理解、迁移边界与小实验"},
     {"name": "junyi-vault", "category": "理解自己，形成判断", "path": "junyi-vault", "version": "1.0.0", "maturity": "已发布／15 项安全测试与 26 项情境测试通过", "role": "建库、归档新内容，或只读诊断混乱知识库"},
     {"name": "junyi-personal-website", "category": "沉淀经验，长成事业", "path": "junyi-personal-website", "version": "1.0.0", "maturity": "已发布／9 项测试通过", "role": "从定位与真实素材构建原创、可验证、可部署的个人官网"},
-    {"name": "junyi-positioning", "category": "沉淀经验，长成事业", "path": "junyi-positioning", "version": "0.3.0", "maturity": "已投入真实项目／B00—B11 结构", "role": "建立、审核和迭代唯一的 B00—B11 证据型 IP 战略书"},
+    {"name": "junyi-positioning", "category": "沉淀经验，长成事业", "path": "junyi-positioning", "version": "0.4.1", "maturity": "1次真人全流程实测＋1次独立陌生创作者前向测试／B00—B11 结构／14 项回归测试", "role": "用最轻合适模式形成候选定位卡、诊断定位，或建立和迭代唯一的 B00—B11 证据型 IP 战略书"},
     {"name": "junyi-xhs-benchmark", "category": "沉淀经验，长成事业", "path": "junyi-xhs-benchmark", "version": "0.2.0", "maturity": "测试中", "role": "发现、核验、分层和选择小红书对标样本"},
     {"name": "junyi-child-annual-intake", "category": "理解孩子，支持成长", "path": "junyi-child-annual-intake", "version": "1.0.0", "maturity": "15 案例前向回归与独立复测完成", "role": "按唯一年龄轨道采集、导入和校验家庭成长 Agent 的全年底座资料"},
     {"name": "junyi-infant-annual-plan", "category": "理解孩子，支持成长", "path": "junyi-infant-annual-plan", "version": "1.0.0", "maturity": "15 案例前向回归与独立复测完成", "role": "为 0—35 月龄儿童生成证据可追溯的家庭成长 Agent 全年知识底座"},

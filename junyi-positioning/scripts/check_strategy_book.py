@@ -25,6 +25,8 @@ B00_TERMS = (
     "触达人群",
     "真正买方",
     "不需要吸引的人",
+    "关键适配条件",
+    "关键拒绝条件",
     "传播入口",
     "人物标签",
     "内容承诺",
@@ -38,6 +40,14 @@ B00_TERMS = (
 )
 
 B09_TERMS = ("隐私边界", "真实性边界", "伦理边界", "产品边界", "能力边界")
+
+CHAPTER_TERMS = {
+    "B02": ("跨场景能力复现",),
+    "B03": ("买方适配与拒绝",),
+    "B04": ("结果阶梯", "7／30 天持续使用"),
+    "B07": ("能力信任", "理解信任", "判断信任"),
+    "B10": ("端到端证据链", "唯一主要变量", "停止条件"),
+}
 
 
 def chapter_body(text: str, chapter: str) -> str:
@@ -73,6 +83,12 @@ def check_text(text: str, *, forbid_names: list[str] | None = None) -> tuple[lis
     for term in B09_TERMS:
         if term not in b09:
             errors.append(f"B09 missing required boundary: {term}")
+
+    for chapter, terms in CHAPTER_TERMS.items():
+        body = chapter_body(text, chapter)
+        for term in terms:
+            if term not in body:
+                errors.append(f"{chapter} missing required field: {term}")
 
     for marker in EVIDENCE_MARKERS:
         if marker not in text:
@@ -136,6 +152,7 @@ def main() -> int:
     print(
         f"PASS: {args.book} ({len(text)} chars, {len(errors)} errors, {len(warnings)} warnings)"
     )
+    print("NOTE: structural pass only; source authenticity and decision quality still require evidence review")
     return 0
 
 

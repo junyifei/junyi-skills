@@ -1,9 +1,9 @@
 ---
 name: junyi-positioning
-description: Build, audit, or iterate an evidence-based personal-IP strategy book or run a focused evidence-based positioning diagnosis for any creator, founder, expert, coach, artist, or professional. Use for 个人IP战略书、商业IP定位书、个人IP定位、账号定位、定位诊断、定位收窄、定位改版、从零设计个人IP、审核现有定位、迭代旧战略书、比较定位方向、设计内容与商业验证、制定30天或90天验证计划，尤其当事实、市场信号和个人愿望容易混在一起，或需要输出可执行的 Markdown 战略书时。
+description: Build, audit, or iterate an evidence-based personal-IP strategy, produce a provisional creator positioning card from limited material, or run a focused positioning diagnosis for a creator, founder, expert, coach, artist, or professional. Use for 个人IP战略书、商业IP定位书、创作者定位卡、个人IP定位、账号定位、定位诊断、定位收窄、定位改版、从零设计个人IP、审核现有定位、迭代旧战略书、比较定位方向、设计内容与商业验证、制定30天或90天验证计划，尤其当事实、市场信号和个人愿望容易混在一起时。
 ---
 
-# 君一 IP 定位战略
+# 证据型个人 IP 定位战略
 
 **「君一」是方法来源，不是服务对象。** 本 Skill 为使用者本人设计定位；除非使用者明确要求为他人（客户、学员）做，否则下文的「这个人」始终指使用者本人。
 
@@ -17,25 +17,59 @@ description: Build, audit, or iterate an evidence-based personal-IP strategy boo
 2. **审核现有定位**：保留原方案，逐层检查问题出在用户想起你的时刻、人物记忆、内容承诺、能力证明、买方、产品或表达。
 3. **迭代旧战略书**：先建立版本差异和新增证据，只修改失败层；明确保留、删除、降级和待验证内容。
 4. **仅做定位诊断**：不强制生成整本战略书；判断定位失败层、比较候选方向，输出定位决定、证据缺口、最小修复和验证条件。
+5. **创作者定位卡**：在一次访谈或一组有限材料后，先产出可复用的候选定位交接物；它帮助后续写作、对标和继续访谈，但不替代战略书或宣布正式定位。
 
-输出前先说明当前模式、已有资料、关键缺口和允许做出的决策。资料不足时继续完成可完成部分，把缺口标为“未知”，不要逼使用者一次答完所有问题。
+输出前先说明当前模式、已有资料、关键缺口、允许做出的决策和写入边界。资料不足时继续完成可完成部分，把缺口标为“未知”，不要逼使用者一次答完所有问题。
 
-## 必读资源
+### 先确认测试与正式落地的边界
 
-开始任何任务前，读取：
+当使用者说“测试”“真人实测”“模拟”“扮演陌生学员”或等价表达时，默认进入**真实资料驱动的沙盒测试**：可以使用真实访谈和授权材料完成判断，但不能把测试中的“接受／确认”解释为正式经营决策、文件改版、产品变更或对外发布授权。
 
-- [interview-and-evidence.md](references/interview-and-evidence.md)：访谈提纲、资料清单与证据账本。
-- [positioning-and-scoring.md](references/positioning-and-scoring.md)：五层定位、三类人群、变化地图、候选比较与评分。
-- [strategy-book-framework.md](references/strategy-book-framework.md)：战略书章节顺序、每章职责与 Markdown 框架。
-- [validation-and-quality.md](references/validation-and-quality.md)：30/90 天验证、修订规则、语言与质量检查。
+- 开始时明确：哪些回答只是测试输入，哪些动作会产生文件，产物存在哪里，是否会触碰当前事实源。
+- 测试产物必须显著标注“非正式事实源／不替代现有战略”；默认写入独立测试目录或只在对话中展示，不覆盖当前 `IP战略书.md`、产品卡、官网或行动计划。
+- 测试中的关键确认应写成“为了继续评估 Skill，请确认这个暂定判断是否符合测试人物”，不能写成“批准未来 90 天改变业务”。
+- 真人测试结束后，先交付测试结果和 Skill 缺陷；只有使用者另行明确要求采纳或回写，才进入正式落地。
+- 若同一对话中使用者已经单独授权某项真实写入，只执行该项授权；不能把它扩展为整套测试产物的正式采纳。
 
-任务是“仅做定位诊断”、定位收窄、定位改版，或需要判断失败层时，额外读取 [positioning-diagnosis-module.md](references/positioning-diagnosis-module.md)。它是本 Skill 的内部定位模块，不是独立 Skill。
+非测试任务也要区分“给出战略建议”和“修改正式事实源”。用户只要求分析、审核或报告时，不自动写入；用户明确要求创建或更新战略书时，先确认唯一目标文件和版本关系，再写入并回读验证。
+
+### 陌生使用者第一次使用
+
+使用者不需要有 Obsidian、知识库、旧战略书、成交数据或整理好的履历才能开始。若对方没有现成材料：
+
+1. 先说明当前只能从“候选定位卡”或“从零访谈的第一步”开始，不宣布正式定位；
+2. 一次只请对方讲一个真实事件：当时是谁遇到什么问题、对方实际做了什么、产生了什么可观察结果／产物、有什么记录或反馈；
+3. 根据第一个事件追问下一个最影响判断的问题，不一次抛出七维问卷，也不要求对方先学习本 Skill 的术语；
+4. 材料不足时产出候选定位卡并停止；只有出现多个场景、用户需求、能力与商业证据后，才升级候选比较和完整战略书；
+5. 本 Skill 的脚本只用于可选的候选评分和 Markdown 结构检查。访谈与定位卡不依赖脚本、PyYAML、特定知识库软件或联网环境。
+
+### 创作者定位卡的边界与交付
+
+当用户只需要先把一次访谈沉淀下来、材料尚不足以比较完整定位方向，或明确要求“定位卡”时，使用此模式。每项结论必须标记为 `【事实】`、`【推断】`、`【假设】` 或 `【未知】`，并附来源或待补问题。
+
+定位卡的固定结构、停止条件和升级规则见 [creator-positioning-card.md](references/creator-positioning-card.md)。不要在定位卡中生成 30／90 天战略、给出市场规模或付费结论、把候选标签写成账号简介，或要求一次完成七维访谈。若使用者随后要求对外简介、完整方向比较、产品与内容验证，或以定位卡作为长期唯一依据，转入相应的完整模式并补齐证据账本。
+
+## 按任务读取资源
+
+所有模式先读取 [interview-and-evidence.md](references/interview-and-evidence.md)，只补当前决定真正需要的证据。然后按模式读取：
+
+- **创作者定位卡**：读取 [creator-positioning-card.md](references/creator-positioning-card.md)。不需要加载完整战略书框架或 30／90 天验证。
+- **仅做定位诊断、定位收窄或定位改版**：读取 [positioning-and-scoring.md](references/positioning-and-scoring.md)、[positioning-diagnosis-module.md](references/positioning-diagnosis-module.md)；只有本次需要设计实验时再读 [validation-and-quality.md](references/validation-and-quality.md)。
+- **从零设计、审核完整定位或迭代正式战略书**：读取 [positioning-and-scoring.md](references/positioning-and-scoring.md)、[strategy-book-framework.md](references/strategy-book-framework.md) 和 [validation-and-quality.md](references/validation-and-quality.md)。
+
+评估或修改本 Skill 本身时，额外读取 [forward-test-cases.md](references/forward-test-cases.md)；普通定位任务不要加载测试案例。
 
 ## 核心工作流
+
+- **创作者定位卡**：只完成当前材料所需的证据整理、真实资产和用户想起时刻，按定位卡模板输出后停止；不继续执行候选评分、战略书和 30／90 天验证。
+- **聚焦诊断**：按诊断模块定位失败层，只在需要时调用评分或实验设计；若结论会改变正式定位，再升级为完整模式。
+- **完整模式**：执行下列 1—10 步，输出或更新唯一的 `IP战略书.md`。
 
 ### 1. 用七维度访谈收集资料并建立证据账本
 
 先读取已有材料，再按 [interview-and-evidence.md](references/interview-and-evidence.md) 逐维度补缺口。七维度是资料采集顺序，不是问完七个问题就直接生成定位：IP 内核、用户、用户状态与痛点、身位、产品、选题调性、边界与底线都必须进入后续证据判断、候选比较和验证。
+
+当使用者已经授权读取本地知识库、客户反馈、课程记录或旧战略时，先检索可能存在的答案并给出证据摘要，再追问材料中确实没有、冲突或最影响决定的一个缺口。不要让使用者重新回忆已经被记录的付款、原话、案例或边界；也不要因为找到一份旧结论就跳过当前确认。
 
 一次只追问一个最影响当前决定的问题，并说明为什么问。使用者前面已经回答或材料中已经存在的内容，先整理给使用者确认，不重复采访。允许“未知”，不要为了完成访谈逼使用者即时编出答案。
 
@@ -52,6 +86,8 @@ description: Build, audit, or iterate an evidence-based personal-IP strategy boo
 
 ### 2. 回到个人真实资产
 
+定位发现从本人真实能力、经历、结果与价值选择出发；定位表达再从用户想起这个人的具体时刻出发。前者防止创造一个本人无法长期扮演的角色，后者防止定位沦为自我介绍。
+
 回答：
 
 1. 什么经历、能力、关系、场景或观点是这个人真实拥有的？
@@ -59,6 +95,8 @@ description: Build, audit, or iterate an evidence-based personal-IP strategy boo
 3. 哪些材料可以被展示为过程、产物、前后对比、案例或长期纪录？
 4. 这个方向能否从真实资产中产生至少 100 个不重复选题？
 5. 哪些隐私、伦理、精力、产能和生活方式边界不能被突破？
+
+按 [interview-and-evidence.md](references/interview-and-evidence.md) 建立跨场景能力复现表。只有在不同场景中反复出现、且有结果或过程证据支持的能力，才可作为定位资产；相似经历只能支持理解优势，不能自动证明需求、支付或交付能力。
 
 用市场研究校准需求和用户语言，不用市场热点制造一个本人无法持续扮演的人。
 
@@ -92,6 +130,8 @@ description: Build, audit, or iterate an evidence-based personal-IP strategy boo
 
 不要用粉丝画像代替买方条件，也不要因为某类人会带来播放就默认应该吸引。
 
+用当前阶段与场景、问题强度与代价、已有替代方案、预算和决策权、行动条件、交付适配共同判断真正买方。收入、地域、性别、职业或家庭身份只能作为待核验线索，不能替代真实需求与适配证据。把不适配条件和拒绝后的合适去向写清；拒绝用于保护双方，不用于制造优越感或虚假稀缺。
+
 ### 6. 建立“用户从之前到之后”的变化地图
 
 按 [positioning-and-scoring.md](references/positioning-and-scoring.md) 分别写可观察的：
@@ -103,6 +143,8 @@ description: Build, audit, or iterate an evidence-based personal-IP strategy boo
 - 必须保持不变的边界。
 
 每个“之后”都要能被内容展示、被服务交付或被验证。避免只写“更好、更自由、更有能量”。
+
+再把结果拆成五层：用户原始问题、服务内可完成的动作、服务结束时可验收的成果、7／30 天持续使用、更远期结果及不可控因素。只承诺本人或产品能够负责的层级，不能因为收入、健康、关系或平台结果可以量化，就把它写成可控承诺。
 
 ### 7. 生成并比较定位方向
 
@@ -160,6 +202,8 @@ python scripts/check_strategy_book.py strategy.md --forbid-name "<案例人物�
 ## 下游读取约定
 
 `IP战略书.md` 是唯一事实源。下游 Skill 不生成或维护第二份定位文件，也不依赖模型盲读整本长文档。
+
+创作者定位卡不是 `IP战略书.md` 的竞争事实源：下游只能把它当作待确认的访谈交接物，不能据此声称定位、能力、买方或产品已经确定。升级为战略书后，应在战略书中重新核对并吸收已确认内容。
 
 - 每个下游 Skill 必须在自己的说明中声明需要读取的章节。
 - 所有下游任务至少完整读取 `B00｜定位基准` 和 `B09｜边界与禁止事项`。

@@ -36,14 +36,14 @@ description: 君一 Skills 导航。仅在用户显式调用 /junyi、$junyi、�
 | 季度开始日为 0—35 月龄，资料已 ready，要生成观察线与环境提供方案 | `junyi-infant-quarterly-plan` |
 | 季度开始日为 36—71 月龄，资料已 ready，要生成聚焦与游戏化支持计划 | `junyi-preschool-quarterly-plan` |
 | 季度开始日为 72—144 月龄，资料已 ready，要生成主攻、维持与每周行动计划 | `junyi-school-age-quarterly-plan` |
-| 定位诊断、战略书、商业与内容验证设计 | `junyi-positioning` |
+| 候选定位卡、定位诊断、战略书、商业与内容验证设计 | `junyi-positioning` |
 | 找小红书对标账号、样本和爆款标本 | `junyi-xhs-benchmark` |
 | 从定位、真实素材和设计方向构建或重做个人/品牌官网 | `junyi-personal-website` |
 
 ## 最短调用链
 
 - 不知道从哪里开始：使用 `junyi` 选一个入口，不一次调用全部 Skills。
-- 要建立或审核个人 IP 战略：直接走 `junyi-positioning`。
+- 只有一次访谈或有限材料，先沉淀候选定位卡；要建立或审核正式个人 IP 战略，也直接走 `junyi-positioning`，由它选择最轻合适模式。
 - 只需要研究小红书对标账号与内容样本：直接走 `junyi-xhs-benchmark`。
 - 对重大方向既想看见自己又想防止自欺：先 `junyi-deep-dialogue`；形成明确判断后，仅在用户显式要求时调用 `junyi-po-leng-shui`。
 - 已有一个亲子片段，只想记录与复盘：直接走 `junyi-growth-spark-recorder`。

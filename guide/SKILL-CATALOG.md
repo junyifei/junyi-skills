@@ -64,7 +64,7 @@
 | 我现在想完成什么 | 使用入口 | 准备什么 | 会得到什么 |
 |---|---|---|---|
 | 把录音、日记或聊天记录变成可追溯素材 | [`junyi-content-distiller`](../junyi-content-distiller/SKILL.md) | 原始记录；有条件时提供说话人和时间戳 | 事件、情绪、故事、观点、金句、证据、原则和待办 |
-| 建立、审核或迭代个人 IP 战略 | [`junyi-positioning`](../junyi-positioning/SKILL.md) | 经历、用户证据、内容数据、产品与边界 | 定位决定、证据缺口、验证计划或完整《IP 战略书》 |
+| 先沉淀候选定位卡，或建立、审核、迭代个人 IP 战略 | [`junyi-positioning`](../junyi-positioning/SKILL.md) | 已有访谈或经历；完整模式再补用户证据、内容数据、产品与边界 | 候选定位卡、聚焦诊断，或定位决定、证据缺口、验证计划和完整《IP 战略书》 |
 | 发现并核验小红书对标 | [`junyi-xhs-benchmark`](../junyi-xhs-benchmark/SKILL.md) | 定位、目标用户、内容与商业路径 | 候选池、核验、分层、评分、排除理由和使用建议 |
 | 从定位与真实素材建立个人官网 | [`junyi-personal-website`](../junyi-personal-website/SKILL.md) | 定位、内容、证明、视觉偏好和部署边界 | 原创、响应式、可验收和可部署的网站 |
 

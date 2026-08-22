@@ -176,7 +176,7 @@ npx -y skills add junyifei/junyi-skills --skill <SKILL>
 | 什么时候使用 | 使用入口 | 会得到什么 |
 |---|---|---|
 | 录音、日记和生活记录很多，想提炼真实内容 | [`junyi-content-distiller`](junyi-content-distiller/SKILL.md) | 核心事件、情绪、故事、观点、证据、原则和待办 |
-| 育儿与专业经验很多，但别人记不住你是谁 | [`junyi-positioning`](junyi-positioning/SKILL.md) | 证据型《IP 战略书》、定位决定与验证计划 |
+| 经历、专业经验或想法很多，但别人记不住你是谁 | [`junyi-positioning`](junyi-positioning/SKILL.md) | 候选定位卡、定位诊断，或证据型《IP 战略书》与验证计划 |
 | 需要寻找和核验小红书对标 | [`junyi-xhs-benchmark`](junyi-xhs-benchmark/SKILL.md) | 候选池、排除理由、分层评分与使用建议 |
 | 已有定位与真实素材，想建立个人官网 | [`junyi-personal-website`](junyi-personal-website/SKILL.md) | 原创、可验证、可部署的网站 |
 

@@ -31,6 +31,7 @@ GATES = (
 )
 
 STATUSES = {"pass", "provisional", "fail", "unknown"}
+OUTCOME_ORDER = {"eligible": 0, "provisional": 1, "needs evidence": 2, "reject": 3}
 
 
 def parse_args() -> argparse.Namespace:
@@ -131,12 +132,16 @@ def to_markdown(results: list[dict]) -> str:
         "| Candidate | Basics result | Weighted score | Evidence |",
         "|---|---|---:|---|",
     ]
-    for item in sorted(results, key=lambda row: row["score"], reverse=True):
+    for item in sorted(
+        results,
+        key=lambda row: (OUTCOME_ORDER[row["outcome"]], -row["score"]),
+    ):
         evidence = ", ".join(item["evidence"]) if item["evidence"] else "MISSING"
         lines.append(
             f'| {item["name"]} | {item["outcome"]} | {item["score"]:.1f} | {evidence} |'
         )
     lines.append("")
+    lines.append("Candidates are grouped by basics result before score; rejected directions never rank above eligible ones.")
     lines.append("Scores compare candidates; they do not override a failed basic check or prove payment.")
     if any(item["evidence_warning"] for item in results):
         lines.append("WARNING: at least one candidate has no evidence IDs or notes.")

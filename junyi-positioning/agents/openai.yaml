@@ -1,4 +1,4 @@
 interface:
-  display_name: "证据型个人 IP 战略书"
-  short_description: "用真实证据设计、审核、迭代并验证个人 IP 战略书"
-  default_prompt: "Use $junyi-positioning to turn my facts, audience evidence, positioning ideas, and business goals into an evidence-based personal-IP strategy book."
+  display_name: "证据型个人 IP 定位"
+  short_description: "用真实证据形成定位卡、诊断定位或迭代 IP 战略书"
+  default_prompt: "Use $junyi-positioning to choose the lightest suitable mode, separate facts from hypotheses, and help me form a provisional positioning card, diagnose an existing positioning, or build an evidence-based personal-IP strategy book."
