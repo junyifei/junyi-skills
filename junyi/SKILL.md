@@ -24,7 +24,7 @@ description: 君一 Skills 导航。仅在用户显式调用 /junyi、$junyi、�
 | 转换、分块、索引或归档大文档 | `junyi-doc-reader` |
 | 从短记录、每日录音或超长录音中提炼真实内容、证据、原则和待办 | `junyi-content-distiller` |
 | 把课程、文章、书、访谈或长材料转成自己的理解、边界和实验 | `junyi-learning-distiller` |
-| 新建知识库、归档新内容，或只读诊断已有混乱知识库 | `junyi-vault` |
+| 从默认功能骨架快速新建知识库、重新评估旧分类、归档新内容，或只读诊断已有知识库 | `junyi-vault` |
 | 记住重要的人、按明确承诺和已确认阶段提醒跟进，看清自己的心力流向 | `junyi-relationship-manager` |
 | 复盘这一周和各个 AI 的协作，沉淀成周报和内容素材 | `junyi-ai-weekly-review` |
 | 记录孩子的具体片段并做发展观察与模型复盘 | `junyi-growth-spark-recorder` |
@@ -55,7 +55,7 @@ description: 君一 Skills 导航。仅在用户显式调用 /junyi、$junyi、�
 - 已有大文档，只需要转换、索引或归档：直接走 `junyi-doc-reader`。
 - 要从生活、录音或日常记录中找内容素材：走 `junyi-content-distiller`；它不代替外部课程学习蒸馏。
 - 要消化外部课程、文章、书或访谈：走 `junyi-learning-distiller`；它不把来源观点冒充自己的结论。
-- 要从零搭知识库：`junyi-vault` 建库模式；已有稳定结构只需放新内容：同一 Skill 的归档模式；结构混乱时先走只读诊断模式。
+- 要从零搭知识库：`junyi-vault` 从四项默认能力开始，用 2 个必答问题、1 个隐私选答和 3 个真实材料测试有限调整；已有结构先映射和诊断，不强制重建；确认结构仍有效且只需放新内容时使用归档模式。
 - 从零建立个人 IP 战略：直接走 `junyi-positioning`；需要独立研究小红书对标时，再走 `junyi-xhs-benchmark`。
 - 建个人官网：已有完整《IP战略书》时直接走 `junyi-personal-website`；定位仍不清楚时先走 `junyi-positioning`。官网 Skill 自己判断静态站、内容站或应用，不默认堆框架。
 - 长期个人材料路径：`junyi-content-distiller` → `junyi-learning-distiller` → `junyi-vault`；只调用当前缺少的一步，不强迫重跑全链。

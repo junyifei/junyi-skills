@@ -63,7 +63,7 @@ npx -y skills add junyifei/junyi-skills -g --skill junyi-positioning -y   # 只�
 | 为季度开始日 72—144 月龄孩子生成季度计划 | `$junyi-school-age-quarterly-plan` |
 | 把课程、文章、书或访谈转成自己的理解与实验 | `$junyi-learning-distiller` |
 | 转换、分块、索引或归档大文档 | `$junyi-doc-reader` |
-| 新建、归档或只读诊断知识库 | `$junyi-vault` |
+| 从默认功能骨架快速新建、重新整理、归档或诊断知识库 | `$junyi-vault` |
 | 通过追问想清楚体验、矛盾或选择 | `$junyi-deep-dialogue` |
 | 明确要求挑刺、找漏洞或魔鬼代言人 | `$junyi-po-leng-shui` |
 | 从录音、日记或聊天记录中提炼真实内容 | `$junyi-content-distiller` |

@@ -161,7 +161,7 @@ npx -y skills add junyifei/junyi-skills --skill <SKILL>
 |---|---|---|
 | 课程、文章和书看过，却没有变成自己的理解 | [`junyi-learning-distiller`](junyi-learning-distiller/SKILL.md) | 来源主张、自己的复述、适用边界和小实验 |
 | 大文档需要转换、分块、索引或归档 | [`junyi-doc-reader`](junyi-doc-reader/SKILL.md) | 结构化 Markdown、分块索引和归档结果 |
-| 想从零搭知识库，或已有知识库越来越乱 | [`junyi-vault`](junyi-vault/SKILL.md) | 建库、归档或只读诊断方案 |
+| 想快速搭知识库，或重新整理已经过时的分类 | [`junyi-vault`](junyi-vault/SKILL.md) | 默认功能骨架＋2＋1 个问题形成的文件夹方案、归档预览或旧库诊断 |
 | 有体验、情绪、矛盾或选择，但还没想清楚 | [`junyi-deep-dialogue`](junyi-deep-dialogue/SKILL.md) | 逐层追问、自己的判断和可选觉知记录 |
 | 已有一个方案，明确希望有人挑刺、找漏洞 | [`junyi-po-leng-shui`](junyi-po-leng-shui/SKILL.md) | 关键漏洞、反证与最可能失败的位置 |
 | 想记住每一个重要的人、兑现承诺，看清自己的心力流向 | [`junyi-relationship-manager`](junyi-relationship-manager/SKILL.md) | 有来源标记、支持同名消歧的关系档案与本地跟进报告；进阶可配置飞书三表和自动提醒 |

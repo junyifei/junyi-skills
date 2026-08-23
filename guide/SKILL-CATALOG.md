@@ -53,7 +53,7 @@
 |---|---|---|---|
 | 把课程、文章、书或访谈真正学会 | [`junyi-learning-distiller`](../junyi-learning-distiller/SKILL.md) | 外部材料与想解决的学习问题 | 来源主张、自己的理解、迁移边界和行动实验 |
 | 转换、分块、索引或归档大文档 | [`junyi-doc-reader`](../junyi-doc-reader/SKILL.md) | Word、PDF、TXT、Markdown 或支持的云文档 | 结构化 Markdown、分块索引和归档结果 |
-| 新建、归档或诊断知识库 | [`junyi-vault`](../junyi-vault/SKILL.md) | 目标、现有目录或待归档材料 | 建库方案、归档预览或只读诊断报告 |
+| 新建、重新整理、归档或诊断知识库 | [`junyi-vault`](../junyi-vault/SKILL.md) | 2 项长期责任／检索回答、3 个真实材料示例、隐私选答及现有目录 | 默认功能骨架上有限调整的文件夹方案、归档预览或旧库诊断 |
 | 通过追问想清楚体验、情绪、矛盾或选择 | [`junyi-deep-dialogue`](../junyi-deep-dialogue/SKILL.md) | 一个真实问题和愿意回答的当前体验 | 逐层追问、自己的判断和可选觉知记录 |
 | 明确要求挑刺、找漏洞或做魔鬼代言人评审 | [`junyi-po-leng-shui`](../junyi-po-leng-shui/SKILL.md) | 已有方案、决定或文稿，以及希望挑战的位置 | 关键漏洞、反证、失败风险和优先修改项 |
 | 记住每一个重要的人、兑现承诺，看清自己的心力流向 | [`junyi-relationship-manager`](../junyi-relationship-manager/SKILL.md) | 你和某人的交流片段、明确事实与承诺；首次在 Git 项目中使用时需确认私人保存路径 | 有来源标记且支持同名消歧的关系档案、本地跟进与关系报告；进阶可配置飞书三表和自动提醒 |
