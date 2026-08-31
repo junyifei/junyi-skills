@@ -13,10 +13,10 @@
 > 这些 Skill 来自我在家庭教育、长期社群、一人公司与 AI 协作中的真实实践。完整背景和其他内容：[junyiainative.com](https://junyiainative.com)
 
 [![Release](https://img.shields.io/github/v/release/junyifei/junyi-skills?style=flat-square&label=release)](https://github.com/junyifei/junyi-skills/releases)
-[![Public Skills](https://img.shields.io/badge/public_skills-20-2563EB.svg?style=flat-square)](skill-index.json)
+[![Public Skills](https://img.shields.io/badge/public_skills-21-2563EB.svg?style=flat-square)](skill-index.json)
 [![License](https://img.shields.io/badge/license-CC_BY--NC_4.0-16A34A.svg?style=flat-square)](LICENSE)
 
-当前公开版：**1.6.0** · 正式入口与 Skills：**21 个**（干活的 Skill 20 个 + 「君一 Skills 导航」1 个）
+当前公开版：**1.7.0** · 正式入口与 Skills：**22 个**（干活的 Skill 21 个 + 「君一 Skills 导航」1 个）
 
 [家庭成长 Agent](#家庭成长-agent超级个人-ai-工作台中的一个子系统) · [成长闭环](#一条完整的成长闭环) · [30 秒开始](#30-秒开始) · [安装](#安装) · [三个成长阶段](#三个成长阶段) · [使用与共创](#继续使用与共创)
 
@@ -61,7 +61,7 @@ flowchart LR
 | [理解自己，形成判断](#理解自己形成判断) | 想消化外部学习、整理知识，或把一个重要问题真正想清楚 | 自己的理解、知识结构、判断、反证和行动实验 |
 | [沉淀经验，长成事业](#沉淀经验长成事业) | 想把育儿、生活与专业经验转化为内容、IP 或一人公司事业 | 可追溯内容素材、IP 战略、对标研究和个人官网 |
 
-不知道自己处在哪个阶段时，使用「君一 Skills 导航」。在支持显式 Skill 调用的环境中，它的技术名称是 `$junyi`。它只选择当前最需要的一个 Skill 或一条最短路径，不会把 20 个 Skill 全部运行一遍。
+不知道自己处在哪个阶段时，使用「君一 Skills 导航」。在支持显式 Skill 调用的环境中，它的技术名称是 `$junyi`。它只选择当前最需要的一个 Skill 或一条最短路径，不会把 21 个 Skill 全部运行一遍。
 
 这里不鼓励把孩子变成项目，也不让 AI 代替父母作教育决定；不承诺收入结果，不做医学、心理或发育诊断，也不预测未经证据支持的成长结果。
 
@@ -109,6 +109,12 @@ flowchart LR
 请帮我从君一的 GitHub 仓库 junyifei/junyi-skills，安装 junyi-ai-weekly-review 这个 skill。运行前先告诉我哪些步骤只在本地、哪些内容可能由云端模型处理。
 ```
 
+**想把真实素材写成长文，并保留自己的语气**：
+
+```text
+请帮我从君一的 GitHub 仓库 junyifei/junyi-skills，安装 junyi-article-writing-companion 这个 skill。先用中性模式帮我完成一篇文章；如果需要个性化，再引导我建立自己的定位、语感、范本和发布规则配置。
+```
+
 **只想先看看仓库里有哪些 Skill、暂时不装**：
 
 ```text
@@ -121,7 +127,7 @@ flowchart LR
 请帮我把 GitHub junyifei/junyi-skills 里公开的 skill 都装上。
 ```
 
-装好后，新开一个对话让 AI 重新识别一下就能用了。本仓库已在隔离项目中验证 21/21 发现与复制安装；不同 AI 助手的目录和用法可能不太一样，详见[兼容性与安装说明](guide/COMPATIBILITY.md)。
+装好后，新开一个对话让 AI 重新识别一下就能用了。本仓库已在隔离项目中验证 22/22 发现与复制安装；不同 AI 助手的目录和用法可能不太一样，详见[兼容性与安装说明](guide/COMPATIBILITY.md)。
 
 <details>
 <summary>习惯命令行，或你的工具需要精确命令？点这里</summary>
@@ -176,13 +182,14 @@ npx -y skills add junyifei/junyi-skills --skill <SKILL>
 | 什么时候使用 | 使用入口 | 会得到什么 |
 |---|---|---|
 | 录音、日记和生活记录很多，想提炼真实内容 | [`junyi-content-distiller`](junyi-content-distiller/SKILL.md) | 核心事件、情绪、故事、观点、证据、原则和待办 |
+| 已有真实素材、观点或草稿，想写成长文、续写、多轮改稿或终审 | [`junyi-article-writing-companion`](junyi-article-writing-companion/SKILL.md) | 事实底稿、文章主轴、大纲或正文、分层修改与发布前检查 |
 | 经历、专业经验或想法很多，但别人记不住你是谁 | [`junyi-positioning`](junyi-positioning/SKILL.md) | 候选定位卡、定位诊断，或证据型《IP 战略书》与验证计划 |
 | 需要寻找和核验小红书对标 | [`junyi-xhs-benchmark`](junyi-xhs-benchmark/SKILL.md) | 候选池、排除理由、分层评分与使用建议 |
 | 已有定位与真实素材，想建立个人官网 | [`junyi-personal-website`](junyi-personal-website/SKILL.md) | 原创、可验证、可部署的网站 |
 
 表达不是把孩子当作内容素材，也不是要求每位父母都经营 IP。它只在用户主动选择时，帮助把自己的学习、育儿感悟与专业经验变成可追溯的公共表达。
 
-查看[全部 20 个 Skill 用户目录](guide/SKILL-CATALOG.md)：按“什么时候用、准备什么、得到什么”选择；机器可读的版本与成熟度见 [`skill-index.json`](skill-index.json)。
+查看[全部 21 个 Skill 用户目录](guide/SKILL-CATALOG.md)：按“什么时候用、准备什么、得到什么”选择；机器可读的版本与成熟度见 [`skill-index.json`](skill-index.json)。
 
 ## 继续使用与共创
 

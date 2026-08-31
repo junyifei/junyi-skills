@@ -23,6 +23,7 @@ description: 君一 Skills 导航。仅在用户显式调用 /junyi、$junyi、�
 | 主动要求挑刺、找漏洞、做魔鬼代言人评审 | `junyi-po-leng-shui` |
 | 转换、分块、索引或归档大文档 | `junyi-doc-reader` |
 | 从短记录、每日录音或超长录音中提炼真实内容、证据、原则和待办 | `junyi-content-distiller` |
+| 把真实素材、观点或草稿写成长文，或续写、改稿、终审 | `junyi-article-writing-companion` |
 | 把课程、文章、书、访谈或长材料转成自己的理解、边界和实验 | `junyi-learning-distiller` |
 | 从默认功能骨架快速新建知识库、重新评估旧分类、归档新内容，或只读诊断已有知识库 | `junyi-vault` |
 | 记住重要的人、按明确承诺和已确认阶段提醒跟进，看清自己的心力流向 | `junyi-relationship-manager` |
@@ -54,6 +55,7 @@ description: 君一 Skills 导航。仅在用户显式调用 /junyi、$junyi、�
 - 季度中途跨过年龄边界：当前季度仍使用开始日对应 Skill；下一季度再重新路由，不中途切换方法。
 - 已有大文档，只需要转换、索引或归档：直接走 `junyi-doc-reader`。
 - 要从生活、录音或日常记录中找内容素材：走 `junyi-content-distiller`；它不代替外部课程学习蒸馏。
+- 已有真实素材或草稿，要形成长文、继续改稿或做发布前终审：直接走 `junyi-article-writing-companion`。若先用 `junyi-content-distiller` 提炼素材，只把已确认的事实与来源交给文章 Skill；未经明确授权不自动发布。
 - 要消化外部课程、文章、书或访谈：走 `junyi-learning-distiller`；它不把来源观点冒充自己的结论。
 - 要从零搭知识库：`junyi-vault` 从四项默认能力开始，用 2 个必答问题、1 个隐私选答和 3 个真实材料测试有限调整；已有结构先映射和诊断，不强制重建；确认结构仍有效且只需放新内容时使用归档模式。
 - 从零建立个人 IP 战略：直接走 `junyi-positioning`；需要独立研究小红书对标时，再走 `junyi-xhs-benchmark`。
