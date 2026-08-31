@@ -16,7 +16,7 @@
 [![Public Skills](https://img.shields.io/badge/public_skills-21-2563EB.svg?style=flat-square)](skill-index.json)
 [![License](https://img.shields.io/badge/license-CC_BY--NC_4.0-16A34A.svg?style=flat-square)](LICENSE)
 
-当前公开版：**1.7.0** · 正式入口与 Skills：**22 个**（干活的 Skill 21 个 + 「君一 Skills 导航」1 个）
+当前公开版：**1.8.0** · 正式入口与 Skills：**22 个**（干活的 Skill 21 个 + 「君一 Skills 导航」1 个）
 
 [家庭成长 Agent](#家庭成长-agent超级个人-ai-工作台中的一个子系统) · [成长闭环](#一条完整的成长闭环) · [30 秒开始](#30-秒开始) · [安装](#安装) · [三个成长阶段](#三个成长阶段) · [使用与共创](#继续使用与共创)
 
@@ -112,7 +112,7 @@ flowchart LR
 **想把真实素材写成长文，并保留自己的语气**：
 
 ```text
-请帮我从君一的 GitHub 仓库 junyifei/junyi-skills，安装 junyi-article-writing-companion 这个 skill。先用中性模式帮我完成一篇文章；如果需要个性化，再引导我建立自己的定位、语感、范本和发布规则配置。
+请帮我从君一的 GitHub 仓库 junyifei/junyi-skills，安装 wechat-article-writer 这个 skill。先检查我的公众号写作配置；如果还没有最小配置和至少一篇授权全文范本，请先帮我完成初始化、素材盘点和大纲，不要直接生成完整文章。
 ```
 
 **只想先看看仓库里有哪些 Skill、暂时不装**：
@@ -182,7 +182,7 @@ npx -y skills add junyifei/junyi-skills --skill <SKILL>
 | 什么时候使用 | 使用入口 | 会得到什么 |
 |---|---|---|
 | 录音、日记和生活记录很多，想提炼真实内容 | [`junyi-content-distiller`](junyi-content-distiller/SKILL.md) | 核心事件、情绪、故事、观点、证据、原则和待办 |
-| 已有真实素材、观点或草稿，想写成长文、续写、多轮改稿或终审 | [`junyi-article-writing-companion`](junyi-article-writing-companion/SKILL.md) | 事实底稿、文章主轴、大纲或正文、分层修改与发布前检查 |
+| 已有真实素材、观点或草稿，想写微信公众号长文、续写、多轮改稿或终审 | [`wechat-article-writer`](wechat-article-writer/SKILL.md) | 内容锁定单、公众号大纲或正文、分层修改、标题兑现与发布前检查；完整成稿需先提供最小配置和授权全文范本 |
 | 经历、专业经验或想法很多，但别人记不住你是谁 | [`junyi-positioning`](junyi-positioning/SKILL.md) | 候选定位卡、定位诊断，或证据型《IP 战略书》与验证计划 |
 | 需要寻找和核验小红书对标 | [`junyi-xhs-benchmark`](junyi-xhs-benchmark/SKILL.md) | 候选池、排除理由、分层评分与使用建议 |
 | 已有定位与真实素材，想建立个人官网 | [`junyi-personal-website`](junyi-personal-website/SKILL.md) | 原创、可验证、可部署的网站 |

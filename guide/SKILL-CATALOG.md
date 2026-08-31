@@ -64,7 +64,7 @@
 | 我现在想完成什么 | 使用入口 | 准备什么 | 会得到什么 |
 |---|---|---|---|
 | 把录音、日记或聊天记录变成可追溯素材 | [`junyi-content-distiller`](../junyi-content-distiller/SKILL.md) | 原始记录；有条件时提供说话人和时间戳 | 事件、情绪、故事、观点、金句、证据、原则和待办 |
-| 把真实素材、观点或草稿发展成长文，或继续改稿与终审 | [`junyi-article-writing-companion`](../junyi-article-writing-companion/SKILL.md) | 真实素材、现有草稿或明确观点；个性化时再提供自己的定位、语感、范本和发布规则 | 事实底稿、主轴、大纲或正文、多轮修改说明和发布前检查 |
+| 把真实素材、观点或草稿发展成微信公众号长文，或继续改稿与终审 | [`wechat-article-writer`](../wechat-article-writer/SKILL.md) | 真实素材或草稿；最小创作者配置；至少一篇同类型授权全文范本 | 内容锁定单、公众号大纲或正文、多轮修改说明、标题兑现与发布前检查；配置不足时只交付初始化与大纲 |
 | 先沉淀候选定位卡，或建立、审核、迭代个人 IP 战略 | [`junyi-positioning`](../junyi-positioning/SKILL.md) | 已有访谈或经历；完整模式再补用户证据、内容数据、产品与边界 | 候选定位卡、聚焦诊断，或定位决定、证据缺口、验证计划和完整《IP 战略书》 |
 | 发现并核验小红书对标 | [`junyi-xhs-benchmark`](../junyi-xhs-benchmark/SKILL.md) | 定位、目标用户、内容与商业路径 | 候选池、核验、分层、评分、排除理由和使用建议 |
 | 从定位与真实素材建立个人官网 | [`junyi-personal-website`](../junyi-personal-website/SKILL.md) | 定位、内容、证明、视觉偏好和部署边界 | 原创、响应式、可验收和可部署的网站 |

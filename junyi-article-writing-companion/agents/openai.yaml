@@ -1,6 +1,0 @@
-interface:
-  display_name: "文章创作协作"
-  short_description: "从真实素材到长文初稿、多轮改稿、事实核验与发布前终审"
-  default_prompt: "Use $junyi-article-writing-companion to turn these sources into an evidence-grounded long-form article."
-policy:
-  allow_implicit_invocation: true

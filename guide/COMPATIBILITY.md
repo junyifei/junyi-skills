@@ -1,6 +1,6 @@
 # 兼容性与安装说明
 
-最后核验：2026-08-31（公开仓库 22 项自动发现与 Codex 隔离复制安装；`junyi-article-writing-companion` 完成 Codex、Claude Code、OpenClaw 三端隔离复制安装与资源完整性检查，三端独立真实写作任务仍待回归）。
+最后核验：2026-08-31（`wechat-article-writer` 1.0.0 发布候选；结构、安全、三端隔离发现和真实写作 A/B 结果以本版本发布前的最终验收记录为准）。
 
 > 不想敲命令行？装 Skill 的大白话版见 [README 的「安装」](../README.md#安装)和[新手指南](START-HERE.md)。这份文档是给需要**精确命令**、排查 Agent 兼容性或做手动安装的人。
 
@@ -10,7 +10,7 @@
 |---|---|---|
 | 仓库自动发现 | 已验证 | `skills` CLI 能发现 22 个（21 个 Skill + 1 个「君一 Skills 导航」，技术名称 `junyi`）|
 | Codex 项目级复制安装 | 已验证 | 隔离目录中安装 22/22，`SKILL.md` 与资源目录完整 |
-| `junyi-article-writing-companion` 0.1.0 | 公开 Beta | Codex、Claude Code、OpenClaw 三端隔离复制安装与资源完整性检查通过；尚未切换君一私人写作链，真实写作任务待影子验证 |
+| `wechat-article-writer` 1.0.0 | 发布候选 | 保留 0—11 阶段流程和外置配置门禁；需完成 Codex、Claude Code、OpenClaw 三端隔离发现、无配置与模拟创作者测试、三轮真实写作 A/B，才可标为已发布 |
 | `junyi-relationship-manager` 1.1.0 | 已验证 | 隔离安装包含 SKILL、agents、assets、references 与校验脚本；3 组独立前向情境和 6 项脚本自检通过 |
 | Codex 显式调用 | 已验证 | 支持 `$skill-name` 与自然语言指定 Skill |
 | GitHub Copilot 目录发现 | 部分验证 | 安装工具识别共享 `.agents/skills`，未完成独立任务回归 |
@@ -31,7 +31,7 @@ npx -y skills add junyifei/junyi-skills --list
 ```text
 junyi
 junyi-ai-weekly-review
-junyi-article-writing-companion
+wechat-article-writer
 junyi-content-distiller
 junyi-deep-dialogue
 junyi-doc-reader
