@@ -28,6 +28,7 @@ description: 与创作者协作完成微信公众号长文的素材盘点、内�
 - 事实、隐私与发布状态：[证据与隐私](references/evidence-and-privacy.md)
 - 人群、因果与判断范围：[论断范围](references/claim-scope.md)
 - 长文结构、多轮改稿与标题：[公众号长文与改稿](references/wechat-long-form-editing.md)
+- 人物文章同时出现工具、系统、产品、课程、方法或成果线，且可能抢走人物主线时：[人物主线与系统线的编辑决策](references/person-vs-system-editing.md)
 
 ## 公众号流程
 
@@ -119,6 +120,8 @@ description: 与创作者协作完成微信公众号长文的素材盘点、内�
 当前最致命的问题：
 本轮只解决什么：
 ```
+
+人物文章同时出现工具、系统、产品、课程、方法或成果线时，先读取[人物主线与系统线的编辑决策](references/person-vs-system-editing.md)，完成主角删除测试、核心冲突测试、段落功能账本，以及篇幅最大系统段的“能力／成果—人物认识／选择”标记，再填写“当前最致命的问题”。局部措辞、后文重复或结尾语气不能盖过全文主角漂移。
 
 按以下顺序修改：
 
