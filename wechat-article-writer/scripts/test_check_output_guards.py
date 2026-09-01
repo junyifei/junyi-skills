@@ -30,6 +30,10 @@ class OutputGuardTests(unittest.TestCase):
         text = "不得写成已发布，也不能声称所有人都会这样；不升华成每个人都适用；不引导加我微信。"
         self.assertEqual(MODULE.check(text, "none", "candidate", "none"), [])
 
+    def test_deleted_source_quote_does_not_trigger_scope_check(self):
+        text = "删去原文句子：事业、家庭、成长，从来就没法切割开。"
+        self.assertEqual(MODULE.check(text, "none", "candidate", "none"), [])
+
     def test_scope_evidence_can_allow_population_wording(self):
         text = "在已说明的样本中，大多数受访者选择了第一项。"
         self.assertEqual(MODULE.check(text, "provided", "candidate", "none"), [])
