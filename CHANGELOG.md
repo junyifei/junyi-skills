@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — junyi-doc-reader 1.1.0 candidate — 2026-09-02
+
+- 公共核心不再读取 `~/.openclaw/openclaw.json` 或任何 Agent 平台配置。
+- 飞书凭据改由 `DOC_READER_FEISHU_APP_ID` 与 `DOC_READER_FEISHU_APP_SECRET` 显式注入；`--account` 仅作为非敏感兼容标签保留。
+- 君一自己的 OpenClaw 账号解析留在私人适配层，不进入公开 Skill。
+
 版本统一记录在根目录 [`VERSION`](VERSION) 与 [`skill-index.json`](skill-index.json)；`SKILL.md` frontmatter 只保留跨平台标准字段 `name` 和 `description`。
 
 ## [Unreleased]

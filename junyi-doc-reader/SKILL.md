@@ -1,9 +1,9 @@
 ---
 name: junyi-doc-reader
-description: 大文档归档与检索管线（v5）。支持本地文件（Word/PDF/TXT/Markdown）和飞书云文档，转换、分块、可选 LLM 增强，输出结构化 Markdown 和索引，存入 Obsidian。触发词：读大文档、归档文档、junyi-doc-reader、doc-reader、文档索引、帮我读这个PDF、把文档存到Obsidian、帮我把飞书文档存到Obsidian、帮我把飞书工作日志按日期拆分、archive document、index document
+description: 大文档归档与检索管线（v5.1）。支持本地文件（Word/PDF/TXT/Markdown）和飞书云文档，转换、分块、可选 LLM 增强，输出结构化 Markdown 和索引。飞书凭据必须由环境变量或用户自己的私人适配器提供，不读取任何 Agent 平台配置。触发词：读大文档、归档文档、junyi-doc-reader、doc-reader、文档索引、帮我读这个PDF、把文档存到Obsidian、帮我把飞书文档存到Obsidian、帮我把飞书工作日志按日期拆分、archive document、index document
 ---
 
-# junyi-doc-reader (v5)
+# junyi-doc-reader (v5.1)
 
 大文档归档与检索管线。将大文档安全地转为结构化 Markdown，生成分块索引，可选 LLM 提炼摘要。v5 新增飞书云文档支持。
 
@@ -65,42 +65,46 @@ python3 scripts/pipeline.py <input_file> --output <output_dir> \
 ### Feishu Document (v5)
 
 ```bash
-python3 scripts/pipeline.py --source feishu --doc-token XXX --account YYY \
+DOC_READER_FEISHU_APP_ID="..." DOC_READER_FEISHU_APP_SECRET="..." \
+python3 scripts/pipeline.py --source feishu --doc-token XXX \
   --output <output_dir> [--mode ...] [--split-by date] [--dry-run]
 ```
 
-**脚本路径相对于 skill 目录：** `~/.openclaw/shared-skills/junyi-doc-reader/`
+命令中的 `scripts/` 均相对于当前发现到的 Skill 目录；不要假设它位于 OpenClaw、Claude Code 或 Codex 的固定路径。
 
 ### Examples
 
 ```bash
 # 基础归档（本地文件）
-python3 ~/.openclaw/shared-skills/junyi-doc-reader/scripts/pipeline.py \
+python3 "<SKILL_DIR>/scripts/pipeline.py" \
   /path/to/document.docx \
   --output /path/to/obsidian/vault/文档名/
 
 # 带 LLM 增强 + 按章节分文件
 DOC_READER_API_KEY="sk-xxx" DOC_READER_ALLOW_EXTERNAL=true \
-python3 ~/.openclaw/shared-skills/junyi-doc-reader/scripts/pipeline.py \
+python3 "<SKILL_DIR>/scripts/pipeline.py" \
   /path/to/document.pdf \
   --output /path/to/obsidian/vault/文档名/ \
   --mode archive+index+insights \
   --split-by chapter
 
 # 飞书文档归档（v5 新增）
-python3 ~/.openclaw/shared-skills/junyi-doc-reader/scripts/pipeline.py \
-  --source feishu --doc-token YOUR_DOC_TOKEN --account YOUR_ACCOUNT \
+DOC_READER_FEISHU_APP_ID="..." DOC_READER_FEISHU_APP_SECRET="..." \
+python3 "<SKILL_DIR>/scripts/pipeline.py" \
+  --source feishu --doc-token YOUR_DOC_TOKEN \
   --output /path/to/obsidian/vault/文档名/
 
 # 飞书工作日志按日期拆分（v5 新增）
-python3 ~/.openclaw/shared-skills/junyi-doc-reader/scripts/pipeline.py \
-  --source feishu --doc-token YOUR_DOC_TOKEN --account YOUR_ACCOUNT \
+DOC_READER_FEISHU_APP_ID="..." DOC_READER_FEISHU_APP_SECRET="..." \
+python3 "<SKILL_DIR>/scripts/pipeline.py" \
+  --source feishu --doc-token YOUR_DOC_TOKEN \
   --output /path/to/obsidian/vault/日志/ \
   --split-by date
 
 # 预览日期拆分（不写入）
-python3 ~/.openclaw/shared-skills/junyi-doc-reader/scripts/pipeline.py \
-  --source feishu --doc-token YOUR_DOC_TOKEN --account YOUR_ACCOUNT \
+DOC_READER_FEISHU_APP_ID="..." DOC_READER_FEISHU_APP_SECRET="..." \
+python3 "<SKILL_DIR>/scripts/pipeline.py" \
+  --source feishu --doc-token YOUR_DOC_TOKEN \
   --output /path/to/obsidian/vault/日志/ \
   --split-by date --dry-run
 ```
@@ -110,7 +114,7 @@ python3 ~/.openclaw/shared-skills/junyi-doc-reader/scripts/pipeline.py \
 | 条件 | 校验 |
 |------|------|
 | source=local | 必须提供 input_file |
-| source=feishu | 必须提供 --doc-token 和 --account |
+| source=feishu | 必须提供 `--doc-token`，并通过环境变量或私人适配器提供两项飞书凭据 |
 | source=local + --doc-token | 报错：参数冲突 |
 | --split-by date + source=local | 报错：date 拆分仅支持飞书源 |
 | source=feishu + mode=insights | 必须设置 DOC_READER_ALLOW_EXTERNAL=true |
@@ -123,6 +127,8 @@ python3 ~/.openclaw/shared-skills/junyi-doc-reader/scripts/pipeline.py \
 | `DOC_READER_API_URL` | API endpoint | `https://api.openai.com/v1/chat/completions` |
 | `DOC_READER_MODEL` | 模型名 | `claude-haiku-4-5-20251001` |
 | `DOC_READER_ALLOW_EXTERNAL` | 是否允许外发文档 | `false` |
+| `DOC_READER_FEISHU_APP_ID` | 飞书应用 ID；仅飞书源读取 | (无) |
+| `DOC_READER_FEISHU_APP_SECRET` | 飞书应用密钥；仅飞书源读取 | (无) |
 
 ## Output Structure
 
@@ -184,11 +190,12 @@ Pipeline 自动保存进度到 `state.json`。如果中断，重新运行相同�
 
 本 Skill 的两类「敏感能力」均为**功能必需**且**用户授权**，遵循最小权限原则：
 
-### 1. 本地凭据访问（仅飞书源）
+### 1. 飞书凭据（仅飞书源）
 
-- **读取范围**：仅 `~/.openclaw/openclaw.json` 中指定 account 的 `appId` / `appSecret` 两个字段（兼容 `plugins.entries.feishu.accounts[<account>]` 与 `channels.feishu.accounts[<account>]` 两种布局，取先命中的）
-- **触发条件**：用户显式使用 `--source feishu --account <name>` 时
-- **使用方式**：仅在内存中用于换取 Feishu tenant_access_token，不落盘、不打日志、不外传
+- **读取范围**：只读取当前进程的 `DOC_READER_FEISHU_APP_ID` 与 `DOC_READER_FEISHU_APP_SECRET`
+- **平台解耦**：公共脚本不读取 `~/.openclaw`、`~/.claude`、`~/.codex` 或其他 Agent 配置
+- **触发条件**：用户显式使用 `--source feishu` 时；缺少任一变量立即停止
+- **使用方式**：仅在内存中换取 Feishu tenant_access_token，不落盘、不打日志、不外传
 - **网络出口白名单**：仅 `open.feishu.cn`（飞书官方 API），无任何第三方 endpoint
 - **本地源（默认）**：完全不读取 openclaw.json，纯本地文件处理
 
@@ -214,7 +221,8 @@ Pipeline 自动保存进度到 `state.json`。如果中断，重新运行相同�
 
 | 能力 | 默认行为 | 启用方式 |
 |------|---------|---------|
-| 读 openclaw.json | 仅 `--source feishu` 时读飞书凭据 | 用户显式选择飞书源 |
+| 读 Agent 平台配置 | **永不读取** | 不提供该能力 |
+| 读飞书凭据环境变量 | 仅 `--source feishu` 时 | 设置两项 `DOC_READER_FEISHU_*` 变量或使用私人适配器 |
 | 调用飞书 API | 仅 `--source feishu` 时 | 用户显式选择飞书源 |
 | 外发到 LLM | **关闭** | 设置 4 个环境变量 |
 | 写本地文件 | 仅 `--output` 指定目录 | 用户指定路径 |
@@ -238,11 +246,11 @@ Pipeline 自动保存进度到 `state.json`。如果中断，重新运行相同�
 6. 向用户报告：处理了多少块、生成了哪些文件、有无警告
 7. 如需写入 Obsidian，将 output_dir 内容复制到 vault 目标路径
 
-### Feishu Document (v5)
+### Feishu Document (v5.1)
 
 1. 从用户输入中提取 doc_token（从 feishu.cn/docx/XXX 链接中提取）
-2. 确定 account 名（你在 `~/.openclaw/openclaw.json` 里配置的飞书账号名）
-3. 确定目标目录和 split 方式（用户要求按日期拆分→ --split-by date）
-4. 运行 `python3 scripts/pipeline.py --source feishu --doc-token XXX --account YYY -o <dir> [--split-by date]`
+2. 确认用户已经通过环境变量或私人适配器提供飞书凭据；不要让用户把密钥粘贴进对话
+3. 确定目标目录和 split 方式（用户要求按日期拆分→ `--split-by date`）
+4. 运行 `python3 scripts/pipeline.py --source feishu --doc-token XXX -o <dir> [--split-by date]`
 5. 检查 `manifest.json` 确认状态
 6. 向用户报告结果

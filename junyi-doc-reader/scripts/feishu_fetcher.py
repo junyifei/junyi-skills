@@ -7,24 +7,21 @@ Fetches document content via Feishu Open API, normalizes raw text to
 well-structured Markdown, and writes converted.md + source_meta.json.
 
 Usage:
-    python3 feishu_fetcher.py --doc-token XXX --account YYY --output /path/to/output/
+    DOC_READER_FEISHU_APP_ID="..." DOC_READER_FEISHU_APP_SECRET="..." \
+    python3 feishu_fetcher.py --doc-token XXX --output /path/to/output/
 
 =============================================================================
 SECURITY & PRIVACY DISCLOSURE
 =============================================================================
-This script accesses the user's local openclaw configuration file to retrieve
-Feishu API credentials. This is REQUIRED, EXPECTED, and USER-CONFIGURED behavior
-for any tool that integrates with Feishu cloud documents.
+This script never reads an Agent platform configuration file. Feishu API
+credentials must be supplied explicitly through process environment variables
+or by a user-managed private adapter.
 
 Scope of credential access:
-  - Reads ONLY: appId / appSecret for the named account, looked up under
-    plugins.entries.feishu.accounts[<account_name>] or
-    channels.feishu.accounts[<account_name>] (whichever layout your
-    openclaw.json uses; the first match wins)
-  - From local file: ~/.openclaw/openclaw.json (which the user has explicitly
-    populated with their own Feishu app credentials)
-  - Account name MUST be passed in via --account argument; this script never
-    enumerates or auto-discovers accounts
+  - Reads ONLY DOC_READER_FEISHU_APP_ID and DOC_READER_FEISHU_APP_SECRET from
+    the current process environment
+  - Never enumerates accounts and never opens ~/.openclaw, ~/.claude, ~/.codex,
+    or any other platform configuration
   - Credentials are used in-memory only; never logged, written to disk, or
     transmitted to any endpoint other than the official Feishu Open API
     (open.feishu.cn) over HTTPS
@@ -56,53 +53,27 @@ from datetime import datetime, timezone, timedelta
 # Constants
 # ---------------------------------------------------------------------------
 FEISHU_BASE = "https://open.feishu.cn/open-apis"
-CONFIG_PATH = os.path.expanduser("~/.openclaw/openclaw.json")
+APP_ID_ENV = "DOC_READER_FEISHU_APP_ID"
+APP_SECRET_ENV = "DOC_READER_FEISHU_APP_SECRET"
 
 
 # ---------------------------------------------------------------------------
 # Internal helpers
 # ---------------------------------------------------------------------------
 
-def _read_credentials(account: str) -> tuple:
-    """Read appId and appSecret from openclaw.json for the given account.
-
-    Returns (app_id, app_secret). Exits on failure.
-    """
-    try:
-        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-            config = json.load(f)
-    except (OSError, json.JSONDecodeError) as exc:
-        print(f"[ERROR] Failed to read config {CONFIG_PATH}: {exc}", file=sys.stderr)
-        sys.exit(1)
-
-    acct = None
-    # Try canonical path first, then fall back to channels.feishu.accounts (current openclaw layout)
-    for path in (("plugins", "entries", "feishu", "accounts"), ("channels", "feishu", "accounts")):
-        node = config
-        ok = True
-        for key in path:
-            if isinstance(node, dict) and key in node:
-                node = node[key]
-            else:
-                ok = False
-                break
-        if ok and isinstance(node, dict) and account in node:
-            acct = node[account]
-            break
-    if not acct:
+def _read_credentials_from_env() -> tuple:
+    """Read the two Feishu credentials from the current process environment."""
+    app_id = os.environ.get(APP_ID_ENV, "").strip()
+    app_secret = os.environ.get(APP_SECRET_ENV, "").strip()
+    missing = [name for name, value in ((APP_ID_ENV, app_id), (APP_SECRET_ENV, app_secret)) if not value]
+    if missing:
         print(
-            f"[ERROR] Account '{account}' not found in config. "
-            f"Looked in plugins.entries.feishu.accounts and channels.feishu.accounts",
+            "[ERROR] Missing Feishu credential environment variable(s): "
+            + ", ".join(missing)
+            + ". Set them explicitly or use a private credential adapter.",
             file=sys.stderr,
         )
         sys.exit(1)
-    try:
-        app_id = acct["appId"]
-        app_secret = acct["appSecret"]
-    except KeyError:
-        print(f"[ERROR] Account '{account}' missing appId/appSecret", file=sys.stderr)
-        sys.exit(1)
-
     return app_id, app_secret
 
 
@@ -170,13 +141,17 @@ def _api_get(url: str, token: str) -> dict:
 # Public API
 # ---------------------------------------------------------------------------
 
-def fetch(doc_token: str, account: str) -> dict:
+def fetch(doc_token: str, app_id: str = "", app_secret: str = "") -> dict:
     """Fetch a Feishu document's raw content and metadata.
 
     Returns dict with keys: title, raw_content, modified_time, doc_token.
     Credentials are used transiently and never persisted.
     """
-    app_id, app_secret = _read_credentials(account)
+    if bool(app_id) != bool(app_secret):
+        print("[ERROR] app_id and app_secret must be supplied together", file=sys.stderr)
+        sys.exit(1)
+    if not app_id:
+        app_id, app_secret = _read_credentials_from_env()
     token = _get_tenant_token(app_id, app_secret)
     # app_secret is no longer referenced after this point
 
@@ -310,14 +285,14 @@ def normalize(raw_content: str) -> str:
 
 
 def generate_source_meta(
-    fetch_result: dict, content_hash: str, account: str, md_content: str
+    fetch_result: dict, content_hash: str, credential_profile: str, md_content: str
 ) -> dict:
     """Generate source_meta dict for a fetched Feishu document.
 
     Args:
         fetch_result: dict returned by fetch()
         content_hash: sha256 hex digest prefixed with 'sha256:'
-        account: Feishu account name used
+        credential_profile: Optional non-secret label for the private adapter/profile
         md_content: the normalized markdown string (for size stats)
     """
     now = datetime.now(timezone(timedelta(hours=8)))
@@ -326,7 +301,7 @@ def generate_source_meta(
         "source_type": "feishu",
         "doc_token": fetch_result["doc_token"],
         "title": fetch_result["title"],
-        "account": account,
+        "credential_profile": credential_profile or None,
         "fetched_at": now.isoformat(),
         "modified_time": fetch_result["modified_time"],
         "content_hash": content_hash,
@@ -335,7 +310,13 @@ def generate_source_meta(
     }
 
 
-def fetch_and_normalize(doc_token: str, account: str, output_dir: str) -> tuple:
+def fetch_and_normalize(
+    doc_token: str,
+    output_dir: str,
+    credential_profile: str = "",
+    app_id: str = "",
+    app_secret: str = "",
+) -> tuple:
     """Main entry: fetch, normalize, and write converted.md + source_meta.json.
 
     Returns (md_path, source_meta_dict).
@@ -346,8 +327,9 @@ def fetch_and_normalize(doc_token: str, account: str, output_dir: str) -> tuple:
     meta_path = os.path.join(output_dir, "source_meta.json")
 
     # Fetch document
-    print(f"Fetching Feishu doc: {doc_token} (account: {account})")
-    result = fetch(doc_token, account)
+    profile_suffix = f" (profile: {credential_profile})" if credential_profile else ""
+    print(f"Fetching Feishu doc: {doc_token}{profile_suffix}")
+    result = fetch(doc_token, app_id, app_secret)
     print(f"  Title: {result['title']}")
 
     # Normalize
@@ -368,7 +350,7 @@ def fetch_and_normalize(doc_token: str, account: str, output_dir: str) -> tuple:
             pass  # Corrupted meta, proceed with overwrite
 
     # Generate meta
-    source_meta = generate_source_meta(result, content_hash, account, md_content)
+    source_meta = generate_source_meta(result, content_hash, credential_profile, md_content)
 
     # Write files
     with open(md_path, "w", encoding="utf-8") as f:
@@ -394,14 +376,17 @@ def main():
         "--doc-token", required=True, help="Feishu document token (from URL /docx/XXX)"
     )
     parser.add_argument(
-        "--account", required=True, help="Feishu account name in openclaw.json"
+        "--credential-profile", "--account", dest="credential_profile", default="",
+        help="Optional non-secret label; --account remains as a compatibility alias",
     )
     parser.add_argument(
         "--output", required=True, help="Output directory for converted.md and source_meta.json"
     )
     args = parser.parse_args()
 
-    md_path, meta = fetch_and_normalize(args.doc_token, args.account, args.output)
+    md_path, meta = fetch_and_normalize(
+        args.doc_token, args.output, credential_profile=args.credential_profile
+    )
     print(f"\nDone. Output: {md_path}")
     print(f"  Hash: {meta['content_hash']}")
 

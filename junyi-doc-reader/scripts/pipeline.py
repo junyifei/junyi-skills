@@ -12,7 +12,8 @@ Usage:
     [--split-by year|topic|chapter|none]
 
   # Feishu document
-  python3 scripts/pipeline.py --source feishu --doc-token XXX --account YYY \
+  DOC_READER_FEISHU_APP_ID="..." DOC_READER_FEISHU_APP_SECRET="..." \
+  python3 scripts/pipeline.py --source feishu --doc-token XXX \
     --output <output_dir> [--mode ...] [--split-by date] [--dry-run]
 """
 
@@ -135,7 +136,7 @@ def pre_check(input_path):
     }
 
 
-def run_feishu_pipeline(doc_token, account, output_dir, mode, split_by, dry_run=False):
+def run_feishu_pipeline(doc_token, output_dir, mode, split_by, dry_run=False, credential_profile=""):
     """Run the feishu document pipeline (v5)."""
     os.makedirs(output_dir, exist_ok=True)
 
@@ -143,7 +144,9 @@ def run_feishu_pipeline(doc_token, account, output_dir, mode, split_by, dry_run=
     print("=" * 50)
     print("STEP 1: Fetching from Feishu")
     print("=" * 50)
-    md_path, source_meta = feishu_fetcher.fetch_and_normalize(doc_token, account, output_dir)
+    md_path, source_meta = feishu_fetcher.fetch_and_normalize(
+        doc_token, output_dir, credential_profile=credential_profile
+    )
     print(f"[pipeline] Fetched: {source_meta['title']} ({source_meta['chars']:,} chars)")
     print()
 
@@ -430,7 +433,10 @@ def main():
         help="Document source (default: local)",
     )
     parser.add_argument("--doc-token", default=None, help="Feishu document token (required for feishu source)")
-    parser.add_argument("--account", default=None, help="Feishu account name (required for feishu source)")
+    parser.add_argument(
+        "--credential-profile", "--account", dest="credential_profile", default="",
+        help="Optional non-secret credential profile label; credentials come from DOC_READER_FEISHU_* env vars",
+    )
     parser.add_argument(
         "--mode", "-m",
         choices=["archive-only", "archive+index", "archive+index+insights"],
@@ -452,8 +458,6 @@ def main():
     if args.source == "feishu":
         if not args.doc_token:
             parser.error("--doc-token is required when --source=feishu")
-        if not args.account:
-            parser.error("--account is required when --source=feishu")
         if args.input_file:
             parser.error("input_file conflicts with --source=feishu (use --doc-token instead)")
     else:
@@ -467,7 +471,14 @@ def main():
     mode = detect_mode(args.mode, args.source)
 
     if args.source == "feishu":
-        run_feishu_pipeline(args.doc_token, args.account, args.output, mode, args.split_by, args.dry_run)
+        run_feishu_pipeline(
+            args.doc_token,
+            args.output,
+            mode,
+            args.split_by,
+            args.dry_run,
+            credential_profile=args.credential_profile,
+        )
     else:
         run_pipeline(args.input_file, args.output, mode, args.split_by)
 
