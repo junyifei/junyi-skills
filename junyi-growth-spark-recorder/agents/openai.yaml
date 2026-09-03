@@ -1,5 +1,5 @@
 interface:
   display_name: "闪光瞬间三层复盘"
-  short_description: "把亲子片段转成家庭成长 Agent 可持续使用的三层记录"
+  short_description: "把真实亲子片段转成证据受控的记录、观察和行动"
   brand_color: "#C65A3A"
-  default_prompt: "Use $junyi-growth-spark-recorder to analyze and archive this real parenting moment without inventing details."
+  default_prompt: "Use $junyi-growth-spark-recorder to analyze this real parenting moment. Do not save or update a profile unless I explicitly authorize that action."
