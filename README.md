@@ -16,7 +16,7 @@
 [![Public Skills](https://img.shields.io/badge/public_skills-21-2563EB.svg?style=flat-square)](skill-index.json)
 [![License](https://img.shields.io/badge/license-CC_BY--NC_4.0-16A34A.svg?style=flat-square)](LICENSE)
 
-当前公开版：**1.8.0** · 正式入口与 Skills：**22 个**（干活的 Skill 21 个 + 「君一 Skills 导航」1 个）
+当前公开版：**1.9.0** · 正式入口与 Skills：**22 个**（干活的 Skill 21 个 + 「君一 Skills 导航」1 个）
 
 [家庭成长 Agent](#家庭成长-agent超级个人-ai-工作台中的一个子系统) · [成长闭环](#一条完整的成长闭环) · [30 秒开始](#30-秒开始) · [安装](#安装) · [三个成长阶段](#三个成长阶段) · [使用与共创](#继续使用与共创)
 
