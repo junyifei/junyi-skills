@@ -13,7 +13,7 @@
     {"name": "junyi", "category": "君一 Skills 导航", "path": "junyi", "version": "1.4.0", "maturity": "已发布", "role": "根据真实任务、已有证据与当前阶段，选择最合适的 Skill 或最短调用链"},
     {"name": "junyi-deep-dialogue", "category": "理解自己，形成判断", "path": "junyi-deep-dialogue", "version": "1.0.0", "maturity": "已发布", "role": "通过苏格拉底式追问把体验转化为自己的判断"},
     {"name": "junyi-po-leng-shui", "category": "理解自己，形成判断", "path": "junyi-po-leng-shui", "version": "1.0.0", "maturity": "已发布", "role": "只有用户明确说出触发词时才进行反谄媚与魔鬼代言人评审"},
-    {"name": "junyi-growth-spark-recorder", "category": "理解孩子，支持成长", "path": "junyi-growth-spark-recorder", "version": "2.0.0", "maturity": "本地候选／虚构家庭与三端隔离发现通过／待君一真实验收", "role": "把真实亲子片段整理为证据受控的记录、发展观察和模型复盘，并把分析、事件保存、长期档案更新与对外分享分开授权"},
+    {"name": "junyi-growth-spark-recorder", "category": "理解孩子，支持成长", "path": "junyi-growth-spark-recorder", "version": "2.0.0", "maturity": "本地候选／客观门禁、三端隔离发现与真实片段两轮盲测通过／待公开发布授权", "role": "把真实亲子片段整理为证据受控的记录、发展观察和模型复盘，并把分析、事件保存、长期档案更新与对外分享分开授权"},
     {"name": "junyi-doc-reader", "category": "理解自己，形成判断", "path": "junyi-doc-reader", "version": "1.1.0", "maturity": "本地验证通过／待公开发布", "role": "转换、分块、索引和归档大文档"},
     {"name": "junyi-content-distiller", "category": "沉淀经验，长成事业", "path": "junyi-content-distiller", "version": "1.0.0", "maturity": "已发布／29 项测试通过", "role": "从短记录、每日录音和超长录音提炼事件、证据、内容素材、原则与待办"},
     {"name": "wechat-article-writer", "category": "沉淀经验，长成事业", "path": "wechat-article-writer", "version": "1.0.0", "maturity": "已随仓库 v1.8.0 发布／客观门禁与三轮主观验收通过", "role": "基于创作者外置配置、授权全文范本和真实素材，完成微信公众号长文的内容锁定、大纲、初稿、多轮改稿、标题兑现与发布前终审"},
