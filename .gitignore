@@ -10,16 +10,6 @@ growth-preview/
 # 本地回归测试记录，可能包含测试输入与内部评语，不得发布
 .private-regression/
 
-# 尚未完成实盘验证的 IP Skills，验证后再显式加入
-junyi-audience/
-junyi-xhs-topics/
-junyi-xhs-title/
-junyi-channels-title/
-junyi-xhs-write/
-junyi-xhs-audit/
-junyi-channels-write/
-junyi-channels-audit/
-
 # 与本次公开发布无关的本地资料
 docs/
 junyi-growth-spark-recorder.zip

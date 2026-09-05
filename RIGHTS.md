@@ -10,22 +10,22 @@ CC BY-NC 4.0 不包含对“君一”姓名、肖像或商标的额外授权，�
 
 ## 2026-07-17 迁移记录
 
-以下 10 个 Skill 曾在 `million-follower-ip-skills` 仓库以 MIT 发布。作者确认它们均为本人原创，或本人持有完整的重新许可权；迁入本仓库后统一使用 `junyi-*` 名称。当前 GitHub 公开版只发布其中前两项，其余继续保留在本地验证：
+以下 10 个 Skill 曾在 `million-follower-ip-skills` 仓库以 MIT 发布。作者确认它们均为本人原创，或本人持有完整的重新许可权；迁移评估时曾统一使用 `junyi-*` 候选名称。当前 GitHub 公开版只发布其中前两项，其余候选从未进入本仓库的 Git 历史、索引或 Release，并已于 2026-09-05 退出本地开发路径：
 
 - `junyi-positioning`（原 `build-evidence-based-ip-book`）
 - `junyi-xhs-benchmark`（原 `find-xiaohongshu-benchmarks`）
-- `junyi-audience`（原 `research-audience-insights`，本地）
-- `junyi-xhs-topics`（原 `plan-xiaohongshu-topics`，本地）
-- `junyi-xhs-title`（原 `write-xiaohongshu-titles`，本地）
-- `junyi-xhs-write`（原 `write-xiaohongshu-content`，本地）
-- `junyi-xhs-audit`（原 `audit-xiaohongshu-content`，本地）
-- `junyi-channels-title`（原 `write-wechat-channels-titles`，本地）
-- `junyi-channels-write`（原 `write-wechat-channels-content`，本地）
-- `junyi-channels-audit`（原 `audit-wechat-channels-content`，本地）
+- `junyi-audience`（原 `research-audience-insights`，未公开、已归档）
+- `junyi-xhs-topics`（原 `plan-xiaohongshu-topics`，未公开、已归档）
+- `junyi-xhs-title`（原 `write-xiaohongshu-titles`，未公开、已归档）
+- `junyi-xhs-write`（原 `write-xiaohongshu-content`，未公开、已归档）
+- `junyi-xhs-audit`（原 `audit-xiaohongshu-content`，未公开、已归档）
+- `junyi-channels-title`（原 `write-wechat-channels-titles`，未公开、已归档）
+- `junyi-channels-write`（原 `write-wechat-channels-content`，未公开、已归档）
+- `junyi-channels-audit`（原 `audit-wechat-channels-content`，未公开、已归档）
 
 此前已经取得的 MIT 版本继续受当时的 MIT 许可约束；本记录不撤销既有许可，只说明本仓库当前版本的许可依据。
 
-本地 Skills 只有在完成实盘验证、隐私和权利检查并被显式加入 Git 后，才构成未来公开版本的一部分。
+归档候选不是活动 Skill，也不是未来公开承诺。若以后出现真实用途，需要根据当时需求重新立项、审计和验证，不直接从归档恢复到 Agent 发现路径。
 
 ## 2026-07-19 新增公开 Skill 来源记录
 
@@ -52,6 +52,8 @@ CC BY-NC 4.0 不包含对“君一”姓名、肖像或商标的额外授权，�
 - `junyi-school-age-quarterly-plan`
 
 公开转换只保留资料采集、证据规则、分龄方法、家长报告结构和确定性校验。作者家庭成员姓名与事件、学校与关系网络、内部 Agent、私有方法名、自动写入规则、账号资源标识、文件路径和真实家庭报告不属于本次公开授权材料。
+
+早期统一生成器原型 `build-quarterly-child-growth-plan` 从未进入 GitHub。其通用资料、证据和校验逻辑已由上述四个正式 Skill 承接；原型于 2026-09-05 退出本地开发路径并冻结归档，不作为第五个季度 Skill 或活动兼容名称保留。
 
 ## 2026-07-24 许可变更与新增公开 Skill 记录
 
